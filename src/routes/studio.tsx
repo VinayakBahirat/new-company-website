@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
+import { StudioArchitecture } from "@/components/site/studio-architecture";
 import { Counter, Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { COMPANY, DIFFERENTIATORS, INDUSTRIES, STATS, VALUES } from "@/content/site";
@@ -32,10 +33,7 @@ function StudioPage() {
             title="Independent by design, senior by default."
             body={`${COMPANY.name} started as four engineers who kept being called in to rescue systems that had been built too quickly. Eleven years later the studio still runs on that premise: get the hard decisions right early, and the product stays cheap to change.`}
           />
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-border bg-surface/40">
-            <NodeField density={44} />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_38%,var(--background)_90%)]" />
-          </div>
+          <StudioArchitecture />
         </div>
       </Section>
 

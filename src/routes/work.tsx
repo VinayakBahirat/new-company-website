@@ -7,7 +7,7 @@ import { MockUi } from "@/components/site/mock-ui";
 
 const TITLE = "Selected Work — Enterprise Platforms & AI Products | Aeriform Systems";
 const DESCRIPTION =
-  "Representative engagements across enterprise platforms, AI products, SaaS, automation, mobile and cloud infrastructure. Anonymised and illustrative.";
+  "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -30,21 +30,32 @@ function WorkPage() {
           <SectionHeading
             eyebrow="Selected work"
             title="Platforms, products and systems in production."
-            body="Engagement details are anonymised. Names, interfaces and figures are illustrative of the class of problem we take on."
+            body="We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems."
           />
         </div>
       </Section>
 
       <Section className="pb-8">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 2) * 0.06}>
               <TiltCard intensity={5} className="h-full">
                 <GlassCard className="h-full rounded-[1.8rem] p-2.5">
-                  <div className={`relative aspect-[16/10] overflow-hidden rounded-[1.3rem] bg-gradient-to-br ${p.accent}`}>
-                    <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.74)]" />
-                    <div className="absolute inset-0 grid-lines opacity-30" />
-                    <MockUi name={p.name} />
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[1.3rem]">
+                    {p.image ? (
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <>
+                        <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
+                        <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.74)]" />
+                        <div className="absolute inset-0 grid-lines opacity-30" />
+                        <MockUi name={p.name} />
+                      </>
+                    )}
                   </div>
                   <div className="p-6 sm:p-8">
                     <div className="flex flex-wrap items-center justify-between gap-3">
@@ -92,8 +103,8 @@ function WorkPage() {
 
       <ClosingCta
         eyebrow="Your system"
-        title="Bring us the part that keeps breaking."
-        body="Re-platforms, AI features that stalled in prototype, or a product still on the whiteboard — we start where the risk is."
+        title="Let's Build Something Great Together."
+        body="Whether you're starting a new project or improving an existing one, we're here to help you build the right solution."
       />
     </>
   );

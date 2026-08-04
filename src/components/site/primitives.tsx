@@ -46,7 +46,12 @@ export function SectionHeading({
       )}
     >
       <Reveal>
-        <p className="eyebrow flex items-center gap-2.5">
+        <p
+          className={cn(
+            "eyebrow flex items-center gap-2.5",
+            align === "center" && "justify-center",
+          )}
+        >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
           {eyebrow}
         </p>
