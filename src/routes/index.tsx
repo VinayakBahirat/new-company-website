@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { MeshBackground, Hairline } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
+import { StudioArchitecture } from "@/components/site/studio-architecture";
 import {
   Counter,
   Parallax,
@@ -45,7 +46,7 @@ import {
 
 const TITLE = "Aeriform Systems — Enterprise Software & AI Product Engineering";
 const DESCRIPTION =
-  "An engineering studio building enterprise platforms, AI products, SaaS and cloud systems. Senior pods, production-grade architecture, measurable performance.";
+  "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,16 +104,16 @@ function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
               </span>
-              Two delivery pods open for Q3
+              Available for new projects
             </Pill>
           </motion.div>
 
           <h1 className="mt-8 text-[2.6rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.1rem]">
             <span className="text-gradient block">
-              <SplitHeading text="Software that feels" delay={0.1} />
+              <SplitHeading text="We Build Products That" delay={0.1} />
             </span>
             <span className="block text-amber-gradient">
-              <SplitHeading text="engineered, not assembled." delay={0.28} />
+              <SplitHeading text="Real Businesses Depend On." delay={0.28} />
             </span>
           </h1>
 
@@ -122,8 +123,7 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            {COMPANY.name} designs and builds enterprise platforms, AI products and SaaS systems
-            for teams who measure software by what it survives — not by how fast it demos.
+            We help businesses turn ideas into fast, reliable, and scalable software. From custom web applications and SaaS platforms to AI-powered solutions, we build products that solve real business problems and support long-term growth.
           </motion.p>
 
           <motion.div
@@ -142,7 +142,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.9 }}
-            className="mt-16 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-4"
+            className="mt-16 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-4 hidden"
           >
             {METRICS.map((m) => (
               <div key={m.label} className="bg-background/70 px-5 py-6 backdrop-blur-sm">
@@ -271,14 +271,14 @@ function CapabilityGrid() {
     <Section id="capabilities" className="py-24 sm:py-32">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <SectionHeading
-          eyebrow="Capabilities"
+          eyebrow="Our Services"
           title={
             <>
-              Nine disciplines,
-              <br className="hidden sm:block" /> one delivery team.
+              Everything You Need.
+              <br className="hidden sm:block" /> One Reliable Team.
             </>
           }
-          body="Every engagement draws from the same senior bench — product engineering, applied AI, infrastructure and design working against a single roadmap."
+          body="Every engagement draws from the same senior bench product engineering, applied AI, infrastructure and design working against a single roadmap."
         />
         <Reveal delay={0.1}>
           <CtaLink to="/services" variant="ghost">
@@ -324,25 +324,14 @@ function StudioIntro() {
     <Section className="py-24 sm:py-32">
       <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <Parallax distance={34}>
-          <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-border bg-surface/40">
-            <div className="absolute inset-0 grid-lines opacity-40" />
-            <NodeField density={46} accent="255, 255, 255" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_35%,var(--background)_88%)]" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-              <div>
-                <p className="eyebrow">System topology</p>
-                <p className="mt-1 font-display text-lg">Composable by construction</p>
-              </div>
-              <span className="font-mono text-[0.65rem] text-muted-foreground">live</span>
-            </div>
-          </div>
+          <StudioArchitecture />
         </Parallax>
 
         <div>
           <SectionHeading
             eyebrow="The studio"
             title="We take the parts of a product that are hard to undo."
-            body="Architecture, data models, AI behaviour and performance budgets are the decisions that outlive every redesign. That is where our team sits — designing the substrate, then building the product on top of it."
+            body="A successful product starts with the right foundation. We take time to understand your business, plan the best solution, and build software that is reliable, scalable, and ready for the future."
           />
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-2">
             {VALUES.map((v, i) => (
@@ -354,9 +343,9 @@ function StudioIntro() {
               </Reveal>
             ))}
             <div className="hidden bg-background/70 p-6 sm:block">
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">Mission</p>
+              <p className=" text-primary font-display text-base font-semibold">Mission</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Make serious software feel effortless for the people who depend on it every day.
+                Helping businesses grow with reliable, high-quality software built for long-term success.
               </p>
             </div>
           </div>
@@ -373,8 +362,8 @@ function ProcessTimeline() {
     <Section id="process" className="py-24 sm:py-32">
       <SectionHeading
         eyebrow="Delivery process"
-        title="Ten stages. No black boxes."
-        body="Each stage has an owner, an artefact and an exit criterion. You always know where the work is and what unblocks the next step."
+        title="A Simple Process. Clear at Every Step."
+        body="We keep the process simple and transparent, so you always know what we're working on and what comes next."
       />
       <div className="relative mt-16">
         <div
@@ -409,8 +398,8 @@ function TechSection() {
     <Section id="technology" className="py-24 sm:py-32">
       <SectionHeading
         eyebrow="Technology"
-        title="A deliberately narrow stack, mastered deeply."
-        body="We would rather know five tools completely than forty superficially. Everything below is in production across active engagements."
+        title="Technology That Powers Every Solution."
+        body="We choose proven technologies that help us build secure, fast, and reliable software for every project."
       />
       <div className="mt-16 grid gap-4 lg:grid-cols-5">
         {TECH_GROUPS.map((group, gi) => (
@@ -449,9 +438,9 @@ function WorkPreview() {
     <Section className="py-24 sm:py-32">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <SectionHeading
-          eyebrow="Selected work"
-          title="Systems built to be lived in."
-          body="Representative engagements, anonymised. Names, interfaces and figures are illustrative of the class of problem we take on."
+          eyebrow="Our Work"
+          title="Projects That Deliver Real Results"
+          body="A selection of projects that showcase the types of solutions we build for businesses across different industries."
         />
         <Reveal delay={0.1}>
           <CtaLink to="/work" variant="ghost">
@@ -465,10 +454,21 @@ function WorkPreview() {
           <Reveal key={p.slug} delay={i * 0.07}>
             <TiltCard intensity={6} className="h-full">
               <GlassCard className="group h-full rounded-[1.6rem] p-2">
-                <div className={`relative aspect-[4/3] overflow-hidden rounded-[1.1rem] bg-gradient-to-br ${p.accent}`}>
-                  <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.72)]" />
-                  <div className="absolute inset-0 grid-lines opacity-30" />
-                  <MockUi name={p.name} />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem]">
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    />
+                  ) : (
+                    <>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
+                      <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.72)]" />
+                      <div className="absolute inset-0 grid-lines opacity-30" />
+                      <MockUi name={p.name} />
+                    </>
+                  )}
                 </div>
                 <div className="p-5">
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">{p.category}</p>
@@ -495,9 +495,9 @@ function IndustriesSection() {
     <Section className="py-24 sm:py-32">
       <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <SectionHeading
-          eyebrow="Industries"
-          title="Regulated, operational, high-consequence."
-          body="Domains differ; the failure modes rhyme. We adapt to the compliance surface and the vocabulary, not to a template."
+          eyebrow="Industries We Serve"
+          title="Built for Businesses Across Industries"
+          body="Every business is unique, so every solution is tailored to your goals, industry, and challenges."
         />
         <div className="flex flex-wrap gap-2.5">
           {INDUSTRIES.map((industry, i) => (
@@ -520,7 +520,7 @@ function WhyUs() {
     <Section className="py-24 sm:py-32">
       <SectionHeading
         eyebrow="Why teams choose us"
-        title="Ten commitments we are measured against."
+        title="Why Clients Choose Us."
         align="center"
       />
       <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
@@ -548,19 +548,19 @@ function StatsBand() {
       <GlassCard className="rounded-[2rem] p-8 sm:p-14">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">By the numbers</p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Track record, measured.</h2>
+            <p className="eyebrow">OUR IMPACT</p>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Results That Speak for Themselves.</h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Figures reflect a rolling twelve-month window across active and completed engagements.
+            Real numbers that reflect our experience, successful projects, and commitment to quality.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
           {[
-            { value: 11, suffix: "+", label: "Years of engineering" },
-            { value: 240, suffix: "+", label: "Projects delivered" },
-            { value: 98.4, decimals: 1, suffix: "%", label: "Partner satisfaction" },
-            { value: 99.98, decimals: 2, suffix: "%", label: "Deployment success" },
+            { value: 6, suffix: "+", label: "Years of engineering" },
+            { value: 50, suffix: "+", label: "Projects delivered" },
+            { value: 100, decimals: 1, suffix: "%", label: "Client Focus" },
+            { value: 99.98, decimals: 2, suffix: "%", label: "Long-Term Support" },
           ].map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
               <div>

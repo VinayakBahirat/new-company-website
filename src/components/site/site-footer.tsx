@@ -24,7 +24,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Logotype />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{COMPANY.tagline}</p>
-            <p className="mt-4 font-mono text-xs tracking-wider text-muted-foreground/80">{COMPANY.hq}</p>
+            {/* <p className="mt-4 font-mono text-xs tracking-wider text-muted-foreground/80">{COMPANY.hq}</p> */}
             <div className="mt-6 flex gap-2">
               {SOCIALS.map(({ label, Icon }) => (
                 <a

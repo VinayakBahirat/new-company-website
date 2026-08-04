@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Mail, MapPin, Phone, Check } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Check, ChevronDown } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
-import { NodeField } from "@/components/site/node-field";
+import { ContactAnimation } from "@/components/site/contact-animation";
 import { Reveal } from "@/components/site/motion-primitives";
 import { GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { COMPANY, FAQS, SERVICES } from "@/content/site";
@@ -89,29 +89,35 @@ function ContactPage() {
                       <label htmlFor="budget" className="eyebrow mb-2.5 block">
                         Budget range
                       </label>
-                      <select id="budget" name="budget" className={FIELD} defaultValue="">
-                        <option value="" disabled>
-                          Select a range
-                        </option>
-                        <option>Under $50k</option>
-                        <option>$50k – $150k</option>
-                        <option>$150k – $500k</option>
-                        <option>$500k+</option>
-                      </select>
+                      <div className="relative">
+                        <select id="budget" name="budget" className={`${FIELD} appearance-none pr-10`} defaultValue="">
+                          <option value="" disabled>
+                            Select a range
+                          </option>
+                          <option>Under $50k</option>
+                          <option>$50k – $150k</option>
+                          <option>$150k – $500k</option>
+                          <option>$500k+</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      </div>
                     </div>
                   </div>
                   <div>
                     <label htmlFor="scope" className="eyebrow mb-2.5 block">
                       What do you need built?
                     </label>
-                    <select id="scope" name="scope" className={FIELD} defaultValue="">
-                      <option value="" disabled>
-                        Select a capability
-                      </option>
-                      {SERVICES.map((s) => (
-                        <option key={s.slug}>{s.title}</option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select id="scope" name="scope" className={`${FIELD} appearance-none pr-10`} defaultValue="">
+                        <option value="" disabled>
+                          Select a capability
+                        </option>
+                        {SERVICES.map((s) => (
+                          <option key={s.slug}>{s.title}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                    </div>
                   </div>
                   <div>
                     <label htmlFor="message" className="eyebrow mb-2.5 block">
@@ -164,20 +170,7 @@ function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.12}>
-              <GlassCard className="relative h-[280px] overflow-hidden rounded-[1.8rem]">
-                <div className="absolute inset-0 grid-lines opacity-50" />
-                <NodeField density={30} />
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_55%,transparent_25%,var(--background)_92%)]" />
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                  <span className="relative flex h-3 w-3 mx-auto">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-primary" />
-                  </span>
-                  <p className="mt-4 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                    {COMPANY.hq}
-                  </p>
-                </div>
-              </GlassCard>
+              <ContactAnimation />
             </Reveal>
           </div>
         </div>
