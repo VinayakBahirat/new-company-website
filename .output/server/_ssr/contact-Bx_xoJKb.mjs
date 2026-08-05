@@ -2,9 +2,12 @@ import { a as __toESM } from "../_runtime.mjs";
 import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { A as ChevronDown, O as CircleCheck, P as ArrowUpRight, b as FileText, f as Network, h as Mail, j as Check, k as ChevronRight, l as Server, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
-import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-BkslOaj1.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-B5cKq6Mg.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/contact-BO7repCI.js
+import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-21v6u0fD.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-DwWnNtZZ.mjs";
+import { t as toast } from "../_libs/sonner.mjs";
+import { t as es_default } from "../_libs/emailjs__browser.mjs";
+import processModule from "node:process";
+//#region node_modules/.nitro/vite/services/ssr/assets/contact-Bx_xoJKb.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ContactAnimation() {
@@ -194,12 +197,115 @@ function ContactAnimation() {
 		]
 	});
 }
+/**
+* Helper to safely resolve environment variables from import.meta.env or process.env
+*/
+function getEnvVar(key) {
+	if (typeof import.meta !== "undefined" && {
+		"BASE_URL": "/",
+		"DEV": false,
+		"MODE": "production",
+		"PROD": true,
+		"SSR": true,
+		"TSS_DEV_SERVER": "false",
+		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
+		"TSS_DEV_SSR_STYLES_ENABLED": "true",
+		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
+		"TSS_INLINE_CSS_ENABLED": "false",
+		"TSS_ROUTER_BASEPATH": "",
+		"TSS_SERVER_FN_BASE": "/_serverFn/",
+		"VITE_EMAILJS_PUBLIC_KEY": "fEOtOvX4AQGGxJ56n",
+		"VITE_EMAILJS_SERVICE_ID": "service_xaoi3mi",
+		"VITE_EMAILJS_TEMPLATE_ID": "template_10dba97"
+	}[key]) return {
+		"BASE_URL": "/",
+		"DEV": false,
+		"MODE": "production",
+		"PROD": true,
+		"SSR": true,
+		"TSS_DEV_SERVER": "false",
+		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
+		"TSS_DEV_SSR_STYLES_ENABLED": "true",
+		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
+		"TSS_INLINE_CSS_ENABLED": "false",
+		"TSS_ROUTER_BASEPATH": "",
+		"TSS_SERVER_FN_BASE": "/_serverFn/",
+		"VITE_EMAILJS_PUBLIC_KEY": "fEOtOvX4AQGGxJ56n",
+		"VITE_EMAILJS_SERVICE_ID": "service_xaoi3mi",
+		"VITE_EMAILJS_TEMPLATE_ID": "template_10dba97"
+	}[key];
+	if (typeof processModule !== "undefined" && processModule.env && processModule.env[key]) return processModule.env[key];
+}
+/**
+* Sends a contact form submission email using EmailJS.
+*/
+async function sendContactEmail(data) {
+	const serviceId = getEnvVar("VITE_EMAILJS_SERVICE_ID") || getEnvVar("EMAILJS_SERVICE_ID");
+	const templateId = getEnvVar("VITE_EMAILJS_TEMPLATE_ID") || getEnvVar("EMAILJS_TEMPLATE_ID");
+	const publicKey = getEnvVar("VITE_EMAILJS_PUBLIC_KEY") || getEnvVar("EMAILJS_PUBLIC_KEY");
+	if (!serviceId || !templateId || !publicKey) {
+		const missing = [];
+		if (!serviceId) missing.push("VITE_EMAILJS_SERVICE_ID / EMAILJS_SERVICE_ID");
+		if (!templateId) missing.push("VITE_EMAILJS_TEMPLATE_ID / EMAILJS_TEMPLATE_ID");
+		if (!publicKey) missing.push("VITE_EMAILJS_PUBLIC_KEY / EMAILJS_PUBLIC_KEY");
+		console.error(`EmailJS is missing configuration: ${missing.join(", ")}`);
+		throw new Error(`EmailJS configuration is missing: ${missing.join(", ")}. Please configure them in your .env file and restart your dev server.`);
+	}
+	const submissionDate = (/* @__PURE__ */ new Date()).toLocaleString("en-US", { timeZoneName: "short" });
+	const templateParams = {
+		sender_name: data.name,
+		sender_email: data.email,
+		phone_number: data.phone || "Not provided",
+		company: data.company || "Not provided",
+		selected_service: data.scope || "Not provided",
+		budget: data.budget || "Not provided",
+		message: data.message,
+		submission_date: submissionDate
+	};
+	try {
+		const response = await es_default.send(serviceId, templateId, templateParams, publicKey);
+		if (response.status !== 200) throw new Error(`EmailJS responded with status code ${response.status}: ${response.text}`);
+	} catch (error) {
+		console.error("Failed to send email via EmailJS:", error);
+		throw error;
+	}
+}
 var FIELD = "w-full rounded-xl border border-border bg-glass px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-ring";
 function ContactPage() {
 	const [sent, setSent] = (0, import_react.useState)(false);
-	const onSubmit = (e) => {
+	const [isSubmitting, setIsSubmitting] = (0, import_react.useState)(false);
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		setSent(true);
+		if (isSubmitting) return;
+		setIsSubmitting(true);
+		const form = e.currentTarget;
+		const formData = new FormData(form);
+		const name = formData.get("name");
+		const email = formData.get("email");
+		const phone = formData.get("phone");
+		const company = formData.get("company");
+		const budget = formData.get("budget");
+		const scope = formData.get("scope");
+		const message = formData.get("message");
+		try {
+			await sendContactEmail({
+				name,
+				email,
+				phone: phone || void 0,
+				company: company || void 0,
+				budget: budget || void 0,
+				scope: scope || void 0,
+				message
+			});
+			toast.success("Message sent successfully!");
+			setSent(true);
+			form.reset();
+		} catch (error) {
+			console.error(error);
+			toast.error(error.message || "Failed to send message. Please try again.");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 		"      ",
@@ -270,6 +376,16 @@ function ContactPage() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "grid gap-5 sm:grid-cols-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									htmlFor: "phone",
+									className: "eyebrow mb-2.5 block",
+									children: "Phone number (Optional)"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+									id: "phone",
+									name: "phone",
+									type: "tel",
+									className: FIELD,
+									placeholder: "Your phone number"
+								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "company",
 									className: "eyebrow mb-2.5 block",
 									children: "Company (Optional)"
@@ -279,7 +395,11 @@ function ContactPage() {
 									autoComplete: "organization",
 									className: FIELD,
 									placeholder: "Company or project name"
-								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+								})] })]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "grid gap-5 sm:grid-cols-2",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "budget",
 									className: "eyebrow mb-2.5 block",
 									children: "Budget range"
@@ -323,37 +443,36 @@ function ContactPage() {
 											})
 										]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
+								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
+									htmlFor: "scope",
+									className: "eyebrow mb-2.5 block",
+									children: "What do you need built?"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "relative",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+										id: "scope",
+										name: "scope",
+										className: `${FIELD} appearance-none pr-10`,
+										defaultValue: "",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												value: "",
+												disabled: true,
+												className: "bg-zinc-950 text-muted-foreground",
+												children: "Select a capability"
+											}),
+											SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: s.title
+											}, s.slug)),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "Other / General Inquiry"
+											})
+										]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
 								})] })]
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
-								htmlFor: "scope",
-								className: "eyebrow mb-2.5 block",
-								children: "What do you need built?"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "relative",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-									id: "scope",
-									name: "scope",
-									className: `${FIELD} appearance-none pr-10`,
-									defaultValue: "",
-									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											value: "",
-											disabled: true,
-											className: "bg-zinc-950 text-muted-foreground",
-											children: "Select a capability"
-										}),
-										SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											className: "bg-zinc-950 text-white",
-											children: s.title
-										}, s.slug)),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-											className: "bg-zinc-950 text-white",
-											children: "Other / General Inquiry"
-										})
-									]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
-							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 								htmlFor: "message",
 								className: "eyebrow mb-2.5 block",
@@ -366,10 +485,11 @@ function ContactPage() {
 								className: `${FIELD} resize-none`,
 								placeholder: "Tell us about your project, idea, goals, or any questions you have."
 							})] }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "submit",
-								className: "focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)]",
-								children: ["Send message", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })]
+								disabled: isSubmitting,
+								className: "focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)] disabled:opacity-70 disabled:cursor-not-allowed",
+								children: isSubmitting ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: ["Sending...", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" })] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: ["Send message", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })] })
 							})
 						]
 					})

@@ -7,6 +7,9 @@ import { ContactAnimation } from "@/components/site/contact-animation";
 import { Reveal } from "@/components/site/motion-primitives";
 import { GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { COMPANY, SERVICES } from "@/content/site";
+import { toast } from "sonner";
+import { sendContactEmail } from "@/lib/emailjs";
+
 
 const TITLE = "Contact — Start a Project | Aeriform Systems";
 const DESCRIPTION =
@@ -29,11 +32,46 @@ const FIELD =
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const company = formData.get("company") as string;
+    const budget = formData.get("budget") as string;
+    const scope = formData.get("scope") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      await sendContactEmail({
+        name,
+        email,
+        phone: phone || undefined,
+        company: company || undefined,
+        budget: budget || undefined,
+        scope: scope || undefined,
+        message,
+      });
+
+      toast.success("Message sent successfully!");
+      setSent(true);
+      form.reset();
+    } catch (error: any) {
+      console.error(error);
+      toast.error(error.message || "Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
 
   return (
     <>      <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
@@ -79,11 +117,19 @@ function ContactPage() {
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
+                      <label htmlFor="phone" className="eyebrow mb-2.5 block">
+                        Phone number (Optional)
+                      </label>
+                      <input id="phone" name="phone" type="tel" className={FIELD} placeholder="Your phone number" />
+                    </div>
+                    <div>
                       <label htmlFor="company" className="eyebrow mb-2.5 block">
                         Company (Optional)
                       </label>
                       <input id="company" name="company" autoComplete="organization" className={FIELD} placeholder="Company or project name" />
                     </div>
+                  </div>
+                  <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="budget" className="eyebrow mb-2.5 block">
                         Budget range
@@ -103,22 +149,22 @@ function ContactPage() {
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                       </div>
                     </div>
-                  </div>
-                  <div>
-                    <label htmlFor="scope" className="eyebrow mb-2.5 block">
-                      What do you need built?
-                    </label>
-                    <div className="relative">
-                      <select id="scope" name="scope" className={`${FIELD} appearance-none pr-10`} defaultValue="">
-                        <option value="" disabled className="bg-zinc-950 text-muted-foreground">
-                          Select a capability
-                        </option>
-                        {SERVICES.map((s) => (
-                          <option key={s.slug} className="bg-zinc-950 text-white">{s.title}</option>
-                        ))}
-                        <option className="bg-zinc-950 text-white">Other / General Inquiry</option>
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                    <div>
+                      <label htmlFor="scope" className="eyebrow mb-2.5 block">
+                        What do you need built?
+                      </label>
+                      <div className="relative">
+                        <select id="scope" name="scope" className={`${FIELD} appearance-none pr-10`} defaultValue="">
+                          <option value="" disabled className="bg-zinc-950 text-muted-foreground">
+                            Select a capability
+                          </option>
+                          {SERVICES.map((s) => (
+                            <option key={s.slug} className="bg-zinc-950 text-white">{s.title}</option>
+                          ))}
+                          <option className="bg-zinc-950 text-white">Other / General Inquiry</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                      </div>
                     </div>
                   </div>
                   <div>
@@ -136,10 +182,20 @@ function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)]"
+                    disabled={isSubmitting}
+                    className="focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Send message
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    {isSubmitting ? (
+                      <>
+                        Sending...
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
+                      </>
+                    ) : (
+                      <>
+                        Send message
+                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

@@ -2,11 +2,11 @@ import { a as __toESM } from "../_runtime.mjs";
 import { i as useMotionValue, n as useSpring, o as motion, r as useTransform } from "../_libs/framer-motion.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { C as Cpu, E as Cloud, F as ArrowRight, M as BrainCircuit, N as Boxes, T as CodeXml, _ as Layers, c as ShieldCheck, o as Smartphone, r as Workflow, y as Gauge } from "../_libs/lucide-react.mjs";
-import { _ as SERVICES, a as Parallax, c as TiltCard, d as DIFFERENTIATORS, f as INDUSTRIES, h as PROJECTS, l as cn, m as PROCESS, n as MeshBackground, o as Reveal, p as METRICS, r as Counter, s as SplitHeading, v as TECH_GROUPS, y as VALUES } from "./router-BkslOaj1.mjs";
-import { a as Section, i as Pill, n as CtaLink, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-B5cKq6Mg.mjs";
+import { _ as SERVICES, a as Parallax, c as TiltCard, d as DIFFERENTIATORS, f as INDUSTRIES, h as PROJECTS, l as cn, m as PROCESS, n as MeshBackground, o as Reveal, p as METRICS, r as Counter, s as SplitHeading, v as TECH_GROUPS, y as VALUES } from "./router-21v6u0fD.mjs";
+import { a as Section, i as Pill, n as CtaLink, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DwWnNtZZ.mjs";
 import { t as StudioArchitecture } from "./studio-architecture-Bp_n5BlN.mjs";
 import { t as MockUi } from "./mock-ui-DM3a5Zh7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CmJwA-Ed.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DpIfSnta.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /**

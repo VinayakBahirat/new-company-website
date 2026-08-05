@@ -1,8 +1,8 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { d as DIFFERENTIATORS, f as INDUSTRIES, n as MeshBackground, o as Reveal, y as VALUES } from "./router-BkslOaj1.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-B5cKq6Mg.mjs";
+import { d as DIFFERENTIATORS, f as INDUSTRIES, n as MeshBackground, o as Reveal, y as VALUES } from "./router-21v6u0fD.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DwWnNtZZ.mjs";
 import { t as StudioArchitecture } from "./studio-architecture-Bp_n5BlN.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/studio-CNlJN_U-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/studio-CBvHnyz1.js
 var import_jsx_runtime = require_jsx_runtime();
 function StudioPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
