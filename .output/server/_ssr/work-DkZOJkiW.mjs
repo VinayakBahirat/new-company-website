@@ -1,8 +1,8 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { c as TiltCard, h as PROJECTS, n as MeshBackground, o as Reveal } from "./router-BkslOaj1.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-B5cKq6Mg.mjs";
+import { c as TiltCard, h as PROJECTS, n as MeshBackground, o as Reveal } from "./router-21v6u0fD.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DwWnNtZZ.mjs";
 import { t as MockUi } from "./mock-ui-DM3a5Zh7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/work-DxLvNXh_.js
+//#region node_modules/.nitro/vite/services/ssr/assets/work-DkZOJkiW.js
 var import_jsx_runtime = require_jsx_runtime();
 function WorkPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [

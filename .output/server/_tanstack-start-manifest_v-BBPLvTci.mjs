@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Dpzs7FG_.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BBPLvTci.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "D:/vinu/New-company-website/src/routes/__root.tsx",
@@ -10,58 +10,58 @@ var tsrStartManifest = () => ({ routes: {
 			"/studio",
 			"/work"
 		],
-		preloads: ["/assets/index-D3HzO18s.js"],
+		preloads: ["/assets/index-Xq5MLIQ_.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-D3HzO18s.js"
+			src: "/assets/index-Xq5MLIQ_.js"
 		} }]
 	},
 	"/": {
 		filePath: "D:/vinu/New-company-website/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-OOm3BIBw.js",
-			"/assets/studio-architecture-DoHUlrg4.js",
-			"/assets/primitives-DQSybkV5.js",
-			"/assets/mock-ui-DSgExVa6.js"
+			"/assets/routes-BUd34ZV7.js",
+			"/assets/studio-architecture-DOMxfHe7.js",
+			"/assets/primitives-C4CX3a_A.js",
+			"/assets/mock-ui-WtkU92Hi.js"
 		]
 	},
 	"/careers": {
 		filePath: "D:/vinu/New-company-website/src/routes/careers.tsx",
 		children: void 0,
-		preloads: ["/assets/careers-CA1Mg04o.js", "/assets/primitives-DQSybkV5.js"]
+		preloads: ["/assets/careers-1_UaLFXk.js", "/assets/primitives-C4CX3a_A.js"]
 	},
 	"/contact": {
 		filePath: "D:/vinu/New-company-website/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-C9bq7idc.js",
-			"/assets/server-B_dxlhw3.js",
-			"/assets/primitives-DQSybkV5.js"
+			"/assets/contact-DxtXqPMI.js",
+			"/assets/server-BHf2zpuL.js",
+			"/assets/primitives-C4CX3a_A.js"
 		]
 	},
 	"/services": {
 		filePath: "D:/vinu/New-company-website/src/routes/services.tsx",
 		children: void 0,
-		preloads: ["/assets/services-D39I5wVE.js", "/assets/primitives-DQSybkV5.js"]
+		preloads: ["/assets/services-CMY7_ES4.js", "/assets/primitives-C4CX3a_A.js"]
 	},
 	"/studio": {
 		filePath: "D:/vinu/New-company-website/src/routes/studio.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/studio-Bt6WpT3m.js",
-			"/assets/studio-architecture-DoHUlrg4.js",
-			"/assets/primitives-DQSybkV5.js"
+			"/assets/studio-CKFqjWLE.js",
+			"/assets/studio-architecture-DOMxfHe7.js",
+			"/assets/primitives-C4CX3a_A.js"
 		]
 	},
 	"/work": {
 		filePath: "D:/vinu/New-company-website/src/routes/work.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/work-Dl4rXhSf.js",
-			"/assets/primitives-DQSybkV5.js",
-			"/assets/mock-ui-DSgExVa6.js"
+			"/assets/work-B96PngHv.js",
+			"/assets/primitives-C4CX3a_A.js",
+			"/assets/mock-ui-WtkU92Hi.js"
 		]
 	}
 } });

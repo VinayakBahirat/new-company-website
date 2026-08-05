@@ -1,8 +1,8 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { P as ArrowUpRight } from "../_libs/lucide-react.mjs";
-import { i as Magnetic, l as cn, o as Reveal } from "./router-BkslOaj1.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/primitives-B5cKq6Mg.js
+import { i as Magnetic, l as cn, o as Reveal } from "./router-21v6u0fD.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/primitives-DwWnNtZZ.js
 var import_jsx_runtime = require_jsx_runtime();
 function Section({ children, className, id, bleed = false }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
