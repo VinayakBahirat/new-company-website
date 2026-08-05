@@ -131,7 +131,7 @@ export function CtaLink({ to, children, variant = "primary", className, hash }: 
 export function ClosingCta({
   eyebrow = "Next step",
   title = "Let's scope the first milestone.",
-  body = "Bring the problem, the constraints and the deadline. We will come back with an architecture, a plan and a fixed-scope first increment.",
+  body = "Whether you're starting a new project or improving an existing one, we're here to help you build reliable software that grows with your business.",
 }: {
   eyebrow?: string;
   title?: string;

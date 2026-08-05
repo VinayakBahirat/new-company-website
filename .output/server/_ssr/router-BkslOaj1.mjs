@@ -7,7 +7,7 @@ import { t as Lenis } from "../_libs/lenis.mjs";
 import { P as ArrowUpRight, a as Twitter, g as Linkedin, n as X, p as Menu, v as Github, x as Dribbble } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CDQN5hn-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BkslOaj1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -20,7 +20,7 @@ var __exportAll = (all, no_symbols) => {
 	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
 	return target;
 };
-var styles_default = "/assets/styles-CJynofHF.css";
+var styles_default = "/assets/styles-ClcJeS5H.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -55,9 +55,9 @@ var Rugna_Adhaar_Foundation_Website_default = "/assets/Rugna-Adhaar-Foundation-W
 var COMPANY = {
 	name: "Aeriform Systems",
 	short: "Aeriform",
-	tagline: "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.",
+	tagline: "We help businesses build fast, reliable, and scalable software that solves real problems. From web applications to AI-powered solutions, we turn ideas into products people love to use.",
 	email: "studio@aeriform.systems",
-	phone: "+1 (415) 555-0182",
+	phone: "+91 7709044575",
 	address: "Pier 9, Innovation Quarter, San Francisco, CA",
 	hq: "San Francisco · Amsterdam · Singapore"
 };
@@ -101,147 +101,95 @@ var METRICS = [
 		label: "Countries served globally"
 	}
 ];
-var STATS = [
-	{
-		value: 11,
-		suffix: "+",
-		label: "Years of engineering",
-		note: "Not our first rodeo. We've seen tech stacks rise and fall."
-	},
-	{
-		value: 240,
-		suffix: "+",
-		label: "Projects delivered",
-		note: "From scratch startups to massive enterprise migrations."
-	},
-	{
-		value: 68,
-		suffix: "",
-		label: "Senior engineers",
-		note: "People who actually write code, not slide decks."
-	},
-	{
-		value: 19,
-		suffix: "",
-		label: "Countries served",
-		note: "Distributed pods operating in your time zone."
-	},
-	{
-		value: 42,
-		suffix: "",
-		label: "Technologies mastered",
-		note: "We pick the right tool for the job, never the trendiest."
-	},
-	{
-		value: 98.4,
-		decimals: 1,
-		suffix: "%",
-		label: "Client retention",
-		note: "Our partners stay because our code compounds value."
-	},
-	{
-		value: 99.98,
-		decimals: 2,
-		suffix: "%",
-		label: "Uptime guarantee",
-		note: "Monitored, automated, and built defensively."
-	},
-	{
-		value: 98,
-		suffix: "/100",
-		label: "Median PageSpeed score",
-		note: "Because slow software is expensive software."
-	}
-];
 var SERVICES = [
 	{
 		slug: "enterprise",
 		title: "Enterprise Software",
-		summary: "Systems designed to outlive the hype cycles. We build high-throughput, audit-ready software that handles the heavy lifting, zero-downtime migrations, and runs quietly for decades.",
+		summary: "Custom software built to streamline operations, improve efficiency, and support your business as it grows.",
 		points: [
-			"Domain-driven systems",
-			"Granular access controls",
-			"Zero-downtime DB migrations"
+			"Business Process Automation",
+			"Secure Access Control",
+			"Scalable Architecture"
 		]
 	},
 	{
 		slug: "ai",
 		title: "AI Product Development",
-		summary: "Retrieval pipelines and autonomous agents that survive contact with real, messy user data. No wrappers. Just real-world LLM orchestration with robust safety nets.",
+		summary: "AI-powered solutions that automate tasks, improve decision-making, and create better customer experiences.",
 		points: [
-			"Evaluation & testing loops",
-			"Custom vector pipelines",
-			"Guardrails & telemetry"
+			"AI Chatbots",
+			"Workflow Automation",
+			"Custom AI Solutions"
 		]
 	},
 	{
 		slug: "saas",
 		title: "SaaS Platform Engineering",
-		summary: "Multi-tenant platforms built to handle millions of transactions. We set up clean tenant isolation, precise usage-based billing, and self-serve onboarding from day one.",
+		summary: "Scalable SaaS platforms built for subscription businesses, secure user management, and long-term growth.",
 		points: [
-			"Hard tenant isolation",
-			"Usage-based billing",
-			"Instant self-serve setup"
+			"Multi-Tenant Architecture",
+			"Subscription & Billing",
+			"User Management"
 		]
 	},
 	{
 		slug: "web",
 		title: "Custom Web Applications",
-		summary: "Web apps that feel as responsive as desktop software. No sluggish loads, no junk frames, and design systems that scale without breaking.",
+		summary: "Fast, secure, and user-friendly web applications tailored to your business needs.",
 		points: [
-			"Fast rendering paths",
-			"Predictive loading states",
-			"Unified design tokens"
+			"Responsive Design",
+			"High Performance",
+			"Secure Development"
 		]
 	},
 	{
 		slug: "mobile",
 		title: "Mobile Applications",
-		summary: "Offline-first mobile products with snappy data sync. We build shared codebases that don't compromise on native feel, animations, or platform guidelines.",
+		summary: "Cross-platform mobile apps that deliver a smooth experience on both Android and iOS.",
 		points: [
-			"Offline-first sync",
-			"Native module overrides",
-			"Automated App Store lanes"
+			"Android & iOS Apps",
+			"Offline Support",
+			"App Store Deployment"
 		]
 	},
 	{
 		slug: "cloud",
 		title: "Cloud & Platform Ops",
-		summary: "Infrastructure treated as a product. We design reproducible, secure, and cost-optimized environments so your team can ship changes with confidence.",
+		summary: "Reliable cloud infrastructure that keeps your applications secure, scalable, and always available.",
 		points: [
-			"Infrastructure as Code",
-			"Isolated staging pipelines",
-			"Predictive cost models"
+			"Cloud Deployment",
+			"CI/CD Automation",
+			"Infrastructure Management"
 		]
 	},
 	{
 		slug: "automation",
 		title: "Automation Systems",
-		summary: "Replacing manual drudgery with event-driven workflows. We orchestrate background pipelines that keep humans in control and maintain perfect audit trails.",
+		summary: "Automate repetitive tasks and business workflows to save time, reduce errors, and improve productivity.",
 		points: [
-			"State machine routing",
-			"Human-in-the-loop review",
-			"Immutable action logs"
+			"Workflow Automation",
+			"Process Optimization",
+			"Smart Notifications"
 		]
 	},
 	{
 		slug: "api",
 		title: "API & Backend Engineering",
-		summary: "Data models, queue systems, and API contracts that hold up under heavy load and decades of schema evolution without breaking clients.",
+		summary: "Secure and scalable APIs that connect your applications, automate data flow, and support business growth.",
 		points: [
-			"Typed API contracts",
-			"Fault-tolerant worker queues",
-			"Zero-friction schema evolution"
+			"API Development",
+			"System Integration",
+			"Secure Data Flow"
 		]
 	},
 	{
 		slug: "performance",
 		title: "Performance Optimization",
-		summary: "Rebuilding the slow paths. We profile bottlenecks, optimize queries, and enforce performance budgets so your software feels fast and runs cheap.",
+		summary: "Improve the speed, reliability, and performance of your existing software for a better user experience.",
 		points: [
-			"Render & query budgeting",
-			"Edge caching strategies",
-			"CI performance blockers"
+			"Faster Loading",
+			"Better Performance",
+			"Optimized Code"
 		]
 	}
 ];
@@ -249,52 +197,52 @@ var PROCESS = [
 	{
 		step: "01",
 		title: "Discovery",
-		body: "We dig past the initial brief to find the real technical and business bottlenecks."
+		body: "Every successful project starts with understanding your business, goals, and challenges."
 	},
 	{
 		step: "02",
 		title: "Planning",
-		body: "We define concrete milestones with explicit budgets. No vague roadmaps, no hidden costs."
+		body: "A clear roadmap with realistic timelines, budgets, and milestones keeps every project on track."
 	},
 	{
 		step: "03",
 		title: "UX Research",
-		body: "We talk to the engineers and operations teams who will live in the system every day."
+		body: "Understanding your users helps create experiences that are simple, intuitive, and effective."
 	},
 	{
 		step: "04",
 		title: "Wireframes",
-		body: "We map out low-fidelity flows to find architectural flaws before writing a single line of code."
+		body: "Simple layouts help visualize the product and validate ideas before development begins."
 	},
 	{
 		step: "05",
 		title: "UI Design",
-		body: "Component libraries, interactive states, and responsive layouts built for consistency."
+		body: "Clean, modern designs that are easy to use and create a great experience for your customers."
 	},
 	{
 		step: "06",
 		title: "Architecture",
-		body: "We align on database schemas, state management, and failure modes before building."
+		body: "A strong foundation ensures your software is reliable, scalable, and ready for future growth."
 	},
 	{
 		step: "07",
 		title: "Development",
-		body: "We ship code in two-week cycles. You will see working software in staging from week two."
+		body: "Your project is built step by step, with regular updates so you can track progress throughout the development process."
 	},
 	{
 		step: "08",
 		title: "Testing",
-		body: "We run end-to-end regression tests, load testing, and security audits before every release."
+		body: "Every feature is carefully tested to make sure your software is reliable, secure, and ready for launch."
 	},
 	{
 		step: "09",
 		title: "Deployment",
-		body: "We use progressive rollouts with instant rollbacks and continuous telemetry."
+		body: "Your software is launched smoothly with minimal disruption, ensuring everything works as expected from day one."
 	},
 	{
 		step: "10",
 		title: "Maintenance",
-		body: "We stick around to upgrade libraries, patch security flaws, and scale the infrastructure."
+		body: "Regular updates and ongoing support keep your software secure, reliable, and ready as your business grows."
 	}
 ];
 var TECH_GROUPS = [
@@ -361,65 +309,65 @@ var INDUSTRIES = [
 ];
 var VALUES = [
 	{
-		title: "Uncertainty First",
-		body: "We build the riskiest, most complex parts of the system first—before they become expensive to change."
+		title: "Smart Planning",
+		body: "Every successful project starts with a clear plan. We understand your goals, identify the right solution, and build it the right way from the beginning."
 	},
 	{
-		title: "Craft as Strategy",
-		body: "Clean types, thorough tests, and readable code. High quality isn't a luxury; it's how we move fast without breaking things."
+		title: "Quality You Can Trust",
+		body: "We focus on quality from start to finish, delivering reliable software that performs well today and is easy to improve in the future."
 	},
 	{
-		title: "Blunt Honesty",
-		body: "We share live boards, provide realistic estimates, and deliver bad news early. No excuses, no sugarcoating."
+		title: "Clear Communication",
+		body: "We keep you informed at every stage with clear updates, realistic timelines, and honest communication."
 	},
 	{
-		title: "Shared Pagers",
-		body: "We monitor, maintain, and support the systems we build. If it breaks at 2 AM, we're the ones fixing it."
+		title: "Ongoing Support",
+		body: "Our support doesn't end after launch. We help keep your software secure, updated, and running smoothly as your business grows."
 	},
 	{
-		title: "Deep Integration",
-		body: "We don't throw code over the wall. We embed inside your team, review your PRs, and align with your rituals."
+		title: "A True Partnership",
+		body: "We work closely with your team, understand your goals, and stay involved throughout the project to deliver the best results."
 	}
 ];
 var DIFFERENTIATORS = [
 	{
-		title: "Speed to Value",
-		body: "We deliver a working, production-ready system in six weeks, not six months."
+		title: "Fast Delivery",
+		body: "We deliver your project quickly without compromising on quality, so you can start seeing results sooner."
 	},
 	{
-		title: "Built to Scale",
+		title: "Built for Growth",
 		body: "Architectures shaped for the traffic spikes when your business takes off."
 	},
 	{
-		title: "Boring stacks, exciting results",
-		body: "We use robust, battle-tested technologies that keep your maintenance costs low."
+		title: "Reliable Technology",
+		body: "We use trusted technologies to build reliable software that is easy to maintain and ready for future growth"
 	},
 	{
-		title: "No Hidden Juniors",
-		body: "You work directly with senior engineers who write code every day. No bait-and-switch."
+		title: "Experienced Team",
+		body: "Work directly with experienced developers who stay involved throughout your project from start to finish."
 	},
 	{
 		title: "Transparent Pipelines",
-		body: "Shared backlogs, open Slack channels, and a shared definition of what 'done' means."
+		body: "Regular updates and clear communication keep you informed throughout every stage of your project."
 	},
 	{
-		title: "Compounding Value",
-		body: "Our clients stay because we write systems that remain easy to modify years down the line."
+		title: "Long-Term Partnership",
+		body: "We build software that's easy to maintain, improve, and grow as your business evolves."
 	},
 	{
-		title: "Performance Budgets",
-		body: "We measure build sizes and database queries in CI to prevent performance creep."
+		title: "High Performance",
+		body: "Fast, reliable software that delivers a smooth experience for your users as your business grows."
 	},
 	{
-		title: "Readability First",
-		body: "We document setup, write clear code comments, and ensure handovers are seamless."
+		title: "Easy to Maintain",
+		body: "Your software is built to be easy to maintain, update, and improve as your business grows."
 	},
 	{
-		title: "Defense in Depth",
-		body: "Least privilege access, secure secrets management, and constant vulnerability scans."
+		title: "Security First",
+		body: "Security is built into every project to help protect your business, data, and customers."
 	},
 	{
-		title: "Low-Ceremony Architecture",
+		title: "Clean Codebase",
 		body: "Codebases that are easy to understand, easy to test, and easy to extend."
 	}
 ];
@@ -695,24 +643,6 @@ var ROLES = [
 		team: "Delivery",
 		location: "Singapore / Remote",
 		type: "Full-time"
-	}
-];
-var FAQS = [
-	{
-		q: "How do engagements usually start?",
-		a: "With a paid two-week discovery. You leave with an architecture outline, a delivery plan and a fixed-scope first milestone — whether or not you continue with us."
-	},
-	{
-		q: "How are teams structured?",
-		a: "Senior-weighted pods of three to seven: product engineering, applied AI, infrastructure and design, with a delivery lead accountable end to end."
-	},
-	{
-		q: "Who owns the code?",
-		a: "You do, from the first commit. Repositories, pipelines and infrastructure live in your accounts with full documentation at handover."
-	},
-	{
-		q: "Can you work alongside an in-house team?",
-		a: "Most of our work is embedded. We join your rituals, review your PRs and hand over ownership progressively rather than in one drop."
 	}
 ];
 function cn(...inputs) {
@@ -1048,7 +978,7 @@ function SiteNav() {
 						children: NAV_LINKS.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 							to: link.to,
 							className: "focus-ring relative rounded-lg px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground",
-							activeProps: { className: "text-foreground" },
+							activeProps: { className: "text-primary font-semibold after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-4 after:rounded-full after:bg-primary" },
 							children: link.label
 						}, link.to))
 					}),
@@ -1102,6 +1032,7 @@ function SiteNav() {
 			}].map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 				to: link.to,
 				className: "focus-ring flex items-center justify-between rounded-xl px-4 py-3.5 text-base text-foreground/85 transition-colors hover:bg-glass",
+				activeProps: { className: "bg-primary/10 text-primary font-semibold" },
 				children: [link.label, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4 text-muted-foreground" })]
 			}, link.to))
 		}) : null })]
@@ -1170,10 +1101,6 @@ function SiteFooter() {
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "mt-5 text-sm leading-relaxed text-muted-foreground",
 									children: COMPANY.tagline
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "mt-4 font-mono text-xs tracking-wider text-muted-foreground/80",
-									children: COMPANY.hq
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "mt-6 flex gap-2",
@@ -1427,7 +1354,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./routes-DY1vEF2u.mjs");
+var $$splitComponentImporter$5 = () => import("./routes-CmJwA-Ed.mjs");
 var TITLE$5 = "Aeriform Systems — Enterprise Software & AI Product Engineering";
 var DESCRIPTION$5 = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route$5 = createFileRoute("/")({
@@ -1448,7 +1375,7 @@ var Route$5 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./careers-Blj6jwut.mjs");
+var $$splitComponentImporter$4 = () => import("./careers-Bf0e-EYe.mjs");
 var TITLE$4 = "Careers — Engineering, AI and Design Roles | Aeriform Systems";
 var DESCRIPTION$4 = "Open roles for senior product engineers, AI systems engineers, platform engineers, designers and delivery leads. Remote-friendly, senior-weighted teams.";
 var Route$4 = createFileRoute("/careers")({
@@ -1469,7 +1396,7 @@ var Route$4 = createFileRoute("/careers")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./contact-x9RcQJnC.mjs");
+var $$splitComponentImporter$3 = () => import("./contact-BO7repCI.mjs");
 var TITLE$3 = "Contact — Start a Project | Aeriform Systems";
 var DESCRIPTION$3 = "Tell us about the platform, AI product or system you need built. We reply within one business day and start with a two-week discovery.";
 var Route$3 = createFileRoute("/contact")({
@@ -1490,7 +1417,7 @@ var Route$3 = createFileRoute("/contact")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services-D3zj7lMp.mjs");
+var $$splitComponentImporter$2 = () => import("./services-2nMslxoO.mjs");
 var TITLE$2 = "Services — Enterprise, AI, SaaS & Cloud Engineering | Aeriform Systems";
 var DESCRIPTION$2 = "Enterprise software, AI product development, SaaS platforms, mobile, cloud operations, automation and performance engineering delivered by senior pods.";
 var Route$2 = createFileRoute("/services")({
@@ -1511,7 +1438,7 @@ var Route$2 = createFileRoute("/services")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./studio-CrZTVlV1.mjs");
+var $$splitComponentImporter$1 = () => import("./studio-CNlJN_U-.mjs");
 var TITLE$1 = "Studio — Story, Mission and Values | Aeriform Systems";
 var DESCRIPTION$1 = "An independent engineering studio of 68 product, AI, infrastructure and design specialists building long-lived software systems across 19 countries.";
 var Route$1 = createFileRoute("/studio")({
@@ -1532,7 +1459,7 @@ var Route$1 = createFileRoute("/studio")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./work-FsoD9mH-.mjs");
+var $$splitComponentImporter = () => import("./work-DxLvNXh_.mjs");
 var TITLE = "Selected Work — Enterprise Platforms & AI Products | Aeriform Systems";
 var DESCRIPTION = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route = createFileRoute("/work")({
@@ -1597,4 +1524,4 @@ var getRouter = () => {
 	});
 };
 //#endregion
-export { ROLES as _, Parallax as a, TECH_GROUPS as b, TiltCard as c, DIFFERENTIATORS as d, FAQS as f, PROJECTS as g, PROCESS as h, Magnetic as i, cn as l, METRICS as m, MeshBackground as n, Reveal as o, INDUSTRIES as p, Counter as r, SplitHeading as s, router_exports as t, COMPANY as u, SERVICES as v, VALUES as x, STATS as y };
+export { SERVICES as _, Parallax as a, TiltCard as c, DIFFERENTIATORS as d, INDUSTRIES as f, ROLES as g, PROJECTS as h, Magnetic as i, cn as l, PROCESS as m, MeshBackground as n, Reveal as o, METRICS as p, Counter as r, SplitHeading as s, router_exports as t, COMPANY as u, TECH_GROUPS as v, VALUES as y };

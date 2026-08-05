@@ -30,8 +30,8 @@ function StudioPage() {
         <div className="relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <SectionHeading
             eyebrow="The studio"
-            title="Independent by design, senior by default."
-            body={`${COMPANY.name} started as four engineers who kept being called in to rescue systems that had been built too quickly. Eleven years later the studio still runs on that premise: get the hard decisions right early, and the product stays cheap to change.`}
+            title="Built on Experience. Focused on Results."
+            body={`We help businesses turn ideas into reliable software with a focus on quality, performance, and long-term success. Every project is built with care, clear communication, and a commitment to delivering real business value.`}
           />
           <StudioArchitecture />
         </div>
@@ -43,7 +43,7 @@ function StudioPage() {
             <GlassCard className="h-full rounded-[1.6rem] p-8">
               <h2 className="eyebrow">Mission</h2>
               <p className="mt-4 text-lg leading-relaxed sm:text-xl">
-                Make serious software feel effortless for the people who depend on it every day.
+                Build software that helps businesses grow, work smarter, and deliver better experiences.
               </p>
             </GlassCard>
           </Reveal>
@@ -51,8 +51,7 @@ function StudioPage() {
             <GlassCard className="h-full rounded-[1.6rem] p-8">
               <h2 className="eyebrow">Vision</h2>
               <p className="mt-4 text-lg leading-relaxed sm:text-xl">
-                A world where enterprise tools are held to the same standard of craft as the products
-                people choose for themselves.
+                To become a trusted technology partner for businesses by building software that drives growth, innovation, and long-term success.
               </p>
             </GlassCard>
           </Reveal>
@@ -60,7 +59,7 @@ function StudioPage() {
       </Section>
 
       <Section className="py-20">
-        <SectionHeading eyebrow="Core values" title="Five principles, applied literally." />
+        <SectionHeading eyebrow="Core values" title="The Values That Guide Every Project." />
         <div className="mt-14 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.05}>
@@ -74,7 +73,7 @@ function StudioPage() {
         </div>
       </Section>
 
-      <Section className="py-20">
+      {/* <Section className="py-20">
         <SectionHeading eyebrow="Statistics" title="Eleven years, measured." />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s, i) => (
@@ -89,15 +88,20 @@ function StudioPage() {
             </Reveal>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
-      <Section className="py-20">
+
+      <Section className="py-24 sm:py-32">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <SectionHeading eyebrow="Industries" title="Where the work happens." />
+          <SectionHeading
+            eyebrow="Industries We Serve"
+            title="Built for Businesses Across Industries"
+            body="Every business is unique, so every solution is tailored to your goals, industry, and challenges."
+          />
           <div className="flex flex-wrap gap-2.5">
             {INDUSTRIES.map((industry, i) => (
               <Reveal key={industry} delay={i * 0.03}>
-                <span className="inline-flex rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground">
+                <span className="inline-flex items-center rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground">
                   {industry}
                 </span>
               </Reveal>
@@ -106,13 +110,20 @@ function StudioPage() {
         </div>
       </Section>
 
-      <Section className="py-20">
-        <SectionHeading eyebrow="Commitments" title="What partnership means here." align="center" />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <Section className="py-24 sm:py-32">
+        <SectionHeading
+          eyebrow="Why teams choose us"
+          title="Why Clients Choose Us."
+          align="center"
+        />
+        <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
           {DIFFERENTIATORS.map((d, i) => (
-            <Reveal key={d.title} delay={(i % 5) * 0.04}>
-              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6">
-                <h3 className="font-display text-base font-semibold">{d.title}</h3>
+            <Reveal key={d.title} delay={(i % 5) * 0.05}>
+              <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+                <span className="font-mono text-[0.65rem] text-primary">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 font-display text-base font-semibold">{d.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.body}</p>
               </div>
             </Reveal>
@@ -120,7 +131,7 @@ function StudioPage() {
         </div>
       </Section>
 
-      <ClosingCta eyebrow="Work with us" title="Meet the team that would build it." />
+      <ClosingCta eyebrow="LET'S BUILD TOGETHER" title="Let's Build Something Great Together." />
     </>
   );
 }

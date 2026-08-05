@@ -1,7 +1,7 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { b as TECH_GROUPS, h as PROCESS, n as MeshBackground, o as Reveal, v as SERVICES } from "./router-CDQN5hn-.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-BgftHy_v.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services-D3zj7lMp.js
+import { _ as SERVICES, m as PROCESS, n as MeshBackground, o as Reveal, v as TECH_GROUPS } from "./router-BkslOaj1.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-B5cKq6Mg.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services-2nMslxoO.js
 var import_jsx_runtime = require_jsx_runtime();
 function ServicesPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
@@ -11,8 +11,8 @@ function ServicesPage() {
 				className: "relative",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 					eyebrow: "Capabilities",
-					title: "Engineering services for software that has to hold.",
-					body: "Nine practices, one accountable delivery team. Engagements combine whichever of these the problem actually needs."
+					title: "Software That Solves Real Business Problems.",
+					body: "Everything you need to build, launch, and grow your software all in one team."
 				})
 			})]
 		}),
@@ -81,16 +81,20 @@ function ServicesPage() {
 				}, s.step))
 			})]
 		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
+		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
 			className: "pb-8",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "grid gap-4 lg:grid-cols-5",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
+				eyebrow: "Technology",
+				title: "Technologies We Trust.",
+				body: "We use modern, proven technologies to build fast, secure, and scalable software that grows with your business."
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-14 grid gap-4 lg:grid-cols-5",
 				children: TECH_GROUPS.map((g, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					delay: i * .05,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "h-full rounded-2xl border border-border bg-surface/30 p-6",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "eyebrow",
+							className: "font-display text-sm font-semibold uppercase tracking-[0.14em]",
 							children: g.group
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 							className: "mt-4 space-y-1.5 text-sm text-muted-foreground",
@@ -98,12 +102,12 @@ function ServicesPage() {
 						})]
 					})
 				}, g.group))
-			})
+			})]
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ClosingCta, {
-			eyebrow: "Engagement",
-			title: "Start with a two-week discovery.",
-			body: "You leave with an architecture outline, a delivery plan and a fixed-scope first milestone — whether or not you continue with us."
+			eyebrow: "LET'S BUILD TOGETHER",
+			title: "Let's Build Something Great Together.",
+			body: "Tell us about your idea, business, or project. We'll help you plan, build, and launch the right solution."
 		})
 	] });
 }

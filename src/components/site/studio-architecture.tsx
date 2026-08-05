@@ -91,7 +91,7 @@ export function StudioArchitecture() {
       {/* Main 3D Space */}
       <div className="relative flex h-full w-full items-center justify-center" style={{ perspective: 1200 }}>
         <motion.div
-          className="relative flex h-[280px] w-[340px] items-center justify-center sm:h-[320px] sm:w-[400px]"
+          className="relative flex h-[230px] w-[270px] items-center justify-center min-[400px]:h-[280px] min-[400px]:w-[340px] sm:h-[320px] sm:w-[400px]"
           style={{
             transformStyle: "preserve-3d",
           }}

@@ -34,52 +34,38 @@ export function ContactAnimation() {
       {/* Main Interactive Visual */}
       <div className="flex-1 flex items-center justify-center relative my-4">
         {/* Connection pipeline path */}
-        <svg className="absolute inset-x-0 h-10 w-full pointer-events-none overflow-visible">
+        <svg viewBox="0 0 400 40" className="absolute inset-x-0 h-10 w-full pointer-events-none overflow-visible" preserveAspectRatio="none">
+          <defs>
+            <style>{`
+              @keyframes pulse-dot-1 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              @keyframes pulse-dot-2 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              @keyframes pulse-dot-3 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              .pd1 { animation: pulse-dot-1 2.5s ease-in-out infinite; }
+              .pd2 { animation: pulse-dot-2 2.5s ease-in-out 0.8s infinite; }
+              .pd3 { animation: pulse-dot-3 2.5s ease-in-out 1.6s infinite; }
+            `}</style>
+          </defs>
           {/* Base pipeline line */}
-          <line x1="20%" y1="20" x2="80%" y2="20" stroke="rgba(255,255,255,0.06)" strokeWidth="2" strokeDasharray="3 3" />
-          
+          <line x1="80" y1="20" x2="320" y2="20" stroke="rgba(255,255,255,0.06)" strokeWidth="2" strokeDasharray="3 3" />
           {/* Animated data pulses */}
-          <motion.circle
-            r="3"
-            fill="#f59e0b"
-            animate={{
-              cx: ["20%", "80%"],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.circle
-            r="2"
-            fill="#6366f1"
-            animate={{
-              cx: ["20%", "80%"],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.8,
-            }}
-          />
-          <motion.circle
-            r="2"
-            fill="#10b981"
-            animate={{
-              cx: ["20%", "80%"],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.6,
-            }}
-          />
+          <circle className="pd1" r="3" cy="20" cx="80" fill="#f59e0b" />
+          <circle className="pd2" r="2" cy="20" cx="80" fill="#6366f1" />
+          <circle className="pd3" r="2" cy="20" cx="80" fill="#10b981" />
         </svg>
 
         {/* Left Side: The Idea/Brief */}

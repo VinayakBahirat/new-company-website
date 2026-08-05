@@ -29,8 +29,8 @@ function CareersPage() {
         <div className="relative">
           <SectionHeading
             eyebrow="Careers"
-            title="We are always looking for engineers who finish things."
-            body="Small senior teams, real ownership, and systems that stay in production for years. If you care about the parts of software nobody sees, you will fit here."
+            title="Join Our Team"
+            body="We're always interested in meeting talented developers who enjoy building high-quality software and solving real business problems."
           />
         </div>
       </Section>
@@ -68,7 +68,7 @@ function CareersPage() {
       </Section>
 
       <Section id="apply" className="py-24 sm:py-32">
-        <SectionHeading eyebrow="How we work" title="What you can expect from the inside." />
+        <SectionHeading eyebrow="How we work" title="Why You'll Love Working Here." />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.04}>
@@ -82,9 +82,9 @@ function CareersPage() {
       </Section>
 
       <ClosingCta
-        eyebrow="Open application"
-        title="No role that fits? Write to us anyway."
-        body="Send what you have built and what you want to build next. We read everything and reply to every serious application."
+        eyebrow="JOIN OUR TEAM"
+        title="Ready to Build Great Software With Us?"
+        body="If you're passionate about solving real problems and building high-quality software, we'd love to hear from you. Even if there's no current opening, feel free to introduce yourself."
       />
     </>
   );

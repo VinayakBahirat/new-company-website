@@ -16,6 +16,7 @@ import {
 import { MeshBackground, Hairline } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
 import { StudioArchitecture } from "@/components/site/studio-architecture";
+import { HeroDashboard } from "@/components/site/hero-dashboard";
 import {
   Counter,
   Parallax,
@@ -156,88 +157,10 @@ function Hero() {
         </div>
 
         <div className="relative hidden lg:block">
-          <FloatingPanels />
+          <HeroDashboard />
         </div>
       </div>
     </Section>
-  );
-}
-
-function FloatingPanels() {
-  return (
-    <div className="relative h-[520px] [perspective:1400px]">
-      <motion.div
-        initial={{ opacity: 0, y: 40, rotateX: 18, rotateY: -18 }}
-        animate={{ opacity: 1, y: 0, rotateX: 12, rotateY: -14 }}
-        transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="animate-float-y absolute right-0 top-6 w-[360px] [transform-style:preserve-3d]"
-      >
-        <GlassCard className="rounded-[1.4rem] p-5">
-          <div className="flex items-center justify-between">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-              deploy · production
-            </p>
-            <span className="rounded-full bg-primary/15 px-2 py-0.5 font-mono text-[0.6rem] text-primary">
-              passing
-            </span>
-          </div>
-          <div className="mt-5 space-y-3">
-            {[
-              ["build", 100],
-              ["type-check", 100],
-              ["test suite", 100],
-              ["perf budget", 96],
-            ].map(([label, pct]) => (
-              <div key={label as string}>
-                <div className="flex justify-between text-[0.7rem] text-muted-foreground">
-                  <span>{label}</span>
-                  <span className="font-mono text-foreground/80">{pct}%</span>
-                </div>
-                <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-white/8">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${pct as number}%` }}
-                    transition={{ duration: 1.4, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="h-full rounded-full bg-primary"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </GlassCard>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 60, rotateX: 18, rotateY: -18 }}
-        animate={{ opacity: 1, y: 0, rotateX: 10, rotateY: -12 }}
-        transition={{ duration: 1.1, delay: 0.72, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute bottom-4 left-0 w-[320px] [transform-style:preserve-3d]"
-      >
-        <GlassCard className="rounded-[1.4rem] p-5">
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-            retrieval pipeline
-          </p>
-          <div className="mt-4 space-y-2.5 font-mono text-[0.7rem] leading-relaxed">
-            <p className="text-muted-foreground">
-              <span className="text-primary">embed</span> → chunk(1024) · overlap(128)
-            </p>
-            <p className="text-muted-foreground">
-              <span className="text-primary">search</span> → hybrid(bm25 + vector)
-            </p>
-            <p className="text-muted-foreground">
-              <span className="text-primary">rerank</span> → top_k(8) · threshold(0.72)
-            </p>
-            <p className="text-foreground/85">
-              <span className="text-primary">answer</span> → grounded · cited
-            </p>
-          </div>
-          <div className="mt-5 flex items-center gap-2 border-t border-border pt-4">
-            <ShieldCheck className="h-3.5 w-3.5 text-primary" />
-            <span className="text-[0.7rem] text-muted-foreground">Guardrails and evals attached</span>
-          </div>
-        </GlassCard>
-      </motion.div>
-    </div>
   );
 }
 
@@ -323,7 +246,7 @@ function StudioIntro() {
   return (
     <Section className="py-24 sm:py-32">
       <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <Parallax distance={34}>
+        <Parallax distance={34} className="w-full">
           <StudioArchitecture />
         </Parallax>
 

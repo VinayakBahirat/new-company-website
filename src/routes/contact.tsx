@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Mail, MapPin, Phone, Check, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { ContactAnimation } from "@/components/site/contact-animation";
 import { Reveal } from "@/components/site/motion-primitives";
 import { GlassCard, Section, SectionHeading } from "@/components/site/primitives";
-import { COMPANY, FAQS, SERVICES } from "@/content/site";
+import { COMPANY, SERVICES } from "@/content/site";
 
 const TITLE = "Contact — Start a Project | Aeriform Systems";
 const DESCRIPTION =
@@ -35,17 +36,16 @@ function ContactPage() {
   };
 
   return (
-    <>
-      <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
-        <MeshBackground />
-        <div className="relative">
-          <SectionHeading
-            eyebrow="Contact"
-            title="Tell us what needs to exist."
-            body="Share the problem, the constraints and the deadline. You will hear back within one business day from an engineer, not a form autoresponder."
-          />
-        </div>
-      </Section>
+    <>      <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
+      <MeshBackground />
+      <div className="relative">
+        <SectionHeading
+          eyebrow="Contact"
+          title="Let's build something together."
+          body="Whether you are an individual with an idea or a company looking to build next-generation software, we'd love to hear from you. You will hear back within one business day."
+        />
+      </div>
+    </Section>
 
       <Section className="pb-8">
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
@@ -58,8 +58,7 @@ function ContactPage() {
                   </span>
                   <h2 className="mt-6 font-display text-2xl font-semibold">Message received</h2>
                   <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                    Thank you. A delivery lead will reply within one business day with next steps and
-                    a proposed discovery window.
+                    Thank you. We will get back to you within one business day with next steps.
                   </p>
                 </div>
               ) : (
@@ -73,17 +72,17 @@ function ContactPage() {
                     </div>
                     <div>
                       <label htmlFor="email" className="eyebrow mb-2.5 block">
-                        Work email
+                        Email address
                       </label>
-                      <input id="email" name="email" type="email" required autoComplete="email" className={FIELD} placeholder="you@company.com" />
+                      <input id="email" name="email" type="email" required autoComplete="email" className={FIELD} placeholder="you@example.com" />
                     </div>
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="company" className="eyebrow mb-2.5 block">
-                        Company
+                        Company (Optional)
                       </label>
-                      <input id="company" name="company" autoComplete="organization" className={FIELD} placeholder="Company name" />
+                      <input id="company" name="company" autoComplete="organization" className={FIELD} placeholder="Company or project name" />
                     </div>
                     <div>
                       <label htmlFor="budget" className="eyebrow mb-2.5 block">
@@ -91,13 +90,15 @@ function ContactPage() {
                       </label>
                       <div className="relative">
                         <select id="budget" name="budget" className={`${FIELD} appearance-none pr-10`} defaultValue="">
-                          <option value="" disabled>
+                          <option value="" disabled className="bg-zinc-950 text-muted-foreground">
                             Select a range
                           </option>
-                          <option>Under $50k</option>
-                          <option>$50k – $150k</option>
-                          <option>$150k – $500k</option>
-                          <option>$500k+</option>
+                          <option className="bg-zinc-950 text-white">Under $10k</option>
+                          <option className="bg-zinc-950 text-white">$10k – $50k</option>
+                          <option className="bg-zinc-950 text-white">$50k – $150k</option>
+                          <option className="bg-zinc-950 text-white">$150k – $500k</option>
+                          <option className="bg-zinc-950 text-white">$500k+</option>
+                          <option className="bg-zinc-950 text-white">Personal / Undefined</option>
                         </select>
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                       </div>
@@ -109,19 +110,20 @@ function ContactPage() {
                     </label>
                     <div className="relative">
                       <select id="scope" name="scope" className={`${FIELD} appearance-none pr-10`} defaultValue="">
-                        <option value="" disabled>
+                        <option value="" disabled className="bg-zinc-950 text-muted-foreground">
                           Select a capability
                         </option>
                         {SERVICES.map((s) => (
-                          <option key={s.slug}>{s.title}</option>
+                          <option key={s.slug} className="bg-zinc-950 text-white">{s.title}</option>
                         ))}
+                        <option className="bg-zinc-950 text-white">Other / General Inquiry</option>
                       </select>
                       <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="message" className="eyebrow mb-2.5 block">
-                      Project details
+                      Message details
                     </label>
                     <textarea
                       id="message"
@@ -129,14 +131,14 @@ function ContactPage() {
                       rows={6}
                       required
                       className={`${FIELD} resize-none`}
-                      placeholder="The system, the users, the constraints and the deadline."
+                      placeholder="Tell us about your project, idea, goals, or any questions you have."
                     />
                   </div>
                   <button
                     type="submit"
                     className="focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)]"
                   >
-                    Send project brief
+                    Send message
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </form>
@@ -161,10 +163,10 @@ function ContactPage() {
                       {COMPANY.phone}
                     </a>
                   </li>
-                  <li className="flex items-start gap-3 text-muted-foreground">
+                  {/* <li className="flex items-start gap-3 text-muted-foreground">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     {COMPANY.address}
-                  </li>
+                  </li> */}
                 </ul>
               </GlassCard>
             </Reveal>
@@ -177,18 +179,116 @@ function ContactPage() {
       </Section>
 
       <Section className="py-24 sm:py-32">
-        <SectionHeading eyebrow="Before you write" title="Questions we are asked most." />
-        <div className="mt-14 grid gap-4 lg:grid-cols-2">
-          {FAQS.map((f, i) => (
-            <Reveal key={f.q} delay={(i % 2) * 0.06}>
-              <div className="h-full rounded-2xl border border-border bg-surface/30 p-7">
-                <h3 className="font-display text-base font-semibold">{f.q}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <SectionHeading
+          eyebrow="BEFORE YOU START"
+          title="Questions we are asked most."
+          body="Everything you need to know before starting a project with us. If your question isn't listed, we're happy to discuss it during a discovery call."
+        />
+        <FaqAccordion />
       </Section>
     </>
+  );
+}
+
+const FAQ_LIST = [
+  {
+    q: "How do engagements usually start?",
+    a: "Every project begins with a short discovery phase where we understand your business goals, technical constraints, and product vision. You'll receive a clear scope, timeline, architecture direction, and delivery plan before development begins.",
+  },
+  {
+    q: "How are teams structured?",
+    a: "You work directly with a small senior engineering team. The architects designing your system are the same engineers who build, review, and deploy it, ensuring accountability throughout the project.",
+  },
+  {
+    q: "Who owns the code?",
+    a: "You do. From the very first commit, repositories, infrastructure, documentation, deployment pipelines, and intellectual property belong entirely to your organization.",
+  },
+  {
+    q: "Can you work alongside an in-house team?",
+    a: "Yes. We regularly collaborate with internal engineering teams, contributing architecture, development, code reviews, and technical leadership without disrupting existing workflows.",
+  },
+  {
+    q: "What technologies do you specialize in?",
+    a: "Our core stack includes React, Next.js, TypeScript, Node.js, FastAPI, PostgreSQL, MongoDB, AWS, Docker, CI/CD, and modern AI technologies including OpenAI, Gemini, Retrieval-Augmented Generation (RAG), and workflow automation.",
+  },
+  {
+    q: "Do you build AI-powered products?",
+    a: "Yes. We build production-ready AI systems including intelligent search, AI assistants, RAG platforms, workflow automation, custom LLM integrations, and enterprise AI applications designed for real business use.",
+  },
+  {
+    q: "How long does a typical project take?",
+    a: "Project timelines depend on complexity. Most MVPs are delivered within 6–12 weeks, while larger enterprise platforms are planned and released through clearly defined milestones.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "Our partnership continues after deployment with performance optimization, security updates, infrastructure maintenance, monitoring, feature development, and long-term product support.",
+  },
+  {
+    q: "Do you work with startups as well as enterprises?",
+    a: "Yes. We work with startups launching new products, growing SaaS companies, digital agencies, and enterprises building or modernizing mission-critical software.",
+  },
+  {
+    q: "Can you improve an existing application instead of building from scratch?",
+    a: "Absolutely. We modernize legacy applications, improve performance, redesign user experiences, migrate infrastructure, integrate AI capabilities, and scale existing systems without disrupting business operations.",
+  },
+];
+
+function FaqAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <div className="mt-14 grid gap-4 lg:grid-cols-2 items-start">
+      {FAQ_LIST.map((faq, i) => {
+        const isOpen = openIndex === i;
+        return (
+          <Reveal key={faq.q} delay={(i % 2) * 0.05}>
+            <div className="rounded-2xl border border-border bg-surface/30 transition-all duration-300 hover:border-primary/20 hover:bg-surface/40">
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={`faq-content-${i}`}
+                id={`faq-button-${i}`}
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+                className="group flex w-full items-center justify-between gap-4 p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:rounded-2xl cursor-pointer"
+              >
+                <span className="font-display text-base font-semibold text-foreground">
+                  {faq.q}
+                </span>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border bg-glass transition-colors duration-300 group-hover:border-primary/40">
+                  <motion.span
+                    animate={{ rotate: isOpen ? 135 : 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="relative block h-3 w-3"
+                  >
+                    {/* Horizontal line */}
+                    <span className="absolute left-0 top-[5px] h-[2px] w-3 bg-primary" />
+                    {/* Vertical line */}
+                    <span className="absolute left-[5px] top-0 h-3 w-[2px] bg-primary" />
+                  </motion.span>
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    id={`faq-content-${i}`}
+                    role="region"
+                    aria-labelledby={`faq-button-${i}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="border-t border-border/50 px-6 pb-6 pt-4 text-sm leading-relaxed text-muted-foreground">
+                      {faq.a}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </Reveal>
+        );
+      })}
+    </div>
   );
 }
