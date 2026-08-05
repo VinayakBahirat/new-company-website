@@ -1,8 +1,8 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { D as Clock, P as ArrowUpRight, i as Users, m as MapPin } from "../_libs/lucide-react.mjs";
-import { _ as ROLES, n as MeshBackground, o as Reveal, x as VALUES } from "./router-CDQN5hn-.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-BgftHy_v.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/careers-Blj6jwut.js
+import { g as ROLES, n as MeshBackground, o as Reveal, y as VALUES } from "./router-BkslOaj1.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-B5cKq6Mg.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/careers-Bf0e-EYe.js
 var import_jsx_runtime = require_jsx_runtime();
 function CareersPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
@@ -12,8 +12,8 @@ function CareersPage() {
 				className: "relative",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 					eyebrow: "Careers",
-					title: "We are always looking for engineers who finish things.",
-					body: "Small senior teams, real ownership, and systems that stay in production for years. If you care about the parts of software nobody sees, you will fit here."
+					title: "Join Our Team",
+					body: "We're always interested in meeting talented developers who enjoy building high-quality software and solving real business problems."
 				})
 			})]
 		}),
@@ -70,7 +70,7 @@ function CareersPage() {
 			className: "py-24 sm:py-32",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 				eyebrow: "How we work",
-				title: "What you can expect from the inside."
+				title: "Why You'll Love Working Here."
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5",
 				children: VALUES.map((v, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -89,9 +89,9 @@ function CareersPage() {
 			})]
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ClosingCta, {
-			eyebrow: "Open application",
-			title: "No role that fits? Write to us anyway.",
-			body: "Send what you have built and what you want to build next. We read everything and reply to every serious application."
+			eyebrow: "JOIN OUR TEAM",
+			title: "Ready to Build Great Software With Us?",
+			body: "If you're passionate about solving real problems and building high-quality software, we'd love to hear from you. Even if there's no current opening, feel free to introduce yourself."
 		})
 	] });
 }

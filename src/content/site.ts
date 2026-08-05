@@ -16,7 +16,7 @@ export const COMPANY = {
   short: "Aeriform",
   tagline: "We help businesses build fast, reliable, and scalable software that solves real problems. From web applications to AI-powered solutions, we turn ideas into products people love to use.",
   email: "studio@aeriform.systems",
-  phone: "+1 (415) 555-0182",
+  phone: "+91 7709044575",
   address: "Pier 9, Innovation Quarter, San Francisco, CA",
   hq: "San Francisco · Amsterdam · Singapore",
 };
@@ -51,64 +51,64 @@ export const SERVICES = [
     slug: "enterprise",
     title: "Enterprise Software",
     summary:
-      "Systems designed to outlive the hype cycles. We build high-throughput, audit-ready software that handles the heavy lifting, zero-downtime migrations, and runs quietly for decades.",
-    points: ["Domain-driven systems", "Granular access controls", "Zero-downtime DB migrations"],
+      "Custom software built to streamline operations, improve efficiency, and support your business as it grows.",
+    points: ["Business Process Automation", "Secure Access Control", "Scalable Architecture"],
   },
   {
     slug: "ai",
     title: "AI Product Development",
     summary:
-      "Retrieval pipelines and autonomous agents that survive contact with real, messy user data. No wrappers. Just real-world LLM orchestration with robust safety nets.",
-    points: ["Evaluation & testing loops", "Custom vector pipelines", "Guardrails & telemetry"],
+      "AI-powered solutions that automate tasks, improve decision-making, and create better customer experiences.",
+    points: ["AI Chatbots", "Workflow Automation", "Custom AI Solutions"],
   },
   {
     slug: "saas",
     title: "SaaS Platform Engineering",
     summary:
-      "Multi-tenant platforms built to handle millions of transactions. We set up clean tenant isolation, precise usage-based billing, and self-serve onboarding from day one.",
-    points: ["Hard tenant isolation", "Usage-based billing", "Instant self-serve setup"],
+      "Scalable SaaS platforms built for subscription businesses, secure user management, and long-term growth.",
+    points: ["Multi-Tenant Architecture", "Subscription & Billing", "User Management"],
   },
   {
     slug: "web",
     title: "Custom Web Applications",
     summary:
-      "Web apps that feel as responsive as desktop software. No sluggish loads, no junk frames, and design systems that scale without breaking.",
-    points: ["Fast rendering paths", "Predictive loading states", "Unified design tokens"],
+      "Fast, secure, and user-friendly web applications tailored to your business needs.",
+    points: ["Responsive Design", "High Performance", "Secure Development"],
   },
   {
     slug: "mobile",
     title: "Mobile Applications",
     summary:
-      "Offline-first mobile products with snappy data sync. We build shared codebases that don't compromise on native feel, animations, or platform guidelines.",
-    points: ["Offline-first sync", "Native module overrides", "Automated App Store lanes"],
+      "Cross-platform mobile apps that deliver a smooth experience on both Android and iOS.",
+    points: ["Android & iOS Apps", "Offline Support", "App Store Deployment"],
   },
   {
     slug: "cloud",
     title: "Cloud & Platform Ops",
     summary:
-      "Infrastructure treated as a product. We design reproducible, secure, and cost-optimized environments so your team can ship changes with confidence.",
-    points: ["Infrastructure as Code", "Isolated staging pipelines", "Predictive cost models"],
+      "Reliable cloud infrastructure that keeps your applications secure, scalable, and always available.",
+    points: ["Cloud Deployment", "CI/CD Automation", "Infrastructure Management"],
   },
   {
     slug: "automation",
     title: "Automation Systems",
     summary:
-      "Replacing manual drudgery with event-driven workflows. We orchestrate background pipelines that keep humans in control and maintain perfect audit trails.",
-    points: ["State machine routing", "Human-in-the-loop review", "Immutable action logs"],
+      "Automate repetitive tasks and business workflows to save time, reduce errors, and improve productivity.",
+    points: ["Workflow Automation", "Process Optimization", "Smart Notifications"],
   },
   {
     slug: "api",
     title: "API & Backend Engineering",
     summary:
-      "Data models, queue systems, and API contracts that hold up under heavy load and decades of schema evolution without breaking clients.",
-    points: ["Typed API contracts", "Fault-tolerant worker queues", "Zero-friction schema evolution"],
+      "Secure and scalable APIs that connect your applications, automate data flow, and support business growth.",
+    points: ["API Development", "System Integration", "Secure Data Flow"],
   },
   {
     slug: "performance",
     title: "Performance Optimization",
     summary:
-      "Rebuilding the slow paths. We profile bottlenecks, optimize queries, and enforce performance budgets so your software feels fast and runs cheap.",
-    points: ["Render & query budgeting", "Edge caching strategies", "CI performance blockers"],
+      "Improve the speed, reliability, and performance of your existing software for a better user experience.",
+    points: ["Faster Loading", "Better Performance", "Optimized Code"],
   },
 ];
 
@@ -168,7 +168,7 @@ export const DIFFERENTIATORS = [
   { title: "High Performance", body: "Fast, reliable software that delivers a smooth experience for your users as your business grows." },
   { title: "Easy to Maintain", body: "Your software is built to be easy to maintain, update, and improve as your business grows." },
   { title: "Security First", body: "Security is built into every project to help protect your business, data, and customers." },
-  { title: "Easy to Maintain", body: "Codebases that are easy to understand, easy to test, and easy to extend." },
+  { title: "Clean Codebase", body: "Codebases that are easy to understand, easy to test, and easy to extend." },
 ];
 
 export const PROJECTS = [

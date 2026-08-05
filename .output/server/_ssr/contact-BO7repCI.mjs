@@ -1,10 +1,10 @@
 import { a as __toESM } from "../_runtime.mjs";
-import { o as motion } from "../_libs/framer-motion.mjs";
+import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { A as ChevronDown, O as CircleCheck, P as ArrowUpRight, b as FileText, f as Network, h as Mail, j as Check, k as ChevronRight, l as Server, m as MapPin, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
-import { f as FAQS, n as MeshBackground, o as Reveal, u as COMPANY, v as SERVICES } from "./router-CDQN5hn-.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-BgftHy_v.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/contact-x9RcQJnC.js
+import { A as ChevronDown, O as CircleCheck, P as ArrowUpRight, b as FileText, f as Network, h as Mail, j as Check, k as ChevronRight, l as Server, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
+import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-BkslOaj1.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-B5cKq6Mg.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/contact-BO7repCI.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ContactAnimation() {
@@ -37,72 +37,62 @@ function ContactAnimation() {
 				className: "flex-1 flex items-center justify-center relative my-4",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+						viewBox: "0 0 400 40",
 						className: "absolute inset-x-0 h-10 w-full pointer-events-none overflow-visible",
+						preserveAspectRatio: "none",
 						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
+              @keyframes pulse-dot-1 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              @keyframes pulse-dot-2 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              @keyframes pulse-dot-3 {
+                0%   { cx: 80; opacity: 0; }
+                10%  { opacity: 1; }
+                80%  { opacity: 1; }
+                100% { cx: 320; opacity: 0; }
+              }
+              .pd1 { animation: pulse-dot-1 2.5s ease-in-out infinite; }
+              .pd2 { animation: pulse-dot-2 2.5s ease-in-out 0.8s infinite; }
+              .pd3 { animation: pulse-dot-3 2.5s ease-in-out 1.6s infinite; }
+            ` }) }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("line", {
-								x1: "20%",
+								x1: "80",
 								y1: "20",
-								x2: "80%",
+								x2: "320",
 								y2: "20",
 								stroke: "rgba(255,255,255,0.06)",
 								strokeWidth: "2",
 								strokeDasharray: "3 3"
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.circle, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+								className: "pd1",
 								r: "3",
-								fill: "#f59e0b",
-								animate: {
-									cx: ["20%", "80%"],
-									opacity: [
-										0,
-										1,
-										1,
-										0
-									]
-								},
-								transition: {
-									duration: 2.5,
-									repeat: Infinity,
-									ease: "easeInOut"
-								}
+								cy: "20",
+								cx: "80",
+								fill: "#f59e0b"
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.circle, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+								className: "pd2",
 								r: "2",
-								fill: "#6366f1",
-								animate: {
-									cx: ["20%", "80%"],
-									opacity: [
-										0,
-										1,
-										1,
-										0
-									]
-								},
-								transition: {
-									duration: 2.5,
-									repeat: Infinity,
-									ease: "easeInOut",
-									delay: .8
-								}
+								cy: "20",
+								cx: "80",
+								fill: "#6366f1"
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.circle, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+								className: "pd3",
 								r: "2",
-								fill: "#10b981",
-								animate: {
-									cx: ["20%", "80%"],
-									opacity: [
-										0,
-										1,
-										1,
-										0
-									]
-								},
-								transition: {
-									duration: 2.5,
-									repeat: Infinity,
-									ease: "easeInOut",
-									delay: 1.6
-								}
+								cy: "20",
+								cx: "80",
+								fill: "#10b981"
 							})
 						]
 					}),
@@ -212,14 +202,15 @@ function ContactPage() {
 		setSent(true);
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+		"      ",
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
 			className: "relative overflow-hidden pb-16 pt-40 sm:pt-48",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MeshBackground, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "relative",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 					eyebrow: "Contact",
-					title: "Tell us what needs to exist.",
-					body: "Share the problem, the constraints and the deadline. You will hear back within one business day from an engineer, not a form autoresponder."
+					title: "Let's build something together.",
+					body: "Whether you are an individual with an idea or a company looking to build next-generation software, we'd love to hear from you. You will hear back within one business day."
 				})
 			})]
 		}),
@@ -242,7 +233,7 @@ function ContactPage() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground",
-								children: "Thank you. A delivery lead will reply within one business day with next steps and a proposed discovery window."
+								children: "Thank you. We will get back to you within one business day with next steps."
 							})
 						]
 					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
@@ -265,7 +256,7 @@ function ContactPage() {
 								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "email",
 									className: "eyebrow mb-2.5 block",
-									children: "Work email"
+									children: "Email address"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 									id: "email",
 									name: "email",
@@ -273,7 +264,7 @@ function ContactPage() {
 									required: true,
 									autoComplete: "email",
 									className: FIELD,
-									placeholder: "you@company.com"
+									placeholder: "you@example.com"
 								})] })]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -281,13 +272,13 @@ function ContactPage() {
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "company",
 									className: "eyebrow mb-2.5 block",
-									children: "Company"
+									children: "Company (Optional)"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 									id: "company",
 									name: "company",
 									autoComplete: "organization",
 									className: FIELD,
-									placeholder: "Company name"
+									placeholder: "Company or project name"
 								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "budget",
 									className: "eyebrow mb-2.5 block",
@@ -303,12 +294,33 @@ function ContactPage() {
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
 												value: "",
 												disabled: true,
+												className: "bg-zinc-950 text-muted-foreground",
 												children: "Select a range"
 											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "Under $50k" }),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "$50k – $150k" }),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "$150k – $500k" }),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: "$500k+" })
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "Under $10k"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "$10k – $50k"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "$50k – $150k"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "$150k – $500k"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "$500k+"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+												className: "bg-zinc-950 text-white",
+												children: "Personal / Undefined"
+											})
 										]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
 								})] })]
@@ -324,29 +336,40 @@ function ContactPage() {
 									name: "scope",
 									className: `${FIELD} appearance-none pr-10`,
 									defaultValue: "",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-										value: "",
-										disabled: true,
-										children: "Select a capability"
-									}), SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", { children: s.title }, s.slug))]
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											value: "",
+											disabled: true,
+											className: "bg-zinc-950 text-muted-foreground",
+											children: "Select a capability"
+										}),
+										SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											className: "bg-zinc-950 text-white",
+											children: s.title
+										}, s.slug)),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+											className: "bg-zinc-950 text-white",
+											children: "Other / General Inquiry"
+										})
+									]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 								htmlFor: "message",
 								className: "eyebrow mb-2.5 block",
-								children: "Project details"
+								children: "Message details"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("textarea", {
 								id: "message",
 								name: "message",
 								rows: 6,
 								required: true,
 								className: `${FIELD} resize-none`,
-								placeholder: "The system, the users, the constraints and the deadline."
+								placeholder: "Tell us about your project, idea, goals, or any questions you have."
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 								type: "submit",
 								className: "focus-ring group inline-flex items-center justify-center gap-2 rounded-2xl bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-shadow duration-300 hover:shadow-[0_0_54px_-8px_var(--ring)]",
-								children: ["Send project brief", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })]
+								children: ["Send message", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" })]
 							})
 						]
 					})
@@ -361,22 +384,15 @@ function ContactPage() {
 								children: "Direct lines"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
 								className: "mt-5 space-y-4 text-sm",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-										href: `mailto:${COMPANY.email}`,
-										className: "focus-ring flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "h-4 w-4 text-primary" }), COMPANY.email]
-									}) }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-										href: `tel:${COMPANY.phone.replace(/[^+\d]/g, "")}`,
-										className: "focus-ring flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 text-primary" }), COMPANY.phone]
-									}) }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-										className: "flex items-start gap-3 text-muted-foreground",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "mt-0.5 h-4 w-4 shrink-0 text-primary" }), COMPANY.address]
-									})
-								]
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: `mailto:${COMPANY.email}`,
+									className: "focus-ring flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "h-4 w-4 text-primary" }), COMPANY.email]
+								}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: `tel:${COMPANY.phone.replace(/[^+\d]/g, "")}`,
+									className: "focus-ring flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 text-primary" }), COMPANY.phone]
+								}) })]
 							})]
 						})
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
@@ -389,26 +405,120 @@ function ContactPage() {
 		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
 			className: "py-24 sm:py-32",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
-				eyebrow: "Before you write",
-				title: "Questions we are asked most."
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-14 grid gap-4 lg:grid-cols-2",
-				children: FAQS.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
-					delay: i % 2 * .06,
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "h-full rounded-2xl border border-border bg-surface/30 p-7",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "font-display text-base font-semibold",
-							children: f.q
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-3 text-sm leading-relaxed text-muted-foreground",
-							children: f.a
-						})]
-					})
-				}, f.q))
-			})]
+				eyebrow: "BEFORE YOU START",
+				title: "Questions we are asked most.",
+				body: "Everything you need to know before starting a project with us. If your question isn't listed, we're happy to discuss it during a discovery call."
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FaqAccordion, {})]
 		})
 	] });
+}
+var FAQ_LIST = [
+	{
+		q: "How do engagements usually start?",
+		a: "Every project begins with a short discovery phase where we understand your business goals, technical constraints, and product vision. You'll receive a clear scope, timeline, architecture direction, and delivery plan before development begins."
+	},
+	{
+		q: "How are teams structured?",
+		a: "You work directly with a small senior engineering team. The architects designing your system are the same engineers who build, review, and deploy it, ensuring accountability throughout the project."
+	},
+	{
+		q: "Who owns the code?",
+		a: "You do. From the very first commit, repositories, infrastructure, documentation, deployment pipelines, and intellectual property belong entirely to your organization."
+	},
+	{
+		q: "Can you work alongside an in-house team?",
+		a: "Yes. We regularly collaborate with internal engineering teams, contributing architecture, development, code reviews, and technical leadership without disrupting existing workflows."
+	},
+	{
+		q: "What technologies do you specialize in?",
+		a: "Our core stack includes React, Next.js, TypeScript, Node.js, FastAPI, PostgreSQL, MongoDB, AWS, Docker, CI/CD, and modern AI technologies including OpenAI, Gemini, Retrieval-Augmented Generation (RAG), and workflow automation."
+	},
+	{
+		q: "Do you build AI-powered products?",
+		a: "Yes. We build production-ready AI systems including intelligent search, AI assistants, RAG platforms, workflow automation, custom LLM integrations, and enterprise AI applications designed for real business use."
+	},
+	{
+		q: "How long does a typical project take?",
+		a: "Project timelines depend on complexity. Most MVPs are delivered within 6–12 weeks, while larger enterprise platforms are planned and released through clearly defined milestones."
+	},
+	{
+		q: "What happens after launch?",
+		a: "Our partnership continues after deployment with performance optimization, security updates, infrastructure maintenance, monitoring, feature development, and long-term product support."
+	},
+	{
+		q: "Do you work with startups as well as enterprises?",
+		a: "Yes. We work with startups launching new products, growing SaaS companies, digital agencies, and enterprises building or modernizing mission-critical software."
+	},
+	{
+		q: "Can you improve an existing application instead of building from scratch?",
+		a: "Absolutely. We modernize legacy applications, improve performance, redesign user experiences, migrate infrastructure, integrate AI capabilities, and scale existing systems without disrupting business operations."
+	}
+];
+function FaqAccordion() {
+	const [openIndex, setOpenIndex] = (0, import_react.useState)(null);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "mt-14 grid gap-4 lg:grid-cols-2 items-start",
+		children: FAQ_LIST.map((faq, i) => {
+			const isOpen = openIndex === i;
+			return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+				delay: i % 2 * .05,
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-2xl border border-border bg-surface/30 transition-all duration-300 hover:border-primary/20 hover:bg-surface/40",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						"aria-expanded": isOpen,
+						"aria-controls": `faq-content-${i}`,
+						id: `faq-button-${i}`,
+						onClick: () => setOpenIndex(isOpen ? null : i),
+						className: "group flex w-full items-center justify-between gap-4 p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:rounded-2xl cursor-pointer",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "font-display text-base font-semibold text-foreground",
+							children: faq.q
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border bg-glass transition-colors duration-300 group-hover:border-primary/40",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.span, {
+								animate: { rotate: isOpen ? 135 : 0 },
+								transition: {
+									duration: .2,
+									ease: "easeInOut"
+								},
+								className: "relative block h-3 w-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute left-0 top-[5px] h-[2px] w-3 bg-primary" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute left-[5px] top-0 h-3 w-[2px] bg-primary" })]
+							})
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, {
+						initial: false,
+						children: isOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+							id: `faq-content-${i}`,
+							role: "region",
+							"aria-labelledby": `faq-button-${i}`,
+							initial: {
+								height: 0,
+								opacity: 0
+							},
+							animate: {
+								height: "auto",
+								opacity: 1
+							},
+							exit: {
+								height: 0,
+								opacity: 0
+							},
+							transition: {
+								duration: .25,
+								ease: "easeInOut"
+							},
+							className: "overflow-hidden",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "border-t border-border/50 px-6 pb-6 pt-4 text-sm leading-relaxed text-muted-foreground",
+								children: faq.a
+							})
+						})
+					})]
+				})
+			}, faq.q);
+		})
+	});
 }
 //#endregion
 export { ContactPage as component };

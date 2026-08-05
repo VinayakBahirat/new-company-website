@@ -28,8 +28,8 @@ function ServicesPage() {
         <div className="relative">
           <SectionHeading
             eyebrow="Capabilities"
-            title="Engineering services for software that has to hold."
-            body="Nine practices, one accountable delivery team. Engagements combine whichever of these the problem actually needs."
+            title="Software That Solves Real Business Problems."
+            body="Everything you need to build, launch, and grow your software all in one team."
           />
         </div>
       </Section>
@@ -76,11 +76,16 @@ function ServicesPage() {
       </Section>
 
       <Section className="pb-8">
-        <div className="grid gap-4 lg:grid-cols-5">
+        <SectionHeading
+          eyebrow="Technology"
+          title="Technologies We Trust."
+          body="We use modern, proven technologies to build fast, secure, and scalable software that grows with your business."
+        />
+        <div className="mt-14 grid gap-4 lg:grid-cols-5">
           {TECH_GROUPS.map((g, i) => (
             <Reveal key={g.group} delay={i * 0.05}>
               <div className="h-full rounded-2xl border border-border bg-surface/30 p-6">
-                <h3 className="eyebrow">{g.group}</h3>
+                <h3 className="font-display text-sm font-semibold uppercase tracking-[0.14em]">{g.group}</h3>
                 <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
                   {g.items.map((item) => (
                     <li key={item}>{item}</li>
@@ -93,9 +98,9 @@ function ServicesPage() {
       </Section>
 
       <ClosingCta
-        eyebrow="Engagement"
-        title="Start with a two-week discovery."
-        body="You leave with an architecture outline, a delivery plan and a fixed-scope first milestone — whether or not you continue with us."
+        eyebrow="LET'S BUILD TOGETHER"
+        title="Let's Build Something Great Together."
+        body="Tell us about your idea, business, or project. We'll help you plan, build, and launch the right solution."
       />
     </>
   );

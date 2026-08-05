@@ -2,7 +2,7 @@ import { a as __toESM } from "../_runtime.mjs";
 import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { C as Cpu, S as Database, d as PanelsTopLeft, l as Server, s as Shield, t as Zap } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/studio-architecture-Dj9NGask.js
+//#region node_modules/.nitro/vite/services/ssr/assets/studio-architecture-Bp_n5BlN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function StudioArchitecture() {
@@ -102,7 +102,7 @@ function StudioArchitecture() {
 				className: "relative flex h-full w-full items-center justify-center",
 				style: { perspective: 1200 },
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
-					className: "relative flex h-[280px] w-[340px] items-center justify-center sm:h-[320px] sm:w-[400px]",
+					className: "relative flex h-[230px] w-[270px] items-center justify-center min-[400px]:h-[280px] min-[400px]:w-[340px] sm:h-[320px] sm:w-[400px]",
 					style: { transformStyle: "preserve-3d" },
 					animate: {
 						rotateX: isContainerHovered ? 54 : 48,

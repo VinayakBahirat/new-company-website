@@ -63,7 +63,9 @@ export function SiteNav() {
                 key={link.to}
                 to={link.to}
                 className="focus-ring relative rounded-lg px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                activeProps={{ className: "text-foreground" }}
+                activeProps={{
+                  className: "text-primary font-semibold after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:w-4 after:rounded-full after:bg-primary",
+                }}
               >
                 {link.label}
               </Link>
@@ -107,6 +109,7 @@ export function SiteNav() {
                 key={link.to}
                 to={link.to}
                 className="focus-ring flex items-center justify-between rounded-xl px-4 py-3.5 text-base text-foreground/85 transition-colors hover:bg-glass"
+                activeProps={{ className: "bg-primary/10 text-primary font-semibold" }}
               >
                 {link.label}
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground" />

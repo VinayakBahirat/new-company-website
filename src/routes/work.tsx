@@ -102,7 +102,7 @@ function WorkPage() {
       </Section>
 
       <ClosingCta
-        eyebrow="Your system"
+        eyebrow="LET'S BUILD TOGETHER"
         title="Let's Build Something Great Together."
         body="Whether you're starting a new project or improving an existing one, we're here to help you build the right solution."
       />
