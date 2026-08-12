@@ -1,5 +1,6 @@
 import { a as __toESM, i as __toCommonJS, n as __esmMin, r as __exportAll } from "../_runtime.mjs";
-import { n as require_jsx_runtime, r as require_react } from "./react+tanstack__react-query.mjs";
+import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
+import { a as require_jsx_runtime } from "./@radix-ui/react-collection+[...].mjs";
 
 //#region node_modules/unenv/dist/runtime/_internal/utils.mjs
 /* @__NO_SIDE_EFFECTS__ */

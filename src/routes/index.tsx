@@ -281,6 +281,9 @@ function StudioIntro() {
 /* ---------------------------------------------------------------- Process */
 
 function ProcessTimeline() {
+  const leftColumn = PROCESS.filter((_, idx) => idx % 2 === 0);
+  const rightColumn = PROCESS.filter((_, idx) => idx % 2 === 1);
+
   return (
     <Section id="process" className="py-24 sm:py-32">
       <SectionHeading
@@ -289,25 +292,36 @@ function ProcessTimeline() {
         body="We keep the process simple and transparent, so you always know what we're working on and what comes next."
       />
       <div className="relative mt-16">
-        <div
-          aria-hidden
-          className="absolute left-[11px] top-0 hidden h-full w-px bg-gradient-to-b from-primary/60 via-border to-transparent md:block"
-        />
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-14">
-          {PROCESS.map((stage, i) => (
-            <Reveal key={stage.step} delay={(i % 2) * 0.06}>
-              <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60 md:ml-10">
-                <span className="absolute -left-10 top-7 hidden h-6 w-6 place-items-center rounded-full border border-border bg-background text-[0.6rem] font-medium text-muted-foreground transition-colors group-hover:border-primary group-hover:text-primary md:grid">
-                  {i + 1}
-                </span>
-                <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-xs text-primary">{stage.step}</span>
-                  <h3 className="font-display text-lg font-semibold">{stage.title}</h3>
+          {/* Left Column */}
+          <div className="flex flex-col gap-4">
+            {leftColumn.map((stage, i) => (
+              <Reveal key={stage.step} delay={0.06}>
+                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-xs text-primary">{stage.step}</span>
+                    <h3 className="font-display text-lg font-semibold">{stage.title}</h3>
+                  </div>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{stage.body}</p>
                 </div>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{stage.body}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex flex-col gap-4">
+            {rightColumn.map((stage, i) => (
+              <Reveal key={stage.step} delay={0.06}>
+                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-xs text-primary">{stage.step}</span>
+                    <h3 className="font-display text-lg font-semibold">{stage.title}</h3>
+                  </div>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{stage.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
@@ -397,10 +411,10 @@ function WorkPreview() {
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">{p.category}</p>
                   <h3 className="mt-3 font-display text-xl font-semibold">{p.name}</h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{p.goal}</p>
-                  <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                  {/* <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
                     <span className="text-xs text-muted-foreground">{p.metric}</span>
                     <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
+                  </div> */}
                 </div>
               </GlassCard>
             </TiltCard>

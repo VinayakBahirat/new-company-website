@@ -1,6 +1,7 @@
 import { a as __toESM } from "../_runtime.mjs";
 import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
-import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { C as Cpu, S as Database, d as PanelsTopLeft, l as Server, s as Shield, t as Zap } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/studio-architecture-CZIrtLqZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
