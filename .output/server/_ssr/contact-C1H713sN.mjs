@@ -1,13 +1,13 @@
 import { a as __toESM } from "../_runtime.mjs";
 import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
-import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { A as ChevronDown, O as CircleCheck, P as ArrowUpRight, b as FileText, f as Network, h as Mail, j as Check, k as ChevronRight, l as Server, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
-import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-YnqRnFtS.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-DTL290rk.mjs";
+import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { A as ChevronRight, F as ArrowUpRight, M as Check, O as CircleCheck, b as FileText, f as Network, h as Mail, l as Server, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
+import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-CX5FNO4k.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-J7hA-_-l.mjs";
+import { a as SelectValue, i as SelectTrigger, n as SelectContent, o as sendContactEmail, r as SelectItem, t as Select } from "./select-DSz-oj0C.mjs";
 import { t as toast } from "../_libs/sonner.mjs";
-import { t as es_default } from "../_libs/emailjs__browser.mjs";
-import processModule from "node:process";
-//#region node_modules/.nitro/vite/services/ssr/assets/contact-DcXurO12.js
+//#region node_modules/.nitro/vite/services/ssr/assets/contact-C1H713sN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ContactAnimation() {
@@ -197,79 +197,6 @@ function ContactAnimation() {
 		]
 	});
 }
-/**
-* Helper to safely resolve environment variables from import.meta.env or process.env
-*/
-function getEnvVar(key) {
-	if (typeof import.meta !== "undefined" && {
-		"BASE_URL": "/",
-		"DEV": false,
-		"MODE": "production",
-		"PROD": true,
-		"SSR": true,
-		"TSS_DEV_SERVER": "false",
-		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
-		"TSS_DEV_SSR_STYLES_ENABLED": "true",
-		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
-		"TSS_INLINE_CSS_ENABLED": "false",
-		"TSS_ROUTER_BASEPATH": "",
-		"TSS_SERVER_FN_BASE": "/_serverFn/",
-		"VITE_EMAILJS_PUBLIC_KEY": "fEOtOvX4AQGGxJ56n",
-		"VITE_EMAILJS_SERVICE_ID": "service_xaoi3mi",
-		"VITE_EMAILJS_TEMPLATE_ID": "template_10dba97"
-	}[key]) return {
-		"BASE_URL": "/",
-		"DEV": false,
-		"MODE": "production",
-		"PROD": true,
-		"SSR": true,
-		"TSS_DEV_SERVER": "false",
-		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
-		"TSS_DEV_SSR_STYLES_ENABLED": "true",
-		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
-		"TSS_INLINE_CSS_ENABLED": "false",
-		"TSS_ROUTER_BASEPATH": "",
-		"TSS_SERVER_FN_BASE": "/_serverFn/",
-		"VITE_EMAILJS_PUBLIC_KEY": "fEOtOvX4AQGGxJ56n",
-		"VITE_EMAILJS_SERVICE_ID": "service_xaoi3mi",
-		"VITE_EMAILJS_TEMPLATE_ID": "template_10dba97"
-	}[key];
-	if (typeof processModule !== "undefined" && processModule.env && processModule.env[key]) return processModule.env[key];
-}
-/**
-* Sends a contact form submission email using EmailJS.
-*/
-async function sendContactEmail(data) {
-	const serviceId = getEnvVar("VITE_EMAILJS_SERVICE_ID") || getEnvVar("EMAILJS_SERVICE_ID");
-	const templateId = getEnvVar("VITE_EMAILJS_TEMPLATE_ID") || getEnvVar("EMAILJS_TEMPLATE_ID");
-	const publicKey = getEnvVar("VITE_EMAILJS_PUBLIC_KEY") || getEnvVar("EMAILJS_PUBLIC_KEY");
-	if (!serviceId || !templateId || !publicKey) {
-		const missing = [];
-		if (!serviceId) missing.push("VITE_EMAILJS_SERVICE_ID / EMAILJS_SERVICE_ID");
-		if (!templateId) missing.push("VITE_EMAILJS_TEMPLATE_ID / EMAILJS_TEMPLATE_ID");
-		if (!publicKey) missing.push("VITE_EMAILJS_PUBLIC_KEY / EMAILJS_PUBLIC_KEY");
-		console.error(`EmailJS is missing configuration: ${missing.join(", ")}`);
-		throw new Error(`EmailJS configuration is missing: ${missing.join(", ")}. Please configure them in your .env file and restart your dev server.`);
-	}
-	const submissionDate = (/* @__PURE__ */ new Date()).toLocaleString("en-US", { timeZoneName: "short" });
-	const templateParams = {
-		sender_name: data.name,
-		sender_email: data.email,
-		phone_number: data.phone || "Not provided",
-		company: data.company || "Not provided",
-		selected_service: data.scope || "Not provided",
-		budget: data.budget || "Not provided",
-		message: data.message,
-		submission_date: submissionDate
-	};
-	try {
-		const response = await es_default.send(serviceId, templateId, templateParams, publicKey);
-		if (response.status !== 200) throw new Error(`EmailJS responded with status code ${response.status}: ${response.text}`);
-	} catch (error) {
-		console.error("Failed to send email via EmailJS:", error);
-		throw error;
-	}
-}
 var FIELD = "w-full rounded-xl border border-border bg-glass px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-ring";
 function ContactPage() {
 	const [sent, setSent] = (0, import_react.useState)(false);
@@ -335,7 +262,7 @@ function ContactPage() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 								className: "mt-6 font-display text-2xl font-semibold",
-								children: "Message received"
+								children: "Message successfully sent"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground",
@@ -403,74 +330,55 @@ function ContactPage() {
 									htmlFor: "budget",
 									className: "eyebrow mb-2.5 block",
 									children: "Budget range"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "relative",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Select, {
+									name: "budget",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectTrigger, {
 										id: "budget",
-										name: "budget",
-										className: `${FIELD} appearance-none pr-10`,
-										defaultValue: "",
-										children: [
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "",
-												disabled: true,
-												className: "bg-zinc-950 text-muted-foreground",
-												children: "Select a range"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "Under $10k"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "$10k – $50k"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "$50k – $150k"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "$150k – $500k"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "$500k+"
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "Personal / Undefined"
-											})
-										]
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
+										className: `${FIELD} h-auto`,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectValue, { placeholder: "Select a range" })
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SelectContent, { children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "Under $10k",
+											children: "Under $10k"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "$10k – $50k",
+											children: "$10k – $50k"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "$50k – $150k",
+											children: "$50k – $150k"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "$150k – $500k",
+											children: "$150k – $500k"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "$500k+",
+											children: "$500k+"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+											value: "Personal / Undefined",
+											children: "Personal / Undefined"
+										})
+									] })]
 								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {
 									htmlFor: "scope",
 									className: "eyebrow mb-2.5 block",
 									children: "What do you need built?"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "relative",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Select, {
+									name: "scope",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectTrigger, {
 										id: "scope",
-										name: "scope",
-										className: `${FIELD} appearance-none pr-10`,
-										defaultValue: "",
-										children: [
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												value: "",
-												disabled: true,
-												className: "bg-zinc-950 text-muted-foreground",
-												children: "Select a capability"
-											}),
-											SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: s.title
-											}, s.slug)),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-												className: "bg-zinc-950 text-white",
-												children: "Other / General Inquiry"
-											})
-										]
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" })]
+										className: `${FIELD} h-auto`,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectValue, { placeholder: "Select a capability" })
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SelectContent, { children: [SERVICES.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+										value: s.title,
+										children: s.title
+									}, s.slug)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectItem, {
+										value: "Other / General Inquiry",
+										children: "Other / General Inquiry"
+									})] })]
 								})] })]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("label", {

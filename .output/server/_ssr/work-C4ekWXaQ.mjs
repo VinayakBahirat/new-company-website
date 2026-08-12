@@ -1,8 +1,8 @@
-import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { c as TiltCard, h as PROJECTS, n as MeshBackground, o as Reveal } from "./router-YnqRnFtS.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DTL290rk.mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { c as TiltCard, h as PROJECTS, n as MeshBackground, o as Reveal } from "./router-CX5FNO4k.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-J7hA-_-l.mjs";
 import { t as MockUi } from "./mock-ui-DM3a5Zh7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/work-CrO35ETr.js
+//#region node_modules/.nitro/vite/services/ssr/assets/work-C4ekWXaQ.js
 var import_jsx_runtime = require_jsx_runtime();
 function WorkPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
@@ -43,15 +43,12 @@ function WorkPage() {
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "p-6 sm:p-8",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 										className: "flex flex-wrap items-center justify-between gap-3",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary",
 											children: p.category
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-											className: "font-mono text-[0.65rem] text-muted-foreground",
-											children: p.metric
-										})]
+										})
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 										className: "mt-4 font-display text-2xl font-semibold",

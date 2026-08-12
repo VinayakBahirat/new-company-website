@@ -1,12 +1,13 @@
 import { a as __toESM } from "../_runtime.mjs";
 import { i as useMotionValue, n as useSpring, o as motion, r as useTransform } from "../_libs/framer-motion.mjs";
-import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { C as Cpu, E as Cloud, F as ArrowRight, M as BrainCircuit, N as Boxes, T as CodeXml, _ as Layers, c as ShieldCheck, o as Smartphone, r as Workflow, y as Gauge } from "../_libs/lucide-react.mjs";
-import { _ as SERVICES, a as Parallax, c as TiltCard, d as DIFFERENTIATORS, f as INDUSTRIES, h as PROJECTS, l as cn, m as PROCESS, n as MeshBackground, o as Reveal, p as METRICS, r as Counter, s as SplitHeading, v as TECH_GROUPS, y as VALUES } from "./router-YnqRnFtS.mjs";
-import { a as Section, i as Pill, n as CtaLink, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DTL290rk.mjs";
+import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { C as Cpu, E as Cloud, N as BrainCircuit, P as Boxes, T as CodeXml, _ as Layers, c as ShieldCheck, o as Smartphone, r as Workflow, y as Gauge } from "../_libs/lucide-react.mjs";
+import { _ as SERVICES, a as Parallax, c as TiltCard, d as DIFFERENTIATORS, f as INDUSTRIES, h as PROJECTS, l as cn, m as PROCESS, n as MeshBackground, o as Reveal, p as METRICS, r as Counter, s as SplitHeading, v as TECH_GROUPS, y as VALUES } from "./router-CX5FNO4k.mjs";
+import { a as Section, i as Pill, n as CtaLink, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-J7hA-_-l.mjs";
 import { t as StudioArchitecture } from "./studio-architecture-CZIrtLqZ.mjs";
 import { t as MockUi } from "./mock-ui-DM3a5Zh7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CDMIBmoc.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DHj_6GLp.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /**
@@ -896,6 +897,8 @@ function StudioIntro() {
 	});
 }
 function ProcessTimeline() {
+	const leftColumn = PROCESS.filter((_, idx) => idx % 2 === 0);
+	const rightColumn = PROCESS.filter((_, idx) => idx % 2 === 1);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
 		id: "process",
 		className: "py-24 sm:py-32",
@@ -903,23 +906,17 @@ function ProcessTimeline() {
 			eyebrow: "Delivery process",
 			title: "A Simple Process. Clear at Every Step.",
 			body: "We keep the process simple and transparent, so you always know what we're working on and what comes next."
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "relative mt-16",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"aria-hidden": true,
-				className: "absolute left-[11px] top-0 hidden h-full w-px bg-gradient-to-b from-primary/60 via-border to-transparent md:block"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "grid gap-4 md:grid-cols-2 md:gap-x-14",
-				children: PROCESS.map((stage, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
-					delay: i % 2 * .06,
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60 md:ml-10",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "absolute -left-10 top-7 hidden h-6 w-6 place-items-center rounded-full border border-border bg-background text-[0.6rem] font-medium text-muted-foreground transition-colors group-hover:border-primary group-hover:text-primary md:grid",
-								children: i + 1
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "flex flex-col gap-4",
+					children: leftColumn.map((stage, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .06,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-baseline gap-3",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 									className: "font-mono text-xs text-primary",
@@ -928,15 +925,35 @@ function ProcessTimeline() {
 									className: "font-display text-lg font-semibold",
 									children: stage.title
 								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2.5 text-sm leading-relaxed text-muted-foreground",
 								children: stage.body
-							})
-						]
-					})
-				}, stage.step))
-			})]
+							})]
+						})
+					}, stage.step))
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "flex flex-col gap-4",
+					children: rightColumn.map((stage, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: .06,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-baseline gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "font-mono text-xs text-primary",
+									children: stage.step
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "font-display text-lg font-semibold",
+									children: stage.title
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2.5 text-sm leading-relaxed text-muted-foreground",
+								children: stage.body
+							})]
+						})
+					}, stage.step))
+				})]
+			})
 		})]
 	});
 }
@@ -1027,13 +1044,6 @@ function WorkPreview() {
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "mt-2.5 text-sm leading-relaxed text-muted-foreground",
 									children: p.goal
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "mt-5 flex items-center justify-between border-t border-border pt-4",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "text-xs text-muted-foreground",
-										children: p.metric
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" })]
 								})
 							]
 						})]

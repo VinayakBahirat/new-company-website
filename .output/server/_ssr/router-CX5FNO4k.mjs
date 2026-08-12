@@ -1,13 +1,15 @@
 import { a as __toESM } from "../_runtime.mjs";
 import { a as useScroll, c as performance_default, i as useMotionValue, n as useSpring, o as motion, r as useTransform, s as AnimatePresence, t as useInView } from "../_libs/framer-motion.mjs";
-import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
-import { c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, l as useRouterState, m as createFileRoute, p as lazyRouteComponent, s as Scripts, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
+import { _ as useRouter, c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, l as useRouterState, m as createFileRoute, p as lazyRouteComponent, s as Scripts } from "../_libs/@tanstack/react-router+[...].mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
+import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as Lenis } from "../_libs/lenis.mjs";
-import { P as ArrowUpRight, a as Twitter, g as Linkedin, n as X, p as Menu, v as Github, x as Dribbble } from "../_libs/lucide-react.mjs";
+import { F as ArrowUpRight, a as Twitter, g as Linkedin, n as X, p as Menu, v as Github, x as Dribbble } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-YnqRnFtS.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CX5FNO4k.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -20,7 +22,7 @@ var __exportAll = (all, no_symbols) => {
 	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
 	return target;
 };
-var styles_default = "/assets/styles-AuyAe2zT.css";
+var styles_default = "/assets/styles-DnX6TbSx.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -48,10 +50,6 @@ var The_Nick_Strand_default = "/assets/The-Nick-Strand-DeJqWyGL.jpg";
 var The_Skintessa_default = "/assets/The-Skintessa-Opirfw3C.jpg";
 var Bell_Holme_default = "/assets/Bell-Holme-AXs3Y5RG.jpg";
 var Alice_Doremi_default = "/assets/Alice-Doremi-CKtkP-M9.jpg";
-var MenuMuse_default = "/assets/MenuMuse-FlkV_64J.png";
-var SparkFuture_Technologies_default = "/assets/SparkFuture-Technologies-D_mBX-ZT.png";
-var Jamea_Saifiyah_Business_School_default = "/assets/Jamea-Saifiyah-Business-School-DLzI-0gS.png";
-var Rugna_Adhaar_Foundation_Website_default = "/assets/Rugna-Adhaar-Foundation-Website-DqomdtAn.avif";
 var COMPANY = {
 	name: "Aeriform Systems",
 	short: "Aeriform",
@@ -255,7 +253,12 @@ var TECH_GROUPS = [
 			"Tailwind CSS",
 			"Three.js",
 			"React Three Fiber",
-			"Framer Motion"
+			"Framer Motion",
+			"Angular Bootstrap",
+			"Ant Design",
+			"TinyMCE",
+			"jqGrid",
+			"AG Grid"
 		]
 	},
 	{
@@ -263,7 +266,10 @@ var TECH_GROUPS = [
 		items: [
 			"Node.js",
 			"Express",
-			"FastAPI"
+			"FastAPI",
+			"Python",
+			".NET",
+			"Java"
 		]
 	},
 	{
@@ -271,7 +277,8 @@ var TECH_GROUPS = [
 		items: [
 			"PostgreSQL",
 			"MongoDB",
-			"Vector Search"
+			"Vector Search",
+			"Supabase"
 		]
 	},
 	{
@@ -411,6 +418,25 @@ var PROJECTS = [
 		accent: "from-[oklch(0.7_0.15_255)] to-[oklch(0.55_0.16_300)]"
 	},
 	{
+		slug: "the-nick-strand",
+		name: "The Nick Strand",
+		category: "Squarespace / Full Site Development",
+		goal: "Designed and developed professional Squarespace website with custom styling, responsive layouts, and optimized user experience.",
+		tech: [
+			"Squarespace",
+			"Custom CSS",
+			"JavaScript"
+		],
+		features: [
+			"Custom Squarespace styling",
+			"Responsive layout system",
+			"Optimized user experience"
+		],
+		metric: "Squarespace Site",
+		image: The_Nick_Strand_default,
+		accent: "from-[oklch(0.75_0.13_20)] to-[oklch(0.55_0.15_350)]"
+	},
+	{
 		slug: "six-vintage-rugs",
 		name: "Six Vintage Rugs",
 		category: "Shopify / Custom eCommerce",
@@ -447,25 +473,6 @@ var PROJECTS = [
 		metric: "Shopify Store",
 		image: Norsu_Home_default,
 		accent: "from-[oklch(0.78_0.12_95)] to-[oklch(0.6_0.13_60)]"
-	},
-	{
-		slug: "the-nick-strand",
-		name: "The Nick Strand",
-		category: "Squarespace / Full Site Development",
-		goal: "Designed and developed professional Squarespace website with custom styling, responsive layouts, and optimized user experience.",
-		tech: [
-			"Squarespace",
-			"Custom CSS",
-			"JavaScript"
-		],
-		features: [
-			"Custom Squarespace styling",
-			"Responsive layout system",
-			"Optimized user experience"
-		],
-		metric: "Squarespace Site",
-		image: The_Nick_Strand_default,
-		accent: "from-[oklch(0.75_0.13_20)] to-[oklch(0.55_0.15_350)]"
 	},
 	{
 		slug: "the-skintessa",
@@ -523,125 +530,43 @@ var PROJECTS = [
 		metric: "WordPress Site",
 		image: Alice_Doremi_default,
 		accent: "from-[oklch(0.81_0.13_110)] to-[oklch(0.63_0.15_80)]"
-	},
-	{
-		slug: "menumuse",
-		name: "MenuMuse",
-		category: "Next.js / Web App",
-		goal: "A digital menu platform that helps businesses create and share interactive menus, pricing, and dishes videos through a QR Code, improving customer experience and engagement.",
-		tech: [
-			"Next.js",
-			"Responsive design",
-			"GSAP",
-			"SEO",
-			"Web app",
-			"Prismic io",
-			"Vercel"
-		],
-		features: [
-			"QR Code menu sharing",
-			"Interactive dish videos",
-			"Real-time pricing dashboard"
-		],
-		metric: "Next.js Web App",
-		image: MenuMuse_default,
-		accent: "from-[oklch(0.85_0.14_85)] to-[oklch(0.7_0.15_55)]"
-	},
-	{
-		slug: "sparkfuture",
-		name: "SparkFuture Technologies",
-		category: "Next.js / Web Development",
-		goal: "A modern technology solutions company offering web, mobile, and software development services, focused on helping businesses enhance their digital presence, streamline operations, and achieve scalable growth.",
-		tech: [
-			"Next.js",
-			"Responsive design",
-			"GSAP",
-			"SEO",
-			"Web development",
-			"Github Action",
-			"CI/CD Development"
-		],
-		features: [
-			"Service portfolio showcases",
-			"Automated deployment pipelines",
-			"High-performance marketing pages"
-		],
-		metric: "Next.js Site",
-		image: SparkFuture_Technologies_default,
-		accent: "from-[oklch(0.75_0.15_230)] to-[oklch(0.6_0.15_260)]"
-	},
-	{
-		slug: "jsbs",
-		name: "Jamea Saifiyah Business School",
-		category: "Next.js / Web Portal",
-		goal: "An institution that provides quality education in business and management, rooted in the principles of the Islamic ethos.",
-		tech: [
-			"Bootstrap",
-			"CSS",
-			"Next.js",
-			"Vite",
-			"SASS/SCSS"
-		],
-		features: [
-			"Business curriculum modules",
-			"Islamic ethos business case studies",
-			"Performance-optimized static generation"
-		],
-		metric: "Next.js Portal",
-		image: Jamea_Saifiyah_Business_School_default,
-		accent: "from-[oklch(0.78_0.11_140)] to-[oklch(0.58_0.13_175)]"
-	},
-	{
-		slug: "rugna-adhaar",
-		name: "Rugna Adhaar Foundation Website",
-		category: "Next.js / Frontend & Payment",
-		goal: "A website built for Rugna Adhaar Foundation — providing support services and community outreach via a modern frontend, payment integration and automated tax receipt via email to donor.",
-		tech: [
-			"Next.js",
-			"Bootstrap",
-			"Razorpay",
-			"Automated Email Receipt",
-			"Smtp Integration"
-		],
-		features: [
-			"Razorpay payment gateway",
-			"Automated 80G tax receipt email",
-			"Community outreach dynamic pages"
-		],
-		metric: "Next.js Website",
-		image: Rugna_Adhaar_Foundation_Website_default,
-		accent: "from-[oklch(0.75_0.13_30)] to-[oklch(0.55_0.15_5)]"
 	}
 ];
 var ROLES = [
 	{
-		title: "Senior Product Engineer",
-		team: "Product",
-		location: "Remote · EU / US",
-		type: "Full-time"
-	},
-	{
-		title: "AI Systems Engineer",
+		title: "AI Engineer",
 		team: "Applied AI",
-		location: "San Francisco / Remote",
+		location: "Remote",
 		type: "Full-time"
 	},
 	{
-		title: "Platform & Cloud Engineer",
+		title: "Fullstack Engineer",
+		team: "Engineering",
+		location: "Remote",
+		type: "Full-time"
+	},
+	{
+		title: "Business Development",
+		team: "Growth",
+		location: "Remote",
+		type: "Full-time"
+	},
+	{
+		title: "DevOps Engineer",
 		team: "Infrastructure",
-		location: "Amsterdam / Remote",
+		location: "Remote",
 		type: "Full-time"
 	},
 	{
-		title: "Senior Product Designer",
-		team: "Design",
-		location: "Remote · Global",
+		title: "Java Engineer",
+		team: "Engineering",
+		location: "Remote",
 		type: "Full-time"
 	},
 	{
-		title: "Engineering Manager",
-		team: "Delivery",
-		location: "Singapore / Remote",
+		title: ".Net Engineer",
+		team: "Engineering",
+		location: "Remote",
 		type: "Full-time"
 	}
 ];
@@ -1354,7 +1279,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./routes-CDMIBmoc.mjs");
+var $$splitComponentImporter$5 = () => import("./routes-DHj_6GLp.mjs");
 var TITLE$5 = "Aeriform Systems — Enterprise Software & AI Product Engineering";
 var DESCRIPTION$5 = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route$5 = createFileRoute("/")({
@@ -1375,7 +1300,7 @@ var Route$5 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./careers-BImymTif.mjs");
+var $$splitComponentImporter$4 = () => import("./careers-BX8CIsz5.mjs");
 var TITLE$4 = "Careers — Engineering, AI and Design Roles | Aeriform Systems";
 var DESCRIPTION$4 = "Open roles for senior product engineers, AI systems engineers, platform engineers, designers and delivery leads. Remote-friendly, senior-weighted teams.";
 var Route$4 = createFileRoute("/careers")({
@@ -1396,7 +1321,7 @@ var Route$4 = createFileRoute("/careers")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./contact-DcXurO12.mjs");
+var $$splitComponentImporter$3 = () => import("./contact-C1H713sN.mjs");
 var TITLE$3 = "Contact — Start a Project | Aeriform Systems";
 var DESCRIPTION$3 = "Tell us about the platform, AI product or system you need built. We reply within one business day and start with a two-week discovery.";
 var Route$3 = createFileRoute("/contact")({
@@ -1417,7 +1342,7 @@ var Route$3 = createFileRoute("/contact")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services-Gpx1oHbo.mjs");
+var $$splitComponentImporter$2 = () => import("./services-CH4l729k.mjs");
 var TITLE$2 = "Services — Enterprise, AI, SaaS & Cloud Engineering | Aeriform Systems";
 var DESCRIPTION$2 = "Enterprise software, AI product development, SaaS platforms, mobile, cloud operations, automation and performance engineering delivered by senior pods.";
 var Route$2 = createFileRoute("/services")({
@@ -1438,7 +1363,7 @@ var Route$2 = createFileRoute("/services")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./studio-CmMVEW-i.mjs");
+var $$splitComponentImporter$1 = () => import("./studio-DFXEqDwA.mjs");
 var TITLE$1 = "Studio — Story, Mission and Values | Aeriform Systems";
 var DESCRIPTION$1 = "An independent engineering studio of 68 product, AI, infrastructure and design specialists building long-lived software systems across 19 countries.";
 var Route$1 = createFileRoute("/studio")({
@@ -1459,7 +1384,7 @@ var Route$1 = createFileRoute("/studio")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./work-CrO35ETr.mjs");
+var $$splitComponentImporter = () => import("./work-C4ekWXaQ.mjs");
 var TITLE = "Selected Work — Enterprise Platforms & AI Products | Aeriform Systems";
 var DESCRIPTION = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route = createFileRoute("/work")({

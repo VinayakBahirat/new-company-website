@@ -1,7 +1,7 @@
-import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
-import { _ as SERVICES, m as PROCESS, n as MeshBackground, o as Reveal, v as TECH_GROUPS } from "./router-YnqRnFtS.mjs";
-import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-DTL290rk.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services-Gpx1oHbo.js
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { _ as SERVICES, m as PROCESS, n as MeshBackground, o as Reveal, v as TECH_GROUPS } from "./router-CX5FNO4k.mjs";
+import { a as Section, o as SectionHeading, r as GlassCard, t as ClosingCta } from "./primitives-J7hA-_-l.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/services-CH4l729k.js
 var import_jsx_runtime = require_jsx_runtime();
 function ServicesPage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [

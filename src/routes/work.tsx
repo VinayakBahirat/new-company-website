@@ -62,7 +62,7 @@ function WorkPage() {
                       <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">
                         {p.category}
                       </p>
-                      <p className="font-mono text-[0.65rem] text-muted-foreground">{p.metric}</p>
+                      {/* <p className="font-mono text-[0.65rem] text-muted-foreground">{p.metric}</p> */}
                     </div>
                     <h2 className="mt-4 font-display text-2xl font-semibold">{p.name}</h2>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.goal}</p>

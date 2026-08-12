@@ -9,6 +9,14 @@ import { GlassCard, Section, SectionHeading } from "@/components/site/primitives
 import { COMPANY, SERVICES } from "@/content/site";
 import { toast } from "sonner";
 import { sendContactEmail } from "@/lib/emailjs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 
 
 const TITLE = "Contact — Start a Project | Aeriform Systems";
@@ -94,7 +102,7 @@ function ContactPage() {
                   <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/15 text-primary">
                     <Check className="h-6 w-6" />
                   </span>
-                  <h2 className="mt-6 font-display text-2xl font-semibold">Message received</h2>
+                  <h2 className="mt-6 font-display text-2xl font-semibold">Message successfully sent</h2>
                   <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
                     Thank you. We will get back to you within one business day with next steps.
                   </p>
@@ -134,37 +142,39 @@ function ContactPage() {
                       <label htmlFor="budget" className="eyebrow mb-2.5 block">
                         Budget range
                       </label>
-                      <div className="relative">
-                        <select id="budget" name="budget" className={`${FIELD} appearance-none pr-10`} defaultValue="">
-                          <option value="" disabled className="bg-zinc-950 text-muted-foreground">
-                            Select a range
-                          </option>
-                          <option className="bg-zinc-950 text-white">Under $10k</option>
-                          <option className="bg-zinc-950 text-white">$10k – $50k</option>
-                          <option className="bg-zinc-950 text-white">$50k – $150k</option>
-                          <option className="bg-zinc-950 text-white">$150k – $500k</option>
-                          <option className="bg-zinc-950 text-white">$500k+</option>
-                          <option className="bg-zinc-950 text-white">Personal / Undefined</option>
-                        </select>
-                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                      </div>
+                      <Select name="budget">
+                        <SelectTrigger id="budget" className={`${FIELD} h-auto`}>
+                          <SelectValue placeholder="Select a range" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Under $10k">Under $10k</SelectItem>
+                          <SelectItem value="$10k – $50k">$10k – $50k</SelectItem>
+                          <SelectItem value="$50k – $150k">$50k – $150k</SelectItem>
+                          <SelectItem value="$150k – $500k">$150k – $500k</SelectItem>
+                          <SelectItem value="$500k+">$500k+</SelectItem>
+                          <SelectItem value="Personal / Undefined">Personal / Undefined</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                     <div>
                       <label htmlFor="scope" className="eyebrow mb-2.5 block">
                         What do you need built?
                       </label>
-                      <div className="relative">
-                        <select id="scope" name="scope" className={`${FIELD} appearance-none pr-10`} defaultValue="">
-                          <option value="" disabled className="bg-zinc-950 text-muted-foreground">
-                            Select a capability
-                          </option>
+                      <Select name="scope">
+                        <SelectTrigger id="scope" className={`${FIELD} h-auto`}>
+                          <SelectValue placeholder="Select a capability" />
+                        </SelectTrigger>
+                        <SelectContent>
                           {SERVICES.map((s) => (
-                            <option key={s.slug} className="bg-zinc-950 text-white">{s.title}</option>
+                            <SelectItem key={s.slug} value={s.title}>
+                              {s.title}
+                            </SelectItem>
                           ))}
-                          <option className="bg-zinc-950 text-white">Other / General Inquiry</option>
-                        </select>
-                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                      </div>
+                          <SelectItem value="Other / General Inquiry">
+                            Other / General Inquiry
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                   <div>

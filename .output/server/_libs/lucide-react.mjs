@@ -1,5 +1,5 @@
 import { a as __toESM } from "../_runtime.mjs";
-import { r as require_react } from "./react+tanstack__react-query.mjs";
+import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
 //#region node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 /**
@@ -109,19 +109,6 @@ var createLucideIcon = (iconName, iconNode) => {
 	Component.displayName = toPascalCase(iconName);
 	return Component;
 };
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var ArrowRight = createLucideIcon("arrow-right", [["path", {
-	d: "M5 12h14",
-	key: "1ays0h"
-}], ["path", {
-	d: "m12 5 7 7-7 7",
-	key: "xquz4c"
-}]]);
 /**
 * @license lucide-react v0.575.0 - ISC
 *
@@ -288,6 +275,16 @@ var ChevronDown = createLucideIcon("chevron-down", [["path", {
 var ChevronRight = createLucideIcon("chevron-right", [["path", {
 	d: "m9 18 6-6-6-6",
 	key: "mthhwq"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ChevronUp = createLucideIcon("chevron-up", [["path", {
+	d: "m18 15-6-6-6 6",
+	key: "153udz"
 }]]);
 /**
 * @license lucide-react v0.575.0 - ISC
@@ -879,4 +876,4 @@ var Zap = createLucideIcon("zap", [["path", {
 	key: "1xq2db"
 }]]);
 //#endregion
-export { ChevronDown as A, Cpu as C, Clock as D, Cloud as E, ArrowRight as F, BrainCircuit as M, Boxes as N, CircleCheck as O, ArrowUpRight as P, Database as S, CodeXml as T, Layers as _, Twitter as a, FileText as b, ShieldCheck as c, PanelsTopLeft as d, Network as f, Linkedin as g, Mail as h, Users as i, Check as j, ChevronRight as k, Server as l, MapPin as m, X as n, Smartphone as o, Menu as p, Workflow as r, Shield as s, Zap as t, Phone as u, Github as v, Compass as w, Dribbble as x, Gauge as y };
+export { ChevronRight as A, Cpu as C, Clock as D, Cloud as E, ArrowUpRight as F, Check as M, BrainCircuit as N, CircleCheck as O, Boxes as P, Database as S, CodeXml as T, Layers as _, Twitter as a, FileText as b, ShieldCheck as c, PanelsTopLeft as d, Network as f, Linkedin as g, Mail as h, Users as i, ChevronDown as j, ChevronUp as k, Server as l, MapPin as m, X as n, Smartphone as o, Menu as p, Workflow as r, Shield as s, Zap as t, Phone as u, Github as v, Compass as w, Dribbble as x, Gauge as y };
