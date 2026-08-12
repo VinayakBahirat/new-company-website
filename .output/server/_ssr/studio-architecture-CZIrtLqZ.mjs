@@ -2,7 +2,7 @@ import { a as __toESM } from "../_runtime.mjs";
 import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { C as Cpu, S as Database, d as PanelsTopLeft, l as Server, s as Shield, t as Zap } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/studio-architecture-Bp_n5BlN.js
+//#region node_modules/.nitro/vite/services/ssr/assets/studio-architecture-CZIrtLqZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function StudioArchitecture() {
@@ -77,7 +77,7 @@ function StudioArchitecture() {
 							},
 							transition: { duration: .2 },
 							className: "font-mono text-xs text-muted-foreground leading-normal",
-							children: layers[hoveredIndex].desc
+							children: layers[hoveredIndex]?.desc
 						}, hoveredIndex) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.p, {
 							initial: {
 								y: 20,
@@ -518,7 +518,7 @@ function StudioArchitecture() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/70 opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex h-2 w-2 rounded-full bg-primary" })]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "font-mono text-[0.65rem] text-muted-foreground uppercase tracking-widest",
-						children: hoveredIndex !== null ? `FOCUSING: ${layers[hoveredIndex].id.toUpperCase()}` : "MONITORING TOPOLOGY"
+						children: hoveredIndex !== null ? `FOCUSING: ${layers[hoveredIndex]?.id.toUpperCase()}` : "MONITORING TOPOLOGY"
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "font-mono text-[0.65rem] text-muted-foreground/50",

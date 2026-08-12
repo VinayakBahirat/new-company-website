@@ -7,7 +7,7 @@ import { t as Lenis } from "../_libs/lenis.mjs";
 import { P as ArrowUpRight, a as Twitter, g as Linkedin, n as X, p as Menu, v as Github, x as Dribbble } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-21v6u0fD.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-YnqRnFtS.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -1354,7 +1354,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./routes-DpIfSnta.mjs");
+var $$splitComponentImporter$5 = () => import("./routes-CDMIBmoc.mjs");
 var TITLE$5 = "Aeriform Systems — Enterprise Software & AI Product Engineering";
 var DESCRIPTION$5 = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route$5 = createFileRoute("/")({
@@ -1375,7 +1375,7 @@ var Route$5 = createFileRoute("/")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./careers-z199jRn-.mjs");
+var $$splitComponentImporter$4 = () => import("./careers-BImymTif.mjs");
 var TITLE$4 = "Careers — Engineering, AI and Design Roles | Aeriform Systems";
 var DESCRIPTION$4 = "Open roles for senior product engineers, AI systems engineers, platform engineers, designers and delivery leads. Remote-friendly, senior-weighted teams.";
 var Route$4 = createFileRoute("/careers")({
@@ -1396,7 +1396,7 @@ var Route$4 = createFileRoute("/careers")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./contact-Bx_xoJKb.mjs");
+var $$splitComponentImporter$3 = () => import("./contact-DcXurO12.mjs");
 var TITLE$3 = "Contact — Start a Project | Aeriform Systems";
 var DESCRIPTION$3 = "Tell us about the platform, AI product or system you need built. We reply within one business day and start with a two-week discovery.";
 var Route$3 = createFileRoute("/contact")({
@@ -1417,7 +1417,7 @@ var Route$3 = createFileRoute("/contact")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services-DAisaz03.mjs");
+var $$splitComponentImporter$2 = () => import("./services-Gpx1oHbo.mjs");
 var TITLE$2 = "Services — Enterprise, AI, SaaS & Cloud Engineering | Aeriform Systems";
 var DESCRIPTION$2 = "Enterprise software, AI product development, SaaS platforms, mobile, cloud operations, automation and performance engineering delivered by senior pods.";
 var Route$2 = createFileRoute("/services")({
@@ -1438,7 +1438,7 @@ var Route$2 = createFileRoute("/services")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./studio-CBvHnyz1.mjs");
+var $$splitComponentImporter$1 = () => import("./studio-CmMVEW-i.mjs");
 var TITLE$1 = "Studio — Story, Mission and Values | Aeriform Systems";
 var DESCRIPTION$1 = "An independent engineering studio of 68 product, AI, infrastructure and design specialists building long-lived software systems across 19 countries.";
 var Route$1 = createFileRoute("/studio")({
@@ -1459,7 +1459,7 @@ var Route$1 = createFileRoute("/studio")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./work-DkZOJkiW.mjs");
+var $$splitComponentImporter = () => import("./work-CrO35ETr.mjs");
 var TITLE = "Selected Work — Enterprise Platforms & AI Products | Aeriform Systems";
 var DESCRIPTION = "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 var Route = createFileRoute("/work")({

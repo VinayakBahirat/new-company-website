@@ -1,12 +1,11 @@
-import { a as __toESM } from "../_runtime.mjs";
-import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
+import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { o as motion, s as AnimatePresence } from "../_libs/framer-motion.mjs";
 import { A as ChevronDown, O as CircleCheck, P as ArrowUpRight, b as FileText, f as Network, h as Mail, j as Check, k as ChevronRight, l as Server, u as Phone, w as Compass } from "../_libs/lucide-react.mjs";
 import { _ as SERVICES, n as MeshBackground, o as Reveal, u as COMPANY } from "./router-21v6u0fD.mjs";
 import { a as Section, o as SectionHeading, r as GlassCard } from "./primitives-DwWnNtZZ.mjs";
 import { t as toast } from "../_libs/sonner.mjs";
 import { t as es_default } from "../_libs/emailjs__browser.mjs";
-import processModule from "node:process";
 //#region node_modules/.nitro/vite/services/ssr/assets/contact-Bx_xoJKb.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
@@ -234,7 +233,7 @@ function getEnvVar(key) {
 		"VITE_EMAILJS_SERVICE_ID": "service_xaoi3mi",
 		"VITE_EMAILJS_TEMPLATE_ID": "template_10dba97"
 	}[key];
-	if (typeof processModule !== "undefined" && processModule.env && processModule.env[key]) return processModule.env[key];
+	if (typeof process !== "undefined" && process.env && process.env[key]) return process.env[key];
 }
 /**
 * Sends a contact form submission email using EmailJS.

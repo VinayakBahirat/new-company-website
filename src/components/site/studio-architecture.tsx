@@ -70,7 +70,7 @@ export function StudioArchitecture() {
                 transition={{ duration: 0.2 }}
                 className="font-mono text-xs text-muted-foreground leading-normal"
               >
-                {layers[hoveredIndex].desc}
+                {layers[hoveredIndex]?.desc}
               </motion.p>
             ) : (
               <motion.p
@@ -345,7 +345,7 @@ export function StudioArchitecture() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
           </span>
           <span className="font-mono text-[0.65rem] text-muted-foreground uppercase tracking-widest">
-            {hoveredIndex !== null ? `FOCUSING: ${layers[hoveredIndex].id.toUpperCase()}` : "MONITORING TOPOLOGY"}
+            {hoveredIndex !== null ? `FOCUSING: ${layers[hoveredIndex]?.id.toUpperCase()}` : "MONITORING TOPOLOGY"}
           </span>
         </div>
         <span className="font-mono text-[0.65rem] text-muted-foreground/50">V1.0.4 // ISOMETRIC</span>
