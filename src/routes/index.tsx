@@ -6,14 +6,15 @@ import {
   BrainCircuit,
   Cloud,
   Code2,
-  Cpu,
   Gauge,
-  Layers,
-  ShieldCheck,
   Smartphone,
   Workflow,
+  Globe,
+  Briefcase,
+  Server,
+  Zap,
 } from "lucide-react";
-import { MeshBackground, Hairline } from "@/components/site/mesh-background";
+import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
 import { StudioArchitecture } from "@/components/site/studio-architecture";
 import { HeroDashboard } from "@/components/site/hero-dashboard";
@@ -33,6 +34,9 @@ import {
   SectionHeading,
 } from "@/components/site/primitives";
 import { MockUi } from "@/components/site/mock-ui";
+import { LeadForm } from "@/components/site/lead-form";
+import { TestimonialsSection } from "@/components/site/testimonials";
+import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import {
   COMPANY,
   DIFFERENTIATORS,
@@ -61,7 +65,17 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const SERVICE_ICONS = [Layers, BrainCircuit, Boxes, Code2, Smartphone, Cloud, Workflow, Cpu, Gauge];
+const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  "website": Globe,
+  "AI": BrainCircuit,
+  "Mobile App": Smartphone,
+  "Business Software": Briefcase,
+  "SaaS Product Development": Boxes,
+  "Business Automation": Workflow,
+  "Backend & API Development": Server,
+  "Cloud & DevOps Solutions": Cloud,
+  "Application Performance Optimization": Gauge,
+};
 
 function HomePage() {
   return (
@@ -69,14 +83,16 @@ function HomePage() {
       <Hero />
       <MarqueeStrip />
       <CapabilityGrid />
+      <IndustriesSection />
       <StudioIntro />
       <ProcessTimeline />
       <TechSection />
       <WorkPreview />
-      <IndustriesSection />
+      <ClientTestimonials />
       <WhyUs />
       <StatsBand />
       <ClosingCta />
+      <WhatsAppFab />
     </>
   );
 }
@@ -133,11 +149,12 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <CtaLink to="/contact">Schedule a meeting</CtaLink>
+            <CtaLink to="/contact">Get Free Proposal →</CtaLink>
             <CtaLink to="/services" variant="ghost">
-              Explore capabilities
+              Explore Services
             </CtaLink>
           </motion.div>
+
 
           <motion.dl
             initial={{ opacity: 0 }}
@@ -212,7 +229,7 @@ function CapabilityGrid() {
 
       <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service, i) => {
-          const Icon = SERVICE_ICONS[i % SERVICE_ICONS.length]!;
+          const Icon = SERVICE_ICONS[service.slug] || Code2;
           return (
             <Reveal key={service.slug} delay={i * 0.04}>
               <TiltCard className="h-full">
@@ -253,7 +270,8 @@ function StudioIntro() {
         <div>
           <SectionHeading
             eyebrow="The studio"
-            title="We take the parts of a product that are hard to undo."
+            // title="We take the parts of a product that are hard to undo."
+            title="We build software that makes your business easier to run."
             body="A successful product starts with the right foundation. We take time to understand your business, plan the best solution, and build software that is reliable, scalable, and ready for the future."
           />
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-2">
@@ -510,6 +528,80 @@ function StatsBand() {
           ))}
         </div>
       </GlassCard>
+    </Section>
+  );
+}
+
+/* ----------------------------------------------------------- Testimonials */
+
+function ClientTestimonials() {
+  return (
+    <Section className="py-24 sm:py-32">
+      <div className="flex flex-wrap items-end justify-between gap-8">
+        <SectionHeading
+          eyebrow="Client Testimonials"
+          title="What Our Clients Say"
+          body="A few words from the people we've had the opportunity to work with."
+        />
+      </div>
+      <TestimonialsSection />
+    </Section>
+  );
+}
+
+/* --------------------------------------------------------- Lead capture */
+
+function LeadCaptureSection() {
+  return (
+    <Section id="get-a-quote" className="py-24 sm:py-32">
+      <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        {/* Left: Copy */}
+        <div>
+          <Reveal>
+            <p className="eyebrow flex items-center gap-2.5">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
+              Free Project Proposal
+            </p>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <h2 className="mt-5 text-balance text-3xl font-semibold leading-[1.05] sm:text-4xl md:text-5xl">
+              Let's Talk About
+              <br />
+              <span className="text-gradient">Your Project.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              Fill in the form and we'll send a tailored proposal with timelines
+              and cost estimates — within 24 hours. No pushy sales calls.
+            </p>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Free 30-minute strategy call included",
+                "Detailed proposal within 24 hours",
+                "No lock-in contracts",
+                "Direct access to senior engineers",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
+                    <Zap className="h-3 w-3" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+
+        {/* Right: Form */}
+        <Reveal delay={0.1}>
+          <GlassCard className="rounded-[1.8rem] p-7 sm:p-10">
+            <LeadForm />
+          </GlassCard>
+        </Reveal>
+      </div>
     </Section>
   );
 }

@@ -61,7 +61,12 @@ export function SplitHeading({
   className?: string;
   delay?: number;
 }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const words = text.split(" ");
+  
   return (
     <span className={cn("inline-block", className)}>
       {words.map((word, i) => (
@@ -69,10 +74,10 @@ export function SplitHeading({
           <motion.span
             className="inline-block"
             initial={{ y: "108%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
+            animate={mounted ? { y: "0%", opacity: 1 } : { y: "108%", opacity: 0 }}
             transition={{
-              duration: 0.95,
-              delay: delay + i * 0.055,
+              duration: 0.5,
+              delay: delay + i * 0.03,
               ease: [0.16, 1, 0.3, 1],
             }}
           >
