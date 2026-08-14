@@ -23,6 +23,7 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Services", to: "/services" as const },
+  { label: "Industries", to: "/industries" as const },
   { label: "Work", to: "/work" as const },
   { label: "Studio", to: "/studio" as const },
   { label: "Careers", to: "/careers" as const },
@@ -113,62 +114,63 @@ export const SERVICES = [
   //   points: ["Faster Loading", "Better Performance", "Optimized Code"],
   // },
   {
-    slug: "website",
+    slug: "website-web-app-development",
     title: "Website & Web App Development",
     summary:
       "Modern websites and web applications built to deliver seamless user experiences, support business goals, and scale with your needs.",
     points: ["Responsive & Modern UI", "High Performance", "Secure Development"],
   },
   {
-    slug: "AI",
+    slug: "ai-solutions-development",
     title: "AI Solutions & Development",
     summary:
       "Practical AI solutions that help businesses automate processes, improve decision-making, and create smarter digital experiences.",
     points: ["AI-Powered Applications", "AI Chatbots & Assistants", "Custom AI Solutions"],
   },
   {
-    slug: "Mobile App",
+    slug: "mobile-app-development",
     title: "Mobile App Development",
     summary:
       "Reliable and user-friendly mobile applications designed to deliver smooth experiences across Android and iOS platforms.",
     points: ["Android & iOS Development", "Intuitive User Experience", "App Store Deployment"],
-  }, {
-    slug: "Business Software",
+  },
+  {
+    slug: "business-software-solutions",
     title: "Business Software Solutions",
     summary:
-      "Custom software solutions designed around your business processes to improve efficiency, simplify operations, and support growth",
+      "Custom software solutions designed around your business processes to improve efficiency, simplify operations, and support growth.",
     points: ["Custom Software Solutions", "Business Process Management", "Scalable Architecture"],
   },
   {
-    slug: "SaaS Product Development",
+    slug: "saas-product-development",
     title: "SaaS Product Development",
     summary:
       "Scalable SaaS products built with secure architecture, seamless user management, and the flexibility to grow with your business.",
     points: ["Multi-Tenant Architecture", "Subscription & Billing", "User Management"],
   },
   {
-    slug: "Business Automation",
+    slug: "business-automation",
     title: "Business Automation",
     summary:
       "Automate repetitive tasks and business workflows to reduce manual effort, minimize errors, and improve operational efficiency.",
     points: ["Workflow Automation", "Process Optimization", "Automated Notifications"],
   },
   {
-    slug: "Backend & API Development",
+    slug: "backend-api-development",
     title: "Backend & API Development",
     summary:
       "Secure and scalable backend systems that power your applications, connect services, manage data, and support reliable digital experiences.",
     points: ["API Development", "System Integration", "Secure Data Management"],
   },
   {
-    slug: "Cloud & DevOps Solutions",
+    slug: "cloud-devops-solutions",
     title: "Cloud & DevOps Solutions",
     summary:
       "Reliable cloud and deployment solutions that keep your applications secure, scalable, available, and ready for continuous growth.",
     points: ["Cloud Deployment", "CI/CD Automation", "Infrastructure Management"],
   },
   {
-    slug: "Application Performance Optimization",
+    slug: "application-performance-optimization",
     title: "Application Performance Optimization",
     summary:
       "Improve the speed, reliability, and efficiency of your existing applications with optimized code and performance-focused solutions.",
