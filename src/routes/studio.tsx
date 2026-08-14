@@ -1,10 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
 import { StudioArchitecture } from "@/components/site/studio-architecture";
 import { Counter, Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { COMPANY, DIFFERENTIATORS, INDUSTRIES, STATS, VALUES } from "@/content/site";
+import { getIndustrySlug } from "@/content/industry-details";
 
 const TITLE = "Studio — Story, Mission and Values | Aeriform Systems";
 const DESCRIPTION =
@@ -101,9 +103,14 @@ function StudioPage() {
           <div className="flex flex-wrap gap-2.5">
             {INDUSTRIES.map((industry, i) => (
               <Reveal key={industry} delay={i * 0.03}>
-                <span className="inline-flex items-center rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground">
+                <Link
+                  to="/industries/$slug"
+                  params={{ slug: getIndustrySlug(industry) }}
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+                >
                   {industry}
-                </span>
+                  <ArrowRight className="h-3.5 w-3.5 opacity-60" />
+                </Link>
               </Reveal>
             ))}
           </div>

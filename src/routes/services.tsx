@@ -91,20 +91,22 @@ function ServicesPage() {
                   ))}
                 </ul>
                 {/* Per-service CTA */}
-                <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
+                <div className="mt-6 flex flex-wrap items-center justify-between border-t border-border pt-5 gap-3">
                   <Link
-                    to="/contact"
-                    id={`service-cta-${service.slug}`}
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
+                    id={`service-detail-${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:gap-2.5"
                   >
-                    Get a quote for this
+                    View detailed service breakdown
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                   <Link
-                    to="/contact"
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
                     className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
                   >
-                    Free consultation →
+                    Explore Service →
                   </Link>
                 </div>
               </GlassCard>

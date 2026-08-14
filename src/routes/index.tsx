@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { getIndustrySlug } from "@/content/industry-details";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -66,28 +67,28 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  "website": Globe,
-  "AI": BrainCircuit,
-  "Mobile App": Smartphone,
-  "Business Software": Briefcase,
-  "SaaS Product Development": Boxes,
-  "Business Automation": Workflow,
-  "Backend & API Development": Server,
-  "Cloud & DevOps Solutions": Cloud,
-  "Application Performance Optimization": Gauge,
+  "website-web-app-development": Globe,
+  "ai-solutions-development": BrainCircuit,
+  "mobile-app-development": Smartphone,
+  "business-software-solutions": Briefcase,
+  "saas-product-development": Boxes,
+  "business-automation": Workflow,
+  "backend-api-development": Server,
+  "cloud-devops-solutions": Cloud,
+  "application-performance-optimization": Gauge,
 };
 
 function HomePage() {
   return (
     <>
       <Hero />
-      <MarqueeStrip />
+      <StudioIntro />
       <CapabilityGrid />
       <IndustriesSection />
-      <StudioIntro />
       <ProcessTimeline />
       <TechSection />
       <WorkPreview />
+      <MarqueeStrip />
       <ClientTestimonials />
       <WhyUs />
       <StatsBand />
@@ -232,23 +233,25 @@ function CapabilityGrid() {
           const Icon = SERVICE_ICONS[service.slug] || Code2;
           return (
             <Reveal key={service.slug} delay={i * 0.04}>
-              <TiltCard className="h-full">
-                <GlassCard className="group h-full rounded-[1.4rem] p-7 transition-colors duration-500 hover:border-primary/25">
-                  <div className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-glass text-primary transition-transform duration-500 group-hover:-translate-y-0.5">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-6 text-lg font-semibold">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.summary}</p>
-                  <ul className="mt-6 space-y-2 border-t border-border pt-5">
-                    {service.points.map((p) => (
-                      <li key={p} className="flex items-center gap-2.5 text-[0.8rem] text-muted-foreground">
-                        <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </GlassCard>
-              </TiltCard>
+              <Link to="/services/$slug" params={{ slug: service.slug }} className="block h-full">
+                <TiltCard className="h-full">
+                  <GlassCard className="group h-full rounded-[1.4rem] p-6 transition-all duration-300 hover:border-primary/40 hover:scale-[1.01]">
+                    <div className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-glass text-primary transition-transform duration-500 group-hover:-translate-y-0.5">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="mt-5 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground line-clamp-1">
+                      {service.summary}
+                    </p>
+                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-primary">
+                      <span>Explore Service</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </GlassCard>
+                </TiltCard>
+              </Link>
             </Reveal>
           );
         })}
@@ -457,9 +460,14 @@ function IndustriesSection() {
         <div className="flex flex-wrap gap-2.5">
           {INDUSTRIES.map((industry, i) => (
             <Reveal key={industry} delay={i * 0.03}>
-              <span className="inline-flex items-center rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground">
+              <Link
+                to="/industries/$slug"
+                params={{ slug: getIndustrySlug(industry) }}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-glass px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+              >
                 {industry}
-              </span>
+                <ArrowRight className="h-3.5 w-3.5 opacity-60" />
+              </Link>
             </Reveal>
           ))}
         </div>
