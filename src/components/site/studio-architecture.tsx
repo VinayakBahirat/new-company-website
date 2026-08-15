@@ -104,27 +104,30 @@ export function StudioArchitecture() {
         >
           {/* Vertical alignment guidelines when hovered */}
           {isContainerHovered && (
-            <svg className="absolute inset-0 pointer-events-none h-full w-full overflow-visible z-0" style={{ transformStyle: "preserve-3d" }}>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 pointer-events-none h-full w-full overflow-visible z-0" style={{ transformStyle: "preserve-3d" }}>
               <motion.line
-                x1="20%" y1="20%" x2="20%" y2="20%"
+                x1="20" y1="20" x2="20"
+                initial={{ y2: 20 }}
+                animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                animate={{ y2: -140 }}
                 stroke="rgba(255,255,255,0.12)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
               />
               <motion.line
-                x1="80%" y1="20%" x2="80%" y2="20%"
+                x1="80" y1="20" x2="80"
+                initial={{ y2: 20 }}
+                animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                animate={{ y2: -140 }}
                 stroke="rgba(255,255,255,0.12)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
               />
               <motion.line
-                x1="50%" y1="80%" x2="50%" y2="80%"
+                x1="50" y1="80" x2="50"
+                initial={{ y2: 80 }}
+                animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                animate={{ y2: -140 }}
                 stroke="rgba(255,255,255,0.12)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}

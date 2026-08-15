@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getIndustrySlug } from "@/content/industry-details";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 import {
   ArrowRight,
   Boxes,
@@ -83,15 +85,16 @@ function HomePage() {
     <>
       <Hero />
       <StudioIntro />
+      <StatsBand />
       <CapabilityGrid />
       <IndustriesSection />
       <ProcessTimeline />
       <TechSection />
       <WorkPreview />
       <MarqueeStrip />
-      <ClientTestimonials />
       <WhyUs />
-      <StatsBand />
+      <ClientTestimonials />
+
       <ClosingCta />
       <WhatsAppFab />
     </>
@@ -150,7 +153,7 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <CtaLink to="/contact">Get Free Proposal →</CtaLink>
+            <CtaLink to="/contact">Get Free Proposal</CtaLink>
             <CtaLink to="/services" variant="ghost">
               Explore Services
             </CtaLink>
@@ -356,34 +359,48 @@ function TechSection() {
     <Section id="technology" className="py-24 sm:py-32">
       <SectionHeading
         eyebrow="Technology"
-        title="Technology That Powers Every Solution."
+        title="Modern Tech For Modern Problems."
         body="We choose proven technologies that help us build secure, fast, and reliable software for every project."
       />
-      <div className="mt-16 grid gap-4 lg:grid-cols-5">
-        {TECH_GROUPS.map((group, gi) => (
-          <Reveal key={group.group} delay={gi * 0.06}>
-            <GlassCard className="h-full rounded-[1.4rem] p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-sm font-semibold uppercase tracking-[0.14em]">
-                  {group.group}
-                </h3>
-                <span className="font-mono text-[0.65rem] text-muted-foreground">
-                  {String(group.items.length).padStart(2, "0")}
-                </span>
-              </div>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-lg border border-border bg-glass px-2.5 py-1.5 text-xs text-muted-foreground transition-colors duration-300 hover:border-primary/40 hover:text-foreground"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-          </Reveal>
-        ))}
+
+      <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {TECH_GROUPS.map((group, gi) => {
+          const isWide = group.group === "Frontend" || group.group === "Backend" || group.group === "AI";
+
+          return (
+            <Reveal
+              key={group.group}
+              delay={gi * 0.08}
+              className={cn(
+                "h-full",
+                isWide ? "md:col-span-2" : "md:col-span-1"
+              )}
+            >
+              <GlassCard className="group flex h-full flex-col rounded-[1.8rem] p-7 transition-all duration-500 hover:border-primary/30 hover:bg-surface/60">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-display text-base font-semibold tracking-wide group-hover:text-primary transition-colors">
+                    {group.group}
+                  </h3>
+                  <span className="font-mono text-[0.65rem] text-muted-foreground">
+                    {String(group.items.length).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-2.5">
+                  {group.items.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm transition-colors duration-300 hover:border-primary/40 hover:text-foreground"
+                    >
+                      <span className="h-1 w-1 rounded-full bg-primary/50" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </GlassCard>
+            </Reveal>
+          );
+        })}
       </div>
     </Section>
   );
@@ -520,10 +537,10 @@ function StatsBand() {
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
           {[
-            { value: 6, suffix: "+", label: "Years of engineering" },
-            { value: 50, suffix: "+", label: "Projects delivered" },
-            { value: 100, decimals: 1, suffix: "%", label: "Client Focus" },
-            { value: 99.98, decimals: 2, suffix: "%", label: "Long-Term Support" },
+            { value: INDUSTRIES.length, suffix: "+", label: "Industries served" },
+            { value: 54, suffix: "+", label: "Projects delivered" },
+            { value: 97, decimals: 1, suffix: "%", label: "Client Focus" },
+            { value: 95.98, decimals: 2, suffix: "%", label: "Long-Term Support" },
           ].map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
               <div>

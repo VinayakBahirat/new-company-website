@@ -70,7 +70,7 @@ export function SplitHeading({
   return (
     <span className={cn("inline-block", className)}>
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden pb-[0.12em] align-bottom">
+        <span key={`${word}-${i}`} className="inline-block pb-[0.12em] align-bottom" style={{ clipPath: "inset(-100% -50% 0 -50%)" }}>
           <motion.span
             className="inline-block"
             initial={{ y: "108%", opacity: 0 }}
