@@ -138,6 +138,7 @@ function Hero() {
             </Pill>
           </motion.div>
 
+
           <h1 className="mt-8 text-[2.6rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.1rem]">
             <span className="text-gradient block">
               <SplitHeading text="We Build Products That" delay={0.1} />
