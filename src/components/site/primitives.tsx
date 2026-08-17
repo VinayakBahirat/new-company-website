@@ -130,8 +130,8 @@ export function CtaLink({ to, children, variant = "primary", className, hash }: 
 
 export function ClosingCta({
   eyebrow = "Next step",
-  title = "Let's scope the first milestone.",
-  body = "Whether you're starting a new project or improving an existing one, we're here to help you build reliable software that grows with your business.",
+  title = "Have a project in mind?",
+  body = "Let's discuss your requirements and find the right technical approach for your project.",
 }: {
   eyebrow?: string;
   title?: string;
@@ -158,9 +158,9 @@ export function ClosingCta({
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <CtaLink to="/contact">Schedule a meeting</CtaLink>
-              <CtaLink to="/work" variant="ghost">
-                See selected work
+              <CtaLink to="/contact">Book a Free Consultation</CtaLink>
+              <CtaLink to="/contact" variant="ghost">
+                Contact Us
               </CtaLink>
             </div>
           </Reveal>

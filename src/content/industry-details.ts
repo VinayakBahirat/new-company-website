@@ -154,7 +154,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "AI", items: ["OpenAI", "Gemini", "RAG"] },
     ],
     businessOutcomes: [
-      { title: "75% Faster Patient Intake", description: "Eliminate paper forms and manual data entry across clinics." },
+      { title: "Faster, more reliable patient intake workflows", description: "Eliminate paper forms and manual data entry across clinics." },
       { title: "Sub-10 Min Lab Result Turnaround", description: "Deliver instant mobile access to test reports as soon as labs publish." },
       { title: "100% HIPAA Compliance Assurance", description: "Zero-trust encrypted cloud architecture protecting sensitive medical records." },
       { title: "Reduced Physician Burnout", description: "AI summarizers slash chart review time by 90 minutes daily." },
@@ -246,7 +246,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "AI", items: ["OpenAI", "Prompt Engineering"] },
     ],
     businessOutcomes: [
-      { title: "Sub-50ms Transaction Speeds", description: "Deliver instant financial updates and payment processing." },
+      { title: "Built for high-throughput transaction processing", description: "Deliver instant financial updates and payment processing." },
       { title: "90% Reduction in Closing Time", description: "Automated reconciliation cuts monthly accounting close from days to hours." },
       { title: "99.98% Payment Success Rate", description: "Smart multi-gateway routing prevents lost sales from payment outages." },
       { title: "Complete Regulatory Compliance", description: "Audit-ready ledgers meeting SOC2 and PCI-DSS compliance standards." },
@@ -338,7 +338,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "AI", items: ["OpenAI", "Gemini", "RAG"] },
     ],
     businessOutcomes: [
-      { title: "100% Platform Peak Uptime", description: "Scalable architecture effortlessly handles exam week traffic surges." },
+      { title: "Designed for consistent platform uptime during peak usage", description: "Scalable architecture effortlessly handles exam week traffic surges." },
       { title: "18% Improvement in Pass Rates", description: "24/7 AI tutoring helps students overcome learning roadblocks immediately." },
       { title: "50% Reduction in Grading Workload", description: "Automated feedback tools free educators to focus on direct teaching." },
       { title: "WCAG Accessible Learning", description: "Inclusive software design accessible to all learners across devices." },
@@ -430,7 +430,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "AI", items: ["OpenAI", "Vector Search"] },
     ],
     businessOutcomes: [
-      { title: "34% Increase in Mobile Conversions", description: "Sub-second load times keep shoppers engaged through checkout." },
+      { title: "Optimized for stronger mobile conversion rates", description: "Sub-second load times keep shoppers engaged through checkout." },
       { title: "Zero Inventory Overselling", description: "Real-time sync keeps stock balances accurate across all sales channels." },
       { title: "42% Higher Repeat Purchases", description: "Mobile shopping apps and loyalty passes keep customers returning." },
       { title: "Sub-800ms Page Load Speeds", description: "PageSpeed scores above 95/100 driving higher organic SEO revenue." },
@@ -521,7 +521,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "22% Increase in Plant Throughput", description: "Real-time shop floor visibility eliminates assembly line bottlenecks." },
+      { title: "Built to improve visibility across plant operations", description: "Real-time shop floor visibility eliminates assembly line bottlenecks." },
       { title: "68% Reduction in Machine Downtime", description: "Predictive servicing alerts prevent expensive unplanned equipment outages." },
       { title: "35% Lower Defect Rates", description: "Digital quality logging identifies root-cause defect trends immediately." },
       { title: "Zero Paper Job Cards", description: "100% digital shop floor operations with real-time ERP syncing." },
@@ -612,7 +612,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "48% Higher Lead Inquiries", description: "Sub-second search speeds and map filters convert more visitors into active buyers." },
+      { title: "Designed to drive stronger lead engagement", description: "Sub-second search speeds and map filters convert more visitors into active buyers." },
       { title: "98% On-Time Rent Collection", description: "Automated ACH recurring payments eliminate manual rent chasing." },
       { title: "24-Hour Repair Turnarounds", description: "Automated maintenance dispatch resolves tenant issues rapidly." },
       { title: "35% More Out-of-State Sales", description: "Interactive 3D virtual tours enable remote buyers to commit with confidence." },
@@ -703,7 +703,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "80% Savings in Data Entry Costs", description: "Automated document parsing extracts fields in seconds with high accuracy." },
+      { title: "Focused on reducing manual data entry work", description: "Automated document parsing extracts fields in seconds with high accuracy." },
       { title: "62% Reduction in API Costs", description: "Hybrid model routing slashes LLM API spend while preserving quality." },
       { title: "Sub-10s Enterprise Knowledge Search", description: "Empower employees to query proprietary records instantly." },
       { title: "Zero Hallucination Guarantee", description: "Deterministic guardrails enforce strict, verified output formatting." },
@@ -794,7 +794,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "14% Reduction in Fleet Fuel Costs", description: "Optimized route dispatching reduces unnecessary driver mileage." },
+      { title: "Built to reduce operational fleet costs", description: "Optimized route dispatching reduces unnecessary driver mileage." },
       { title: "Same-Day Invoicing Turnaround", description: "Digital proof-of-delivery signature capture eliminates billing delays." },
       { title: "38% Faster Warehouse Picking", description: "Shortest-path bin algorithms speed up order fulfillment." },
       { title: "18% Lower Freight Spend", description: "Automated multi-carrier rate comparison selects optimal shipping pricing." },
@@ -885,7 +885,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "40% More Direct Web Bookings", description: "Fast, frictionless booking engines cut third-party OTA commission spend." },
+      { title: "Designed to increase direct booking conversions", description: "Fast, frictionless booking engines cut third-party OTA commission spend." },
       { title: "65% Keyless Mobile Check-ins", description: "Eliminate front-desk queues and elevate guest arrival experiences." },
       { title: "28% Higher In-Room Sales", description: "Frictionless QR ordering increases room service and spa revenue." },
       { title: "Zero Roaming Data Failures", description: "Offline itinerary passbooks keep guest vouchers accessible anywhere." },
@@ -977,7 +977,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "AI", items: ["OpenAI", "Gemini", "RAG"] },
     ],
     businessOutcomes: [
-      { title: "8-Week Time to Market", description: "Launch production-ready MVPs fast to capture early market feedback and revenue." },
+      { title: "Focused on getting your MVP to market quickly", description: "Launch production-ready MVPs fast to capture early market feedback and revenue." },
       { title: "40% Lower Development Costs", description: "Cross-platform engineering and senior pods eliminate wasted engineering spend." },
       { title: "100% IP Ownership", description: "Complete ownership of codebases, repositories, and cloud setups from day one." },
       { title: "Scales to 100k+ Active Users", description: "Clean architecture foundations ready for rapid growth and investor diligence." },
@@ -1068,7 +1068,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
       { category: "Cloud & DevOps", items: ["AWS", "Docker", "CI/CD"] },
     ],
     businessOutcomes: [
-      { title: "99.99% System Availability SLA", description: "Multi-region cloud architecture guarantees zero business interruption." },
+      { title: "Architected for high system availability", description: "Multi-region cloud architecture guarantees zero business interruption." },
       { title: "95% Faster Internal Approvals", description: "Automated routing cuts corporate sign-off times from weeks to hours." },
       { title: "Unlocked Legacy Mainframe Data", description: "REST wrappers allow modern web and mobile apps to consume legacy data safely." },
       { title: "Full Regulatory & Security Compliance", description: "Centralized audit logging ensures 100% pass rates on enterprise compliance audits." },

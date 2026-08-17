@@ -35,13 +35,13 @@ function IndustriesOverviewPage() {
   const industriesList = Object.values(INDUSTRY_DETAILS);
 
   const complianceBadges: Record<string, string> = {
-    healthcare: "HIPAA & HITECH Compliant",
-    finance: "SOC2 & PCI-DSS Hardened",
-    education: "WCAG 2.1 & SIS Integrated",
-    retail: "PCI-DSS & Headless Commerce",
+    healthcare: "PATIENT DATA SECURITY FOCUSED",
+    finance: "SECURITY-FIRST ARCHITECTURE",
+    education: "SIS INTEGRATION READY",
+    retail: "HEADLESS COMMERCE ARCHITECTURE",
     manufacturing: "Industrial IoT & MES Ready",
     "real-estate": "PropTech & WebGL Powered",
-    "artificial-intelligence": "Deterministic RAG & Zero-Hallucination",
+    "artificial-intelligence": "DETERMINISTIC RAG ARCHITECTURE",
     logistics: "Fleet Telemetry & WMS Ready",
     travel: "PMS Sync & Keyless Access",
     startups: "Multi-Tenant & Rapid MVP",
@@ -77,16 +77,16 @@ function IndustriesOverviewPage() {
           <Reveal delay={0.15}>
             <div className="mt-10 flex flex-wrap items-center gap-6 border-y border-border/80 py-6 text-xs text-muted-foreground">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">HIPAA · SOC2 · PCI-DSS · ISO27001 Compliant</span>
-              </div>
-              <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4 text-primary" />
                 <span className="font-semibold text-foreground">100% IP & Source Code Ownership</span>
               </div>
               <div className="flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                <span className="font-semibold text-foreground">Built With Compliance-Aware Practices</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Zap className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">99.99% Infrastructure Uptime SLA</span>
+                <span className="font-semibold text-foreground">Senior Engineers Only</span>
               </div>
             </div>
           </Reveal>

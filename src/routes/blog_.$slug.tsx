@@ -8,8 +8,8 @@ import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
     const post = BLOG_POSTS.find((p) => p.slug === params.slug);
-    const title = post ? `${post.title} — Blog | Aeriform Systems` : "Blog Post Not Found — Aeriform Systems";
-    const description = post ? post.summary : "Blog post details";
+    const title = post ? (post.metaTitle || `${post.title} — Blog | Aeriform Systems`) : "Blog Post Not Found — Aeriform Systems";
+    const description = post ? (post.metaDescription || post.summary) : "Blog post details";
     return {
       meta: [
         { title },
@@ -50,6 +50,25 @@ function BlogPostPage() {
 
   return (
     <>
+      {post && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.metaDescription || post.summary,
+              author: {
+                "@type": "Person",
+                name: post.author,
+              },
+              datePublished: new Date(post.date).toISOString().split('T')[0],
+              articleSection: post.category,
+            }),
+          }}
+        />
+      )}
       <Section className="relative overflow-hidden pb-12 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
@@ -96,16 +115,88 @@ function BlogPostPage() {
         </div>
       </Section>
 
-      <Section className="pb-24">
+      <Section className="pb-24 border-b border-border">
         <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
           <Reveal delay={0.2}>
+            {post.image && (
+              <div className="mb-12 overflow-hidden rounded-[2rem] border border-border">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="aspect-[2/1] w-full object-cover"
+                />
+              </div>
+            )}
             <GlassCard className="rounded-[2rem] p-8 sm:p-12 md:p-16">
               <article className="prose prose-invert max-w-none">
                 <div className="space-y-6 sm:space-y-8 text-base sm:text-lg leading-relaxed text-muted-foreground">
                   {post.content ? (
-                    post.content.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))
+                    (() => {
+                      const elements = [];
+                      let currentList: { type: 'ul' | 'ol', items: string[], start?: number } | null = null;
+
+                      for (const text of post.content) {
+                        if (!text) continue;
+                        const ulMatch = text.match(/^- (.*)/);
+                        const olMatch = text.match(/^(\d+)\.\s(.*)/);
+
+                        if (ulMatch) {
+                          if (currentList?.type !== 'ul') {
+                            if (currentList) elements.push(currentList);
+                            currentList = { type: 'ul', items: [] };
+                          }
+                          currentList.items.push(ulMatch[1] as string);
+                          continue;
+                        } else if (olMatch) {
+                          if (currentList?.type !== 'ol') {
+                            if (currentList) elements.push(currentList);
+                            currentList = { type: 'ol', items: [], start: parseInt(olMatch[1] as string) };
+                          }
+                          currentList.items.push(olMatch[2] as string);
+                          continue;
+                        }
+
+                        if (currentList) {
+                          elements.push(currentList);
+                          currentList = null;
+                        }
+
+                        if (text.startsWith("**") && text.endsWith("**")) {
+                          elements.push({ type: 'h3', text: text.replace(/\*\*/g, "") });
+                        } else {
+                          elements.push({ type: 'p', text });
+                        }
+                      }
+                      if (currentList) elements.push(currentList);
+
+                      return elements.map((el: any, i) => {
+                        if (el.type === 'h3') {
+                          return <h3 key={i} className="mt-10 mb-4 font-display text-2xl font-semibold text-foreground">{el.text}</h3>;
+                        }
+                        if (el.type === 'p') {
+                          const parsedText = el.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                          return <p key={i} dangerouslySetInnerHTML={{ __html: parsedText }} />;
+                        }
+                        if (el.type === 'ul') {
+                          return (
+                            <ul key={i} className="my-6 list-outside list-disc pl-6 space-y-2 marker:text-primary">
+                              {el.items.map((item: string, j: number) => (
+                                <li key={j} dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                              ))}
+                            </ul>
+                          );
+                        }
+                        if (el.type === 'ol') {
+                          return (
+                            <ol key={i} start={el.start} className="my-6 list-outside list-decimal pl-6 space-y-2 marker:text-primary">
+                              {el.items.map((item: string, j: number) => (
+                                <li key={j} dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                              ))}
+                            </ol>
+                          );
+                        }
+                      });
+                    })()
                   ) : (
                     <p>{post.summary}</p>
                   )}
