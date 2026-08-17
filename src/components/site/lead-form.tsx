@@ -20,10 +20,12 @@ export function LeadForm({
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [fields, setFields] = useState({
     name: "",
+    company: "",
     email: "",
     whatsapp: "",
     service: "",
     budget: "",
+    timeline: "",
     message: "",
   });
 
@@ -39,10 +41,12 @@ export function LeadForm({
 
     const body = `
 Name: ${fields.name}
+Company: ${fields.company}
 Email: ${fields.email}
 WhatsApp: ${fields.whatsapp}
 Service: ${fields.service}
 Budget: ${fields.budget}
+Timeline: ${fields.timeline}
 Message: ${fields.message}
     `.trim();
 
@@ -93,31 +97,44 @@ Message: ${fields.message}
                 required
               />
               <FormField
-                id="lead-email"
-                name="email"
-                type="email"
-                label="Email Address"
-                placeholder="ravi@company.com"
-                value={fields.email}
+                id="lead-company"
+                name="company"
+                type="text"
+                label="Company"
+                placeholder="Acme Corp"
+                value={fields.company}
                 onChange={handleChange}
-                required
               />
             </div>
 
             {/* Row 2 */}
             <div className={cn("grid gap-4", variant === "full" ? "sm:grid-cols-2" : "")}>
               <FormField
+                id="lead-email"
+                name="email"
+                type="email"
+                label="Work Email"
+                placeholder="ravi@company.com"
+                value={fields.email}
+                onChange={handleChange}
+                required
+              />
+              <FormField
                 id="lead-whatsapp"
                 name="whatsapp"
                 type="tel"
-                label="WhatsApp Number"
+                label="Phone / WhatsApp"
                 placeholder="+91 98765 43210"
                 value={fields.whatsapp}
                 onChange={handleChange}
               />
+            </div>
+
+            {/* Row 3 */}
+            <div className={cn("grid gap-4", variant === "full" ? "sm:grid-cols-2" : "")}>
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="lead-service" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  What do you need?
+                  Project Type
                 </label>
                 <select
                   id="lead-service"
@@ -127,7 +144,7 @@ Message: ${fields.message}
                   required
                   className="h-11 rounded-xl border border-border bg-background/60 px-4 text-sm text-foreground outline-none ring-0 transition-colors focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                 >
-                  <option value="">Select a service…</option>
+                  <option value="">Select project type…</option>
                   {SERVICES.map((s) => (
                     <option key={s.slug} value={s.title}>
                       {s.title}
@@ -136,6 +153,15 @@ Message: ${fields.message}
                   <option value="Not sure yet">Not sure yet — need advice</option>
                 </select>
               </div>
+              <FormField
+                id="lead-timeline"
+                name="timeline"
+                type="text"
+                label="Timeline (optional)"
+                placeholder="e.g. Next 1-2 months"
+                value={fields.timeline}
+                onChange={handleChange}
+              />
             </div>
 
             {/* Budget */}
@@ -203,9 +229,10 @@ Message: ${fields.message}
               )}
             </button>
 
-            <p className="text-center text-[0.72rem] text-muted-foreground">
-              We respond within 24 hrs · No spam · No commitment
-            </p>
+            <div className="text-center text-[0.72rem] text-muted-foreground flex flex-col gap-1">
+              <p>We respond within 24 hrs · No spam · No commitment</p>
+              <p>Your information is kept confidential and never shared with third parties.</p>
+            </div>
           </motion.form>
         )}
       </AnimatePresence>

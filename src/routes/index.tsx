@@ -16,6 +16,7 @@ import {
   Briefcase,
   Server,
   Zap,
+  CheckCircle,
 } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
@@ -44,7 +45,10 @@ import {
   COMPANY,
   DIFFERENTIATORS,
   INDUSTRIES,
-  METRICS,
+  STATS,
+  PROBLEMS_SOLVED,
+  WHO_WE_HELP,
+  FAQS,
   PROCESS,
   PROJECTS,
   SERVICES,
@@ -87,13 +91,18 @@ function HomePage() {
       <StudioIntro />
       <StatsBand />
       <CapabilityGrid />
-      <IndustriesSection />
-      <ProcessTimeline />
-      <TechSection />
+      <ProblemsWeSolveSection />
       <WorkPreview />
+      <TechSection />
       <MarqueeStrip />
+      <IndustriesSection />
+      <WhoWeHelpSection />
       <WhyUs />
+      <ProcessTimeline />
+      <AboutTeamSection />
       <ClientTestimonials />
+      <AgencyPartnershipSection />
+      <FaqSection />
 
       <ClosingCta />
       <WhatsAppFab />
@@ -153,13 +162,13 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <CtaLink to="/contact">Get Free Proposal</CtaLink>
-            <CtaLink to="/services" variant="ghost">
-              Explore Services
+            <CtaLink to="/contact">Book a Free Consultation</CtaLink>
+            <CtaLink to="/work" variant="ghost">
+              View Our Work
             </CtaLink>
           </motion.div>
 
-
+          {/* 
           <motion.dl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -174,7 +183,7 @@ function Hero() {
                 <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">{m.label}</dd>
               </div>
             ))}
-          </motion.dl>
+          </motion.dl> */}
         </div>
 
         <div className="relative hidden lg:block">
@@ -258,6 +267,12 @@ function CapabilityGrid() {
             </Reveal>
           );
         })}
+      </div>
+
+      <div className="mt-16 flex justify-center">
+        <Reveal delay={0.1}>
+          <CtaLink to="/contact">Get Free Proposal</CtaLink>
+        </Reveal>
       </div>
     </Section>
   );
@@ -402,6 +417,12 @@ function TechSection() {
           );
         })}
       </div>
+
+      <div className="mt-16 flex justify-center">
+        <Reveal delay={0.1}>
+          <CtaLink to="/contact">Schedule a Call</CtaLink>
+        </Reveal>
+      </div>
     </Section>
   );
 }
@@ -448,11 +469,20 @@ function WorkPreview() {
                 <div className="p-5">
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">{p.category}</p>
                   <h3 className="mt-3 font-display text-xl font-semibold">{p.name}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{p.goal}</p>
-                  {/* <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
-                    <span className="text-xs text-muted-foreground">{p.metric}</span>
-                    <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" />
-                  </div> */}
+                  <div className="mt-4 flex flex-col gap-2">
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      <span className="font-semibold text-foreground/80">Challenge & Solution:</span> {p.goal}
+                    </p>
+                    {p.tech && (
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground/80">Technology:</span> {p.tech.join(", ")}
+                      </p>
+                    )}
+                    <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                      Result: [X]% increase in [metric]
+                    </div>
+                  </div>
                 </div>
               </GlassCard>
             </TiltCard>
@@ -537,10 +567,10 @@ function StatsBand() {
         </div>
         <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
           {[
-            { value: INDUSTRIES.length, suffix: "+", label: "Industries served" },
-            { value: 54, suffix: "+", label: "Projects delivered" },
-            { value: 97, decimals: 1, suffix: "%", label: "Client Focus" },
-            { value: 95.98, decimals: 2, suffix: "%", label: "Long-Term Support" },
+            { value: INDUSTRIES.length, suffix: "+", label: "Years Combined Experience" },
+            { value: 54, suffix: "+", label: "Projects Delivered" },
+            { value: 97, decimals: 0, suffix: "%", label: "On-Time Delivery" },
+            { value: 99, decimals: 0, suffix: "%", label: "Transparent Process" },
           ].map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
               <div>
@@ -553,6 +583,43 @@ function StatsBand() {
           ))}
         </div>
       </GlassCard>
+    </Section>
+  );
+}
+
+/* ------------------------------------------------------------- About Team */
+
+function AboutTeamSection() {
+  return (
+    <Section className="py-24 sm:py-32">
+      <SectionHeading
+        eyebrow="Who We Are"
+        title="The team behind your product"
+        align="center"
+      />
+      <div className="mt-10 mx-auto max-w-3xl text-center">
+        <Reveal delay={0.1}>
+          <p className="text-lg leading-relaxed text-muted-foreground">
+            We're a team of engineers who've spent years building enterprise software across healthcare, retail, and SaaS. We don't just write code — we partner with you to solve real business problems.
+          </p>
+        </Reveal>
+      </div>
+      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
+        {[
+          { value: "6+", label: "Years Building Products" },
+          { value: "6", label: "Person Engineering Team" },
+          { value: "Domain", label: "Healthcare & Enterprise Domain Expertise" },
+        ].map((s, i) => (
+          <Reveal key={s.label} delay={i * 0.06}>
+            <GlassCard className="rounded-[2rem] p-8 h-full flex flex-col justify-center items-center hover:border-primary/30 transition-colors">
+              <p className="font-display text-4xl font-semibold tracking-tight text-amber-gradient sm:text-5xl">
+                {s.value}
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">{s.label}</p>
+            </GlassCard>
+          </Reveal>
+        ))}
+      </div>
     </Section>
   );
 }
@@ -626,6 +693,135 @@ function LeadCaptureSection() {
             <LeadForm />
           </GlassCard>
         </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* --------------------------------------------------- Problems We Solve */
+
+function ProblemsWeSolveSection() {
+  return (
+    <Section className="py-24 sm:py-32 bg-surface/30">
+      <SectionHeading
+        eyebrow="Problems We Solve"
+        title="Software Should Solve Problems, Not Create Them."
+        align="center"
+      />
+      <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        {PROBLEMS_SOLVED.map((p, i) => (
+          <Reveal key={p.title} delay={i * 0.05}>
+            <div className="h-full rounded-2xl border border-border bg-glass p-6 transition-all hover:border-primary/40">
+              <h3 className="font-display text-lg font-semibold">{p.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <div className="mt-12 flex justify-center">
+        <Reveal delay={0.2}>
+          <CtaLink to="/contact">Discuss Your Project</CtaLink>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* -------------------------------------------------------- Who We Help */
+
+function WhoWeHelpSection() {
+  return (
+    <Section className="py-24 sm:py-32">
+      <SectionHeading
+        eyebrow="Who We Help"
+        title="We Partner With Growing Businesses"
+        align="center"
+      />
+      <div className="mt-16 grid gap-6 sm:grid-cols-3 max-w-6xl mx-auto">
+        {WHO_WE_HELP.map((w, i) => (
+          <Reveal key={w.title} delay={i * 0.08}>
+            <GlassCard className="flex h-full flex-col items-center p-8 text-center hover:border-primary/30 transition-colors">
+              <h3 className="font-mono text-sm font-semibold uppercase tracking-widest text-primary">{w.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{w.body}</p>
+            </GlassCard>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ------------------------------------------------- Agency Partnership */
+
+function AgencyPartnershipSection() {
+  return (
+    <Section className="py-24 sm:py-32 bg-primary/5">
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <SectionHeading
+            eyebrow="For Agencies & Businesses"
+            title="Development Partnership"
+            body="We work with agencies and businesses that need reliable development support for new projects, existing products, and ongoing technical work. From full-stack Next.js development to AI integrations and maintenance."
+          />
+          <Reveal delay={0.15}>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+              {[
+                "React / Next.js",
+                "Full-Stack Development",
+                "Backend & APIs",
+                "Shopify Development",
+                "AI Integration",
+                "Maintenance & Support"
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    <CheckCircle className="h-2.5 w-2.5" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="mt-10">
+              <CtaLink to="/contact">Partner With Us</CtaLink>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal delay={0.1}>
+          <GlassCard className="aspect-square w-full rounded-[2rem] p-8 sm:p-12 relative overflow-hidden bg-gradient-to-br from-surface to-background flex items-center justify-center">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--primary)_15%,transparent),transparent_60%)]" />
+            <div className="relative text-center z-10">
+              <Briefcase className="w-16 h-16 text-primary mx-auto mb-6 opacity-80" />
+              <h3 className="font-display text-2xl font-semibold mb-2">Extended Engineering</h3>
+              <p className="text-sm text-muted-foreground max-w-sm mx-auto">Seamlessly expand your technical capabilities without the overhead of hiring in-house.</p>
+            </div>
+          </GlassCard>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------------------------------------------------------------- FAQ */
+
+function FaqSection() {
+  return (
+    <Section className="py-24 sm:py-32">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        align="center"
+      />
+      <div className="mt-16 max-w-3xl mx-auto grid gap-4">
+        {FAQS.map((faq, i) => (
+          <Reveal key={i} delay={i * 0.05}>
+            <div className="rounded-2xl border border-border bg-glass p-6">
+              <h3 className="font-display text-lg font-semibold">{faq.q}</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </Section>
   );

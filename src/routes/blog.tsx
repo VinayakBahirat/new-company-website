@@ -69,8 +69,17 @@ function BlogPage() {
             return (
               <Reveal key={post.slug} delay={i * 0.05}>
                 <TiltCard intensity={5} className="h-full">
-                  <GlassCard className="flex h-full flex-col justify-between rounded-[1.8rem] p-8 transition-colors duration-500 hover:border-primary/25">
+                  <GlassCard className="group flex h-full flex-col justify-between rounded-[1.8rem] p-8 transition-colors duration-500 hover:border-primary/25">
                     <div>
+                      {post.image && (
+                        <div className="mb-6 -mx-8 -mt-8 overflow-hidden rounded-t-[1.8rem]">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
                       <div className="flex items-center gap-3">
                         <span className="rounded-lg bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                           {post.category}
@@ -205,7 +214,7 @@ function NewsletterSection() {
   }
 
   return (
-    <Section className="py-24 sm:py-32">
+    <Section className="py-24 sm:py-32 border-t border-border">
       <GlassCard className="overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-14 sm:py-20">
         <div
           aria-hidden
@@ -219,12 +228,12 @@ function NewsletterSection() {
           </Reveal>
           <Reveal delay={0.06}>
             <h2 className="mt-6 text-balance text-3xl font-semibold sm:text-4xl md:text-5xl">
-              Get our weekly engineering insights — free.
+              Get our weekly engineering insights free.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Monthly deep dives on software architecture, AI integration, performance engineering, and product building — straight to your inbox.
+              Monthly deep dives on software architecture, AI integration, performance engineering, and product building straight to your inbox.
             </p>
           </Reveal>
 
