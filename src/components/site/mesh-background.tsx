@@ -22,7 +22,7 @@ export function Hairline({ className }: { className?: string }) {
     <div
       aria-hidden
       className={cn(
-        "h-px w-full bg-[linear-gradient(90deg,transparent,oklch(1_0_0_/_0.14)_18%,color-mix(in_oklab,var(--primary)_45%,transparent)_50%,oklch(1_0_0_/_0.14)_82%,transparent)]",
+        "h-px w-full bg-[linear-gradient(90deg,transparent,oklch(0_0_0_/_0.08)_18%,color-mix(in_oklab,var(--primary)_45%,transparent)_50%,oklch(0_0_0_/_0.08)_82%,transparent)]",
         className,
       )}
     />

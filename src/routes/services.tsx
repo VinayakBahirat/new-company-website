@@ -94,7 +94,7 @@ function ServicesPage() {
               <Reveal key={service.slug} delay={(i % 2) * 0.06}>
                 <GlassCard
                   id={service.slug}
-                  className="group h-full scroll-mt-32 rounded-[1.6rem] p-8 transition-colors duration-500 hover:border-primary/20"
+                  className="group h-full scroll-mt-32 rounded-[1.6rem] p-8 hover-lift hover:border-primary/30"
                 >
                   <div className="flex items-baseline justify-between gap-4">
                     <div className="flex flex-col gap-3">
@@ -153,7 +153,7 @@ function ServicesPage() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
           {PROCESS.map((s, i) => (
             <Reveal key={s.step} delay={(i % 5) * 0.05}>
-              <div className="h-full bg-background/70 p-6 transition-colors hover:bg-surface/60">
+              <div className="h-full bg-background/70 p-6 hover-lift relative hover:z-10 hover:bg-surface/60">
                 <span className="font-mono text-[0.65rem] text-primary">{s.step}</span>
                 <h3 className="mt-3 font-display text-base font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
@@ -183,7 +183,7 @@ function ServicesPage() {
                   isWide ? "md:col-span-2" : "md:col-span-1"
                 )}
               >
-                <GlassCard className="group flex h-full flex-col rounded-[1.8rem] p-7 transition-all duration-500 hover:border-primary/30 hover:bg-surface/60">
+                <GlassCard className="group flex h-full flex-col rounded-[1.8rem] p-7 hover-lift hover:border-primary/30 hover:bg-surface/60">
                   <div className="flex items-center justify-between">
                     <h3 className="font-display text-base font-semibold tracking-wide group-hover:text-primary transition-colors">
                       {group.group}

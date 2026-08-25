@@ -114,82 +114,76 @@ function HomePage() {
 
 function Hero() {
   return (
-    <Section className="relative min-h-[100svh] overflow-hidden pb-20 pt-36 sm:pt-44">
-      <MeshBackground />
-      <div className="pointer-events-none absolute inset-0 -z-0 opacity-70">
-        <div className="absolute right-[-10%] top-[6%] h-[92vh] w-[70vw] max-w-[900px]">
-          <NodeField density={68} />
-        </div>
+    <Section className="relative min-h-[92svh] overflow-hidden pb-24 pt-36 sm:pt-48 flex items-center justify-center">
+      {/* Background Graphic Image */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <img
+          src="/images/hero_tech_bg.jpg"
+          alt=""
+          className="h-full w-full object-cover object-center opacity-40 mix-blend-multiply [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,black_40%,transparent_100%)]"
+        />
       </div>
-
-      <div className="relative grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Pill>
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              Available for new projects
-            </Pill>
-          </motion.div>
+      <MeshBackground />
 
 
-          <h1 className="mt-8 text-[2.6rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.1rem]">
-            <span className="text-gradient block">
-              <SplitHeading text="We Build Products That" delay={0.1} />
+
+
+
+      {/* Main Centered Content (Exact Original Text preserved) */}
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Pill>
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
             </span>
-            <span className="block text-amber-gradient">
-              <SplitHeading text="Real Businesses Depend On." delay={0.28} />
-            </span>
-          </h1>
+            Available for new projects
+          </Pill>
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
+        <h1 className="mt-8 text-[2.6rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.1rem]">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-gradient block"
           >
-            We help businesses turn ideas into fast, reliable, and scalable software. From custom web applications and SaaS platforms to AI-powered solutions, we build products that solve real business problems and support long-term growth.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            We Build Products That
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-wrap items-center gap-3"
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="block text-amber-gradient"
           >
-            <CtaLink to="/contact">Book a Free Consultation</CtaLink>
-            <CtaLink to="/work" variant="ghost">
-              View Our Work
-            </CtaLink>
-          </motion.div>
+            Real Businesses Depend On.
+          </motion.span>
+        </h1>
 
-          {/* 
-          <motion.dl
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="mt-16 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-4 hidden"
-          >
-            {METRICS.map((m) => (
-              <div key={m.label} className="bg-background/70 px-5 py-6 backdrop-blur-sm">
-                <dt className="font-display text-2xl font-semibold sm:text-3xl">
-                  <Counter to={m.value} suffix={m.suffix} />
-                </dt>
-                <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">{m.label}</dd>
-              </div>
-            ))}
-          </motion.dl> */}
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+        >
+          We help businesses turn ideas into fast, reliable, and scalable software. From custom web applications and SaaS platforms to AI-powered solutions, we build products that solve real business problems and support long-term growth.
+        </motion.p>
 
-        <div className="relative hidden lg:block">
-          <HeroDashboard />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+        >
+          <CtaLink to="/contact">Book a Free Consultation</CtaLink>
+          <CtaLink to="/work" variant="ghost">
+            View Our Work
+          </CtaLink>
+        </motion.div>
       </div>
     </Section>
   );
@@ -248,7 +242,7 @@ function CapabilityGrid() {
             <Reveal key={service.slug} delay={i * 0.04}>
               <Link to="/services/$slug" params={{ slug: service.slug }} className="block h-full">
                 <TiltCard className="h-full">
-                  <GlassCard className="group h-full rounded-[1.4rem] p-6 transition-all duration-300 hover:border-primary/40 hover:scale-[1.01]">
+                  <GlassCard className="group h-full rounded-[1.4rem] p-6 hover-lift hover:border-primary/40">
                     <div className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-glass text-primary transition-transform duration-500 group-hover:-translate-y-0.5">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -337,7 +331,7 @@ function ProcessTimeline() {
           <div className="flex flex-col gap-4">
             {leftColumn.map((stage, i) => (
               <Reveal key={stage.step} delay={0.06}>
-                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60">
+                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 hover-lift hover:border-primary/30 hover:bg-surface/60">
                   <div className="flex items-baseline gap-3">
                     <span className="font-mono text-xs text-primary">{stage.step}</span>
                     <h3 className="font-display text-lg font-semibold">{stage.title}</h3>
@@ -352,7 +346,7 @@ function ProcessTimeline() {
           <div className="flex flex-col gap-4">
             {rightColumn.map((stage, i) => (
               <Reveal key={stage.step} delay={0.06}>
-                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 transition-colors duration-400 hover:border-primary/30 hover:bg-surface/60">
+                <div className="group relative rounded-2xl border border-border bg-surface/30 p-6 hover-lift hover:border-primary/30 hover:bg-surface/60">
                   <div className="flex items-baseline gap-3">
                     <span className="font-mono text-xs text-primary">{stage.step}</span>
                     <h3 className="font-display text-lg font-semibold">{stage.title}</h3>
@@ -461,7 +455,7 @@ function WorkPreview() {
                   ) : (
                     <>
                       <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
-                      <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.72)]" />
+                      <div className="absolute inset-0 bg-background/80" />
                       <div className="absolute inset-0 grid-lines opacity-30" />
                       <MockUi name={p.name} />
                     </>
@@ -479,10 +473,10 @@ function WorkPreview() {
                         <span className="font-semibold text-foreground/80">Technology:</span> {p.tech.join(", ")}
                       </p>
                     )}
-                    <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm">
+                    {/* <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
                       Result: [X]% increase in [metric]
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </GlassCard>
@@ -537,7 +531,7 @@ function WhyUs() {
       <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
         {DIFFERENTIATORS.map((d, i) => (
           <Reveal key={d.title} delay={(i % 5) * 0.05}>
-            <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+            <div className="group h-full bg-background/70 p-6 hover-lift relative hover:z-10 hover:bg-surface/60">
               <span className="font-mono text-[0.65rem] text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -607,14 +601,18 @@ function AboutTeamSection() {
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
         {[
-          { value: "6+", label: "Years Building Products" },
-          { value: "6", label: "Person Engineering Team" },
-          { value: "Domain", label: "Healthcare & Enterprise Domain Expertise" },
+          { value: 6, suffix: "+", label: "Years Building Products" },
+          { value: 6, label: "Person Engineering Team" },
+          { value: "Domain", label: "Healthcare & Enterprise Domain Expertise", isText: true },
         ].map((s, i) => (
           <Reveal key={s.label} delay={i * 0.06}>
-            <GlassCard className="rounded-[2rem] p-8 h-full flex flex-col justify-center items-center hover:border-primary/30 transition-colors">
+            <GlassCard className="rounded-[2rem] p-8 h-full flex flex-col justify-center items-center hover-lift hover:border-primary/30 transition-colors">
               <p className="font-display text-4xl font-semibold tracking-tight text-amber-gradient sm:text-5xl">
-                {s.value}
+                {s.isText ? (
+                  s.value
+                ) : (
+                  <Counter to={s.value as number} {...(s.suffix ? { suffix: s.suffix } : {})} />
+                )}
               </p>
               <p className="mt-4 text-sm text-muted-foreground">{s.label}</p>
             </GlassCard>
@@ -712,7 +710,7 @@ function ProblemsWeSolveSection() {
       <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
         {PROBLEMS_SOLVED.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.05}>
-            <div className="h-full rounded-2xl border border-border bg-glass p-6 transition-all hover:border-primary/40">
+            <div className="h-full rounded-2xl border border-border bg-glass p-6 hover-lift hover:border-primary/40">
               <h3 className="font-display text-lg font-semibold">{p.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
             </div>
@@ -741,7 +739,7 @@ function WhoWeHelpSection() {
       <div className="mt-16 grid gap-6 sm:grid-cols-3 max-w-6xl mx-auto">
         {WHO_WE_HELP.map((w, i) => (
           <Reveal key={w.title} delay={i * 0.08}>
-            <GlassCard className="flex h-full flex-col items-center p-8 text-center hover:border-primary/30 transition-colors">
+            <GlassCard className="flex h-full flex-col items-center p-8 text-center hover-lift hover:border-primary/30 transition-colors">
               <h3 className="font-mono text-sm font-semibold uppercase tracking-widest text-primary">{w.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{w.body}</p>
             </GlassCard>
@@ -817,7 +815,7 @@ function FaqSection() {
       <div className="mt-16 max-w-3xl mx-auto grid gap-4">
         {FAQS.map((faq, i) => (
           <Reveal key={i} delay={i * 0.05}>
-            <div className="rounded-2xl border border-border bg-glass p-6">
+            <div className="rounded-2xl border border-border bg-glass p-6 hover-lift">
               <h3 className="font-display text-lg font-semibold">{faq.q}</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
             </div>

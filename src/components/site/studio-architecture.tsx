@@ -13,9 +13,9 @@ export function StudioArchitecture() {
       title: "03 Product UI & Performance",
       desc: "Pixel-perfect production interface with < 100ms budgets",
       icon: Layout,
-      color: "from-amber-400/20 to-orange-500/20",
-      borderColor: "border-orange-500/30",
-      accentColor: "#f59e0b",
+      color: "from-primary/20 to-primary/30",
+      borderColor: "border-primary/30",
+      accentColor: "#4A90E2",
       translateZ: 140,
     },
     {
@@ -159,7 +159,7 @@ export function StudioArchitecture() {
                 {/* Visual Card */}
                 <div
                   className={`relative h-full w-full rounded-2xl border ${layer.borderColor} bg-surface/85 shadow-2xl backdrop-blur-md transition-all duration-300 ${
-                    isCurrentHovered ? "bg-surface/95 shadow-orange-500/5 ring-1 ring-white/10" : ""
+                    isCurrentHovered ? "bg-surface/95 shadow-primary/5 ring-1 ring-white/10" : ""
                   }`}
                 >
                   {/* Card Content - Layer specific visual mockups */}
@@ -202,14 +202,14 @@ export function StudioArchitecture() {
                           <div className="flex-1 bg-white/5 rounded p-2 relative overflow-hidden flex flex-col justify-between">
                             <div className="flex justify-between items-center z-10">
                               <span className="font-mono text-[0.55rem] text-muted-foreground">PERFORMANCE BUDGET</span>
-                              <span className="font-mono text-[0.55rem] text-amber-400 font-semibold">98.4%</span>
+                              <span className="font-mono text-[0.55rem] text-primary font-semibold">98.4%</span>
                             </div>
                             {/* Animated Mini area graph using SVG */}
                             <svg className="absolute bottom-0 left-0 right-0 h-10 w-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 40">
                               <defs>
                                 <linearGradient id="gradient-chart" x1="0" y1="0" x2="0" y2="1">
-                                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.25" />
-                                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+                                  <stop offset="0%" stopColor="#4A90E2" stopOpacity="0.25" />
+                                  <stop offset="100%" stopColor="#4A90E2" stopOpacity="0" />
                                 </linearGradient>
                               </defs>
                               <path
@@ -219,7 +219,7 @@ export function StudioArchitecture() {
                               <motion.path
                                 d="M 0 35 Q 20 20 40 28 T 80 10 T 100 8"
                                 fill="none"
-                                stroke="#f59e0b"
+                                stroke="#4A90E2"
                                 strokeWidth="1.5"
                                 initial={{ pathLength: 0 }}
                                 animate={{ pathLength: 1 }}

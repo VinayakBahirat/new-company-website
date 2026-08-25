@@ -51,7 +51,7 @@ function WorkPage() {
                     ) : (
                       <>
                         <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
-                        <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.74)]" />
+                        <div className="absolute inset-0 bg-background/80" />
                         <div className="absolute inset-0 grid-lines opacity-30" />
                         <MockUi name={p.name} />
                       </>

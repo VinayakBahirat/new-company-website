@@ -165,7 +165,7 @@ function ServiceDetailPage() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Reveal delay={0.04}>
-            <GlassCard className="h-full rounded-[1.6rem] p-7 transition-all hover:border-primary/30">
+            <GlassCard className="h-full rounded-[1.6rem] p-7 hover-lift hover:border-primary/30">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Briefcase className="h-5 w-5" />
               </div>
@@ -177,7 +177,7 @@ function ServiceDetailPage() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <GlassCard className="h-full rounded-[1.6rem] p-7 transition-all hover:border-primary/30">
+            <GlassCard className="h-full rounded-[1.6rem] p-7 hover-lift hover:border-primary/30">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <ShieldCheck className="h-5 w-5" />
               </div>
@@ -189,7 +189,7 @@ function ServiceDetailPage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <GlassCard className="h-full rounded-[1.6rem] p-7 transition-all hover:border-primary/30">
+            <GlassCard className="h-full rounded-[1.6rem] p-7 hover-lift hover:border-primary/30">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Zap className="h-5 w-5" />
               </div>
@@ -201,7 +201,7 @@ function ServiceDetailPage() {
           </Reveal>
 
           <Reveal delay={0.16}>
-            <GlassCard className="h-full rounded-[1.6rem] p-7 transition-all hover:border-primary/30">
+            <GlassCard className="h-full rounded-[1.6rem] p-7 hover-lift hover:border-primary/30">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Cpu className="h-5 w-5" />
               </div>
@@ -226,7 +226,7 @@ function ServiceDetailPage() {
           {service.capabilities.map((cap, index) => (
             <Reveal key={cap.title} delay={index * 0.05}>
               <TiltCard className="h-full">
-                <GlassCard className="h-full rounded-[1.6rem] p-7 transition-all duration-300 hover:border-primary/30">
+                <GlassCard className="h-full rounded-[1.6rem] p-7 hover-lift hover:border-primary/30">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs font-semibold text-primary">
                       Capability {String(index + 1).padStart(2, "0")}
@@ -328,7 +328,7 @@ function ServiceDetailPage() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {service.process.map((p, i) => (
             <Reveal key={p.step} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6 transition-colors hover:border-primary/30">
+              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6 hover-lift hover:border-primary/30">
                 <span className="font-mono text-xs font-semibold text-primary">{p.step}</span>
                 <h3 className="mt-3 font-display text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -351,7 +351,7 @@ function ServiceDetailPage() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {service.deliverables.map((item, idx) => (
             <Reveal key={item} delay={idx * 0.04}>
-              <GlassCard className="flex h-full items-start gap-3.5 rounded-2xl p-5">
+              <GlassCard className="flex h-full items-start gap-3.5 rounded-2xl p-5 hover-lift hover:border-primary/20">
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                   <CheckCircle2 className="h-3.5 w-3.5" />
                 </span>
@@ -375,7 +375,7 @@ function ServiceDetailPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {service.techStack.map((group, idx) => (
             <Reveal key={group.category} delay={idx * 0.06}>
-              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6">
+              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6 hover-lift hover:border-primary/20">
                 <div className="flex items-center gap-2">
                   <Code2 className="h-4 w-4 text-primary" />
                   <h3 className="font-display text-xs font-semibold uppercase tracking-wider text-muted-foreground">

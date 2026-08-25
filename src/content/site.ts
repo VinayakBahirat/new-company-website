@@ -247,7 +247,7 @@ export const PROJECTS = [
     features: ["Custom theme development", "Product management integration", "Optimized checkout experience"],
     metric: "Shopify Store",
     image: chooseYourAttitudeImg,
-    accent: "from-[oklch(0.8_0.12_75)] to-[oklch(0.6_0.14_45)]",
+    accent: "from-[oklch(0.72_0.14_230)] to-[oklch(0.55_0.12_260)]",
   },
   {
     slug: "evenskyn-beauty",
@@ -291,7 +291,7 @@ export const PROJECTS = [
     features: ["Theme customization", "SEO improvements", "Product presentation design"],
     metric: "Shopify Store",
     image: norsuHomeImg,
-    accent: "from-[oklch(0.78_0.12_95)] to-[oklch(0.6_0.13_60)]",
+    accent: "from-[oklch(0.78_0.12_240)] to-[oklch(0.6_0.13_210)]",
   },
 
   {
@@ -325,7 +325,7 @@ export const PROJECTS = [
     features: ["Speed and load time optimization", "Theme modifications", "Improved navigation & UI"],
     metric: "WordPress Site",
     image: aliceDoremiImg,
-    accent: "from-[oklch(0.81_0.13_110)] to-[oklch(0.63_0.15_80)]",
+    accent: "from-[oklch(0.81_0.13_250)] to-[oklch(0.63_0.15_220)]",
   },
   // {
   //   slug: "menumuse",
@@ -463,7 +463,7 @@ export const TESTIMONIALS = [
     role: "CEO",
     company: "Six Vintage Rugs",
     initials: "JW",
-    color: "from-[oklch(0.65_0.18_40)] to-[oklch(0.52_0.18_20)]",
+    color: "from-[oklch(0.65_0.18_220)] to-[oklch(0.5_0.2_240)]",
   },
 ];
 

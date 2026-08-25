@@ -63,7 +63,7 @@ export function ContactAnimation() {
           {/* Base pipeline line */}
           <line x1="80" y1="20" x2="320" y2="20" stroke="rgba(255,255,255,0.06)" strokeWidth="2" strokeDasharray="3 3" />
           {/* Animated data pulses */}
-          <circle className="pd1" r="3" cy="20" cx="80" fill="#f59e0b" />
+          <circle className="pd1" r="3" cy="20" cx="80" fill="#4A90E2" />
           <circle className="pd2" r="2" cy="20" cx="80" fill="#6366f1" />
           <circle className="pd3" r="2" cy="20" cx="80" fill="#10b981" />
         </svg>

@@ -105,7 +105,7 @@ function CareersPage() {
                   setSelectedRole(role.title);
                   setIsFormOpen(true);
                 }}
-                className="focus-ring group flex w-full flex-col gap-4 rounded-2xl border border-border bg-surface/30 p-6 text-left transition-all duration-400 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-surface/60 sm:flex-row sm:items-center sm:justify-between"
+                className="focus-ring group flex w-full flex-col gap-4 rounded-2xl border border-border bg-surface/30 p-6 text-left hover-lift hover:border-primary/35 hover:bg-surface/60 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <h2 className="font-display text-lg font-semibold sm:text-xl">{role.title}</h2>
@@ -136,7 +136,7 @@ function CareersPage() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.04}>
-              <GlassCard className="h-full rounded-2xl p-6">
+              <GlassCard className="h-full rounded-2xl p-6 hover-lift hover:border-primary/20">
                 <h3 className="font-display text-base font-semibold">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
               </GlassCard>
@@ -146,7 +146,7 @@ function CareersPage() {
       </Section>
 
       <Dialog open={isFormOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-2xl bg-zinc-950 border-border p-7 sm:p-10 text-white rounded-[1.8rem]">
+        <DialogContent className="max-w-2xl bg-background border-border p-7 sm:p-10 text-foreground rounded-[1.8rem]">
           <DialogHeader>
             <DialogTitle className="font-display text-2xl font-semibold">Join Our Pod</DialogTitle>
           </DialogHeader>

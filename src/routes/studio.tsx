@@ -42,7 +42,7 @@ function StudioPage() {
       <Section className="py-20">
         <div className="grid gap-4 lg:grid-cols-2">
           <Reveal>
-            <GlassCard className="h-full rounded-[1.6rem] p-8">
+            <GlassCard className="h-full rounded-[1.6rem] p-8 hover-lift hover:border-primary/20">
               <h2 className="eyebrow">Mission</h2>
               <p className="mt-4 text-lg leading-relaxed sm:text-xl">
                 Build software that helps businesses grow, work smarter, and deliver better experiences.
@@ -50,7 +50,7 @@ function StudioPage() {
             </GlassCard>
           </Reveal>
           <Reveal delay={0.06}>
-            <GlassCard className="h-full rounded-[1.6rem] p-8">
+            <GlassCard className="h-full rounded-[1.6rem] p-8 hover-lift hover:border-primary/20">
               <h2 className="eyebrow">Vision</h2>
               <p className="mt-4 text-lg leading-relaxed sm:text-xl">
                 To become a trusted technology partner for businesses by building software that drives growth, innovation, and long-term success.
@@ -65,7 +65,7 @@ function StudioPage() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.05}>
-              <div className="h-full bg-background/70 p-6">
+              <div className="h-full bg-background/70 p-6 hover-lift relative hover:z-10 hover:bg-surface/60">
                 <span className="font-mono text-[0.65rem] text-primary">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 font-display text-base font-semibold">{v.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
@@ -126,7 +126,7 @@ function StudioPage() {
         <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
           {DIFFERENTIATORS.map((d, i) => (
             <Reveal key={d.title} delay={(i % 5) * 0.05}>
-              <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+              <div className="group h-full bg-background/70 p-6 hover-lift relative hover:z-10 hover:bg-surface/60">
                 <span className="font-mono text-[0.65rem] text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>

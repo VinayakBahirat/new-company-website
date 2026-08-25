@@ -114,7 +114,7 @@ export function CtaLink({ to, children, variant = "primary", className, hash }: 
         to={to}
         {...(hash ? { hash } : {})}
         className={cn(
-          "focus-ring group inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold transition-all duration-300",
+          "focus-ring group inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] will-change-transform",
           variant === "primary"
             ? "bg-primary text-primary-foreground hover:shadow-[0_0_54px_-8px_var(--ring)]"
             : "border border-border bg-glass text-foreground hover:border-primary/40 hover:bg-primary/8",

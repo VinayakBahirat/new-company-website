@@ -9,13 +9,13 @@ export function TestimonialsSection() {
       {TESTIMONIALS.map((t, i) => (
         <Reveal key={t.name} delay={i * 0.07}>
           <TiltCard intensity={5} className="h-full">
-            <GlassCard className="flex h-full flex-col gap-6 rounded-[1.8rem] p-7 transition-colors duration-500 hover:border-primary/20">
+            <GlassCard className="flex h-full flex-col gap-6 rounded-[1.8rem] p-7 hover-lift hover:border-primary/30">
               {/* Stars */}
               <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, si) => (
                   <Star
                     key={si}
-                    className="h-4 w-4 fill-amber-400 text-amber-400"
+                    className="h-4 w-4 fill-primary text-primary"
                   />
                 ))}
               </div>
