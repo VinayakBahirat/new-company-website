@@ -13,9 +13,9 @@ export function StudioArchitecture() {
       title: "03 Product UI & Performance",
       desc: "Pixel-perfect production interface with < 100ms budgets",
       icon: Layout,
-      color: "from-amber-400/20 to-orange-500/20",
-      borderColor: "border-orange-500/30",
-      accentColor: "#f59e0b",
+      color: "from-sky-100/60 to-blue-100/60",
+      borderColor: "border-sky-200/70",
+      accentColor: "#0ea5e9",
       translateZ: 140,
     },
     {
@@ -23,8 +23,8 @@ export function StudioArchitecture() {
       title: "02 AI Behaviour & Architecture",
       desc: "Robust agentic workflows, prompt routing, caching",
       icon: Cpu,
-      color: "from-blue-500/10 to-indigo-600/10",
-      borderColor: "border-indigo-500/30",
+      color: "from-indigo-50/60 to-blue-50/60",
+      borderColor: "border-indigo-200/60",
       accentColor: "#6366f1",
       translateZ: 70,
     },
@@ -33,8 +33,8 @@ export function StudioArchitecture() {
       title: "01 Substrate & Data Models",
       desc: "Hard-to-undo database relations and infra architecture",
       icon: Database,
-      color: "from-emerald-500/10 to-teal-600/10",
-      borderColor: "border-emerald-500/30",
+      color: "from-emerald-50/60 to-teal-50/60",
+      borderColor: "border-emerald-200/60",
       accentColor: "#10b981",
       translateZ: 0,
     },
@@ -42,7 +42,7 @@ export function StudioArchitecture() {
 
   return (
     <div 
-      className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-border bg-surface/30 px-4 select-none sm:h-[580px]"
+      className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-border bg-white/60 px-4 select-none sm:h-[580px]"
       onMouseEnter={() => setIsContainerHovered(true)}
       onMouseLeave={() => {
         setIsContainerHovered(false);
@@ -110,7 +110,7 @@ export function StudioArchitecture() {
                 initial={{ y2: 20 }}
                 animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                stroke="rgba(255,255,255,0.12)"
+                stroke="rgba(14,165,233,0.18)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
               />
@@ -119,7 +119,7 @@ export function StudioArchitecture() {
                 initial={{ y2: 20 }}
                 animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                stroke="rgba(255,255,255,0.12)"
+                stroke="rgba(14,165,233,0.18)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
               />
@@ -128,7 +128,7 @@ export function StudioArchitecture() {
                 initial={{ y2: 80 }}
                 animate={{ y2: -40 }}
                 style={{ transform: "translateZ(0px)" }}
-                stroke="rgba(255,255,255,0.12)"
+                stroke="rgba(14,165,233,0.18)"
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
               />
@@ -158,23 +158,23 @@ export function StudioArchitecture() {
               >
                 {/* Visual Card */}
                 <div
-                  className={`relative h-full w-full rounded-2xl border ${layer.borderColor} bg-surface/85 shadow-2xl backdrop-blur-md transition-all duration-300 ${
-                    isCurrentHovered ? "bg-surface/95 shadow-orange-500/5 ring-1 ring-white/10" : ""
+                  className={`relative h-full w-full rounded-2xl border ${layer.borderColor} bg-white/80 shadow-xl shadow-blue-100/40 backdrop-blur-md transition-all duration-300 ${
+                    isCurrentHovered ? "bg-white/95 shadow-blue-200/50 ring-1 ring-blue-200/50" : ""
                   }`}
                 >
                   {/* Card Content - Layer specific visual mockups */}
                   <div className="absolute inset-0 overflow-hidden rounded-2xl p-4 flex flex-col justify-between">
                     
                     {/* Header */}
-                    <div className="flex items-center justify-between border-b border-white/5 pb-2">
+                    <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                       <div className="flex items-center gap-2">
                         <Icon className="h-4 w-4" style={{ color: layer.accentColor }} />
-                        <span className="font-mono text-[0.7rem] font-medium text-white/80">{layer.title}</span>
+                        <span className="font-mono text-[0.7rem] font-medium text-slate-600">{layer.title}</span>
                       </div>
                       <div className="flex gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-slate-200" />
                       </div>
                     </div>
 
@@ -184,32 +184,32 @@ export function StudioArchitecture() {
                         <div className="w-full h-full flex flex-col justify-between gap-2">
                           {/* Mini dashboard visualization */}
                           <div className="flex items-center justify-between gap-2">
-                            <div className="flex-1 bg-white/5 rounded p-1.5 flex flex-col justify-center">
-                              <span className="font-mono text-[0.55rem] text-muted-foreground">LATENCY</span>
+                            <div className="flex-1 bg-sky-50 rounded p-1.5 flex flex-col justify-center">
+                              <span className="font-mono text-[0.55rem] text-slate-400">LATENCY</span>
                               <div className="flex items-baseline gap-1 mt-0.5">
-                                <span className="font-display text-xs font-semibold text-emerald-400">42ms</span>
-                                <span className="text-[0.5rem] text-emerald-400">↓12%</span>
+                                <span className="font-display text-xs font-semibold text-emerald-600">42ms</span>
+                                <span className="text-[0.5rem] text-emerald-500">↓12%</span>
                               </div>
                             </div>
-                            <div className="flex-1 bg-white/5 rounded p-1.5 flex flex-col justify-center">
-                              <span className="font-mono text-[0.55rem] text-muted-foreground">FPS RATE</span>
+                            <div className="flex-1 bg-sky-50 rounded p-1.5 flex flex-col justify-center">
+                              <span className="font-mono text-[0.55rem] text-slate-400">FPS RATE</span>
                               <div className="flex items-baseline gap-1 mt-0.5">
-                                <span className="font-display text-xs font-semibold text-white">60.0</span>
-                                <span className="text-[0.5rem] text-muted-foreground">stable</span>
+                                <span className="font-display text-xs font-semibold text-slate-700">60.0</span>
+                                <span className="text-[0.5rem] text-slate-400">stable</span>
                               </div>
                             </div>
                           </div>
-                          <div className="flex-1 bg-white/5 rounded p-2 relative overflow-hidden flex flex-col justify-between">
+                          <div className="flex-1 bg-sky-50 rounded p-2 relative overflow-hidden flex flex-col justify-between">
                             <div className="flex justify-between items-center z-10">
-                              <span className="font-mono text-[0.55rem] text-muted-foreground">PERFORMANCE BUDGET</span>
-                              <span className="font-mono text-[0.55rem] text-amber-400 font-semibold">98.4%</span>
+                              <span className="font-mono text-[0.55rem] text-slate-400">PERFORMANCE BUDGET</span>
+                              <span className="font-mono text-[0.55rem] text-primary font-semibold">98.4%</span>
                             </div>
                             {/* Animated Mini area graph using SVG */}
                             <svg className="absolute bottom-0 left-0 right-0 h-10 w-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 40">
                               <defs>
                                 <linearGradient id="gradient-chart" x1="0" y1="0" x2="0" y2="1">
-                                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.25" />
-                                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+                                  <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.25" />
+                                  <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0" />
                                 </linearGradient>
                               </defs>
                               <path
@@ -219,7 +219,7 @@ export function StudioArchitecture() {
                               <motion.path
                                 d="M 0 35 Q 20 20 40 28 T 80 10 T 100 8"
                                 fill="none"
-                                stroke="#f59e0b"
+                                stroke="#0ea5e9"
                                 strokeWidth="1.5"
                                 initial={{ pathLength: 0 }}
                                 animate={{ pathLength: 1 }}
@@ -233,14 +233,14 @@ export function StudioArchitecture() {
                       {layer.id === "logic" && (
                         <div className="w-full h-full flex items-center justify-between gap-2 px-1">
                           {/* Neural-like node diagram with custom SVGs */}
-                          <div className="relative w-full h-full flex items-center justify-between bg-white/[0.02] border border-white/5 rounded-lg p-2 overflow-hidden">
+                          <div className="relative w-full h-full flex items-center justify-between bg-indigo-50/60 border border-indigo-100 rounded-lg p-2 overflow-hidden">
                             {/* AI processing pulse */}
                             <svg className="absolute inset-0 h-full w-full">
-                              <line x1="20" y1="35" x2="80" y2="15" stroke="rgba(99,102,241,0.2)" strokeWidth={1} />
-                              <line x1="20" y1="35" x2="80" y2="55" stroke="rgba(99,102,241,0.2)" strokeWidth={1} />
-                              <line x1="80" y1="15" x2="140" y2="35" stroke="rgba(99,102,241,0.2)" strokeWidth={1} />
-                              <line x1="80" y1="55" x2="140" y2="35" stroke="rgba(99,102,241,0.2)" strokeWidth={1} />
-                              <line x1="140" y1="35" x2="200" y2="35" stroke="rgba(99,102,241,0.2)" strokeWidth={1} />
+                              <line x1="20" y1="35" x2="80" y2="15" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
+                              <line x1="20" y1="35" x2="80" y2="55" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
+                              <line x1="80" y1="15" x2="140" y2="35" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
+                              <line x1="80" y1="55" x2="140" y2="35" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
+                              <line x1="140" y1="35" x2="200" y2="35" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
                               
                               {/* Pulsing particles */}
                               <motion.circle r="2.5" fill="#6366f1"
@@ -255,15 +255,15 @@ export function StudioArchitecture() {
 
                             <div className="z-10 flex flex-col justify-between h-full w-full">
                               <div className="flex justify-between items-center">
-                                <div className="h-6 w-6 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center">
-                                  <Shield className="h-3 w-3 text-indigo-400" />
+                                <div className="h-6 w-6 rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center">
+                                  <Shield className="h-3 w-3 text-indigo-500" />
                                 </div>
-                                <div className="h-6 w-6 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center">
-                                  <Zap className="h-3 w-3 text-blue-400" />
+                                <div className="h-6 w-6 rounded-full bg-sky-50 border border-sky-200 flex items-center justify-center">
+                                  <Zap className="h-3 w-3 text-sky-500" />
                                 </div>
                               </div>
                               <div className="flex justify-center items-center">
-                                <span className="font-mono text-[0.55rem] text-indigo-300 bg-indigo-500/10 px-1.5 py-0.5 rounded border border-indigo-500/20">
+                                <span className="font-mono text-[0.55rem] text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">
                                   ROUTING ENGINE
                                 </span>
                               </div>
@@ -277,55 +277,55 @@ export function StudioArchitecture() {
                           {/* Grid/Database relations */}
                           <div className="flex-1 grid grid-cols-3 gap-1.5">
                             {/* DB Table 1 */}
-                            <div className="bg-white/5 border border-white/5 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
-                              <span className="text-emerald-400 font-semibold border-b border-white/10 pb-0.5 flex items-center gap-0.5">
+                            <div className="bg-emerald-50 border border-emerald-100 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
+                              <span className="text-emerald-600 font-semibold border-b border-emerald-100 pb-0.5 flex items-center gap-0.5">
                                 <Server className="h-2 w-2" /> users
                               </span>
-                              <span className="text-white/60">id (PK)</span>
-                              <span className="text-white/40">org_id (FK)</span>
-                              <span className="text-white/40">role</span>
+                              <span className="text-slate-600">id (PK)</span>
+                              <span className="text-slate-400">org_id (FK)</span>
+                              <span className="text-slate-400">role</span>
                             </div>
                             
                             {/* DB Table 2 */}
-                            <div className="bg-white/5 border border-white/5 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
-                              <span className="text-emerald-400 font-semibold border-b border-white/10 pb-0.5 flex items-center gap-0.5">
+                            <div className="bg-emerald-50 border border-emerald-100 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
+                              <span className="text-emerald-600 font-semibold border-b border-emerald-100 pb-0.5 flex items-center gap-0.5">
                                 <Server className="h-2 w-2" /> orgs
                               </span>
-                              <span className="text-white/60">id (PK)</span>
-                              <span className="text-white/40">tier</span>
-                              <span className="text-white/40">limits</span>
+                              <span className="text-slate-600">id (PK)</span>
+                              <span className="text-slate-400">tier</span>
+                              <span className="text-slate-400">limits</span>
                             </div>
 
                             {/* DB Table 3 */}
-                            <div className="bg-white/5 border border-white/5 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
-                              <span className="text-emerald-400 font-semibold border-b border-white/10 pb-0.5 flex items-center gap-0.5">
+                            <div className="bg-emerald-50 border border-emerald-100 rounded p-1 font-mono text-[0.5rem] flex flex-col gap-0.5">
+                              <span className="text-emerald-600 font-semibold border-b border-emerald-100 pb-0.5 flex items-center gap-0.5">
                                 <Server className="h-2 w-2" /> billing
                               </span>
-                              <span className="text-white/60">id (PK)</span>
-                              <span className="text-white/40">user_id (FK)</span>
-                              <span className="text-white/40">status</span>
+                              <span className="text-slate-600">id (PK)</span>
+                              <span className="text-slate-400">user_id (FK)</span>
+                              <span className="text-slate-400">status</span>
                             </div>
                           </div>
 
-                          <div className="h-4 flex items-center justify-between bg-white/[0.02] border border-white/5 rounded px-2">
-                            <span className="font-mono text-[0.5rem] text-emerald-400/80 flex items-center gap-1">
-                              <span className="h-1 w-1 rounded-full bg-emerald-400 animate-ping" />
+                          <div className="h-4 flex items-center justify-between bg-emerald-50 border border-emerald-100 rounded px-2">
+                            <span className="font-mono text-[0.5rem] text-emerald-600 flex items-center gap-1">
+                              <span className="h-1 w-1 rounded-full bg-emerald-500 animate-ping" />
                               POSTGRES CONNECTED
                             </span>
-                            <span className="font-mono text-[0.5rem] text-white/30">99.99% SLA</span>
+                            <span className="font-mono text-[0.5rem] text-slate-400">99.99% SLA</span>
                           </div>
                         </div>
                       )}
                     </div>
 
                     {/* Footer label */}
-                    <div className="flex items-center justify-between border-t border-white/5 pt-1.5">
-                      <span className="font-mono text-[0.55rem] text-muted-foreground uppercase tracking-wider">
+                    <div className="flex items-center justify-between border-t border-slate-100 pt-1.5">
+                      <span className="font-mono text-[0.55rem] text-slate-400 uppercase tracking-wider">
                         {layer.id === "product" && "Presentation Layer"}
                         {layer.id === "logic" && "Application Engine"}
                         {layer.id === "substrate" && "Database & Infrastructure"}
                       </span>
-                      <span className="font-mono text-[0.55rem] text-white/50">
+                      <span className="font-mono text-[0.55rem] text-slate-400">
                         {layer.id === "product" && "0.4s load"}
                         {layer.id === "logic" && "24 threads"}
                         {layer.id === "substrate" && "Replica active"}

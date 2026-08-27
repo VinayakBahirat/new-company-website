@@ -1,4 +1,4 @@
-import chooseYourAttitudeImg from "@/img/Choose-Your-Attitude.jpg";
+﻿import chooseYourAttitudeImg from "@/img/Choose-Your-Attitude.jpg";
 import evenskynBeautyImg from "@/img/Evenskyn-Beauty.jpg";
 import sixVintageRugsImg from "@/img/Six-Vintage-Rugs.jpg";
 import norsuHomeImg from "@/img/Norsu-Home.jpg";
@@ -12,10 +12,10 @@ import jsbsImg from "@/img/Jamea-Saifiyah-Business-School.png";
 import rugnaAdhaarImg from "@/img/Rugna-Adhaar-Foundation-Website.avif";
 
 export const COMPANY = {
-  name: "Aeriform Systems",
-  short: "Aeriform",
+  name: "Sumanix Solutions",
+  short: "Sumanix",
   tagline: "We help businesses build fast, reliable, and scalable software that solves real problems. From web applications to AI-powered solutions, we turn ideas into products people love to use.",
-  email: "studio@aeriform.systems",
+  email: "hello@sumanix.solutions",
   phone: "+91 7709044575",
   address: "Pier 9, Innovation Quarter, San Francisco, CA",
   hq: "San Francisco · Amsterdam · Singapore",
@@ -442,7 +442,7 @@ export const WHO_WE_HELP = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Aeriform delivered our entire SaaS platform in 8 weeks — clean code, no drama. Their team understood our business from day one.",
+    quote: "Sumanix delivered our entire SaaS platform in 8 weeks — clean code, no drama. Their team understood our business from day one.",
     name: "Rahul Sharma",
     role: "Founder",
     company: "LegalDesk Pro",
@@ -450,7 +450,7 @@ export const TESTIMONIALS = [
     color: "from-[oklch(0.65_0.18_250)] to-[oklch(0.5_0.2_280)]",
   },
   {
-    quote: "We tried two agencies before Aeriform. Night and day difference. They actually push back when they think we're wrong — that's rare and valuable.",
+    quote: "We tried two agencies before Sumanix. Night and day difference. They actually push back when they think we're wrong — that's rare and valuable.",
     name: "Meera Kapoor",
     role: "CTO",
     company: "HealthSync",

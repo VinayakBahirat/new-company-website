@@ -18,7 +18,7 @@ type Node = {
 export function NodeField({
   className,
   density = 62,
-  accent = "254, 176, 39",
+  accent = "100, 149, 220",
 }: {
   className?: string;
   density?: number;
@@ -118,7 +118,7 @@ export function NodeField({
           const max = Math.min(width, height) * 0.22;
           if (dist < max) {
             const alpha = (1 - dist / max) * 0.32 * ((a.depth + b.depth) / 2);
-            ctx.strokeStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
+            ctx.strokeStyle = `rgba(14,165,233,${(alpha * 0.35).toFixed(3)})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.px, a.py);

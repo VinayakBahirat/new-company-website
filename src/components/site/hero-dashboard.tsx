@@ -10,9 +10,9 @@ import { ShieldCheck } from "lucide-react";
 
 /* ─── Design tokens ───────────────────────────────────────────── */
 const CARD =
-  "rounded-[1.1rem] border border-white/[0.06] bg-[#0b0b0b]/90 backdrop-blur-md shadow-xl";
+  "rounded-[1.1rem] border border-blue-100/80 bg-white/90 backdrop-blur-md shadow-lg shadow-blue-100/40";
 const MONO =
-  "font-mono text-[0.55rem] uppercase tracking-[0.18em] text-[#8B8B8B]";
+  "font-mono text-[0.55rem] uppercase tracking-[0.18em] text-slate-400";
 
 /* ─── Parallax wrapper (GPU-accelerated, zero re-renders) ───── */
 function Panel({
@@ -66,13 +66,13 @@ function Bar({
   return (
     <div>
       <div className="flex justify-between mb-0.5">
-        <span className="font-mono text-[0.55rem] text-[#8B8B8B]">{label}</span>
+        <span className="font-mono text-[0.55rem] text-slate-400">{label}</span>
         <span className={`font-mono text-[0.55rem] ${color}`}>
           {value}
           {unit}
         </span>
       </div>
-      <div className="h-[2px] w-full rounded-full bg-white/5">
+      <div className="h-[2px] w-full rounded-full bg-slate-100">
         <motion.div
           className={`h-full rounded-full ${barColor}`}
           initial={{ width: 0 }}
@@ -114,7 +114,7 @@ export function HeroDashboard() {
       onMouseLeave={onLeave}
     >
       {/* Ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/6 blur-[100px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[80px]" />
 
       {/* ── 1  CI/CD Pipeline  top-right ─────────────────────── */}
       <Panel sx={sx} sy={sy} str={8} delay={0.3} from={{ y: 24 }} cls="top-0 right-0 w-[230px]">
@@ -122,8 +122,8 @@ export function HeroDashboard() {
           <div className={`${CARD} p-4`}>
             <div className="flex items-center justify-between mb-3">
               <span className={MONO}>CI/CD Pipeline</span>
-              <span className="flex items-center gap-1.5 rounded-full bg-emerald-400/10 px-2 py-0.5 font-mono text-[0.5rem] text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />{" "}
+              <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 font-mono text-[0.5rem] text-emerald-600">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />{" "}
                 Passing
               </span>
             </div>
@@ -132,12 +132,12 @@ export function HeroDashboard() {
                 (name, i) => (
                   <div key={name}>
                     <div className="flex justify-between text-[0.55rem] mb-0.5">
-                      <span className="font-mono text-[#8B8B8B]">{name}</span>
+                      <span className="font-mono text-slate-400">{name}</span>
                       <span className="font-mono text-primary text-[0.55rem]">
                         ✓
                       </span>
                     </div>
-                    <div className="h-[2px] w-full rounded-full bg-white/5">
+                    <div className="h-[2px] w-full rounded-full bg-slate-100">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
@@ -146,7 +146,7 @@ export function HeroDashboard() {
                           delay: 0.5 + i * 0.08,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-[#FFE08A]"
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-sky-300"
                       />
                     </div>
                   </div>
@@ -170,14 +170,14 @@ export function HeroDashboard() {
           <div className={`${CARD} p-4`}>
             <div className="flex items-center justify-between mb-2.5">
               <span className={MONO}>Cluster Metrics</span>
-              <span className="font-mono text-[0.5rem] text-emerald-400">
+              <span className="font-mono text-[0.5rem] text-emerald-600">
                 Stable
               </span>
             </div>
             <div className="space-y-2">
               <Bar label="CPU Load" value={62} unit="%" color="text-primary" barColor="bg-primary" i={0} />
-              <Bar label="Heap" value={45} unit="%" color="text-emerald-400" barColor="bg-emerald-400" i={1} />
-              <Bar label="Traffic" value={78} unit="k/s" color="text-sky-400" barColor="bg-sky-400" i={2} />
+              <Bar label="Heap" value={45} unit="%" color="text-emerald-600" barColor="bg-emerald-400" i={1} />
+              <Bar label="Traffic" value={78} unit="k/s" color="text-sky-600" barColor="bg-sky-400" i={2} />
               <Bar label="P99 Lat." value={30} unit="ms" color="text-primary" barColor="bg-primary" i={3} />
             </div>
           </div>
@@ -216,11 +216,11 @@ export function HeroDashboard() {
                   key={s.label}
                   className="flex items-center justify-between"
                 >
-                  <span className="font-mono text-[0.52rem] text-[#8B8B8B]">
+                  <span className="font-mono text-[0.52rem] text-slate-400">
                     {s.label}
                   </span>
-                  <span className="flex items-center gap-1 font-mono text-[0.52rem] text-emerald-400">
-                    <span className="h-1 w-1 rounded-full bg-emerald-400" />
+                  <span className="flex items-center gap-1 font-mono text-[0.52rem] text-emerald-600">
+                    <span className="h-1 w-1 rounded-full bg-emerald-500" />
                     {s.status}
                   </span>
                 </div>
@@ -285,10 +285,10 @@ function AiWorkflow() {
             <span
               className={`rounded px-1.5 py-0.5 font-mono text-[0.5rem] transition-all duration-300 ${
                 i === active
-                  ? "bg-primary/20 text-primary font-bold"
+                  ? "bg-primary/15 text-primary font-bold"
                   : i < active
-                  ? "text-emerald-400/80"
-                  : "text-[#444]"
+                  ? "text-emerald-600/90"
+                  : "text-slate-300"
               }`}
             >
               {s}
@@ -296,7 +296,7 @@ function AiWorkflow() {
             {i < AI_STEPS.length - 1 && (
               <span
                 className={`text-[0.45rem] ${
-                  i < active ? "text-emerald-400/60" : "text-[#222]"
+                  i < active ? "text-emerald-400/80" : "text-slate-200"
                 }`}
               >
                 →
@@ -317,7 +317,7 @@ const LOG_LINES = [
   { t: "dim", msg: "Running health checks..." },
   { t: "green", msg: "✓ All 142 tests passed" },
   { t: "green", msg: "✓ Deployed successfully" },
-  { t: "amber", msg: "→ Live in production" },
+  { t: "blue", msg: "→ Live in production" },
 ];
 
 function Terminal() {
@@ -331,9 +331,9 @@ function Terminal() {
   return (
     <div className={`${CARD} p-4`}>
       <div className="flex items-center gap-1.5 mb-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-red-500/60" />
-        <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/60" />
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/60" />
+        <span className="h-1.5 w-1.5 rounded-full bg-red-400/70" />
+        <span className="h-1.5 w-1.5 rounded-full bg-amber-400/70" />
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
         <span className={`ml-1 ${MONO}`}>deploy.sh</span>
       </div>
       <div className="space-y-0.5 font-mono text-[0.55rem] leading-relaxed min-h-[95px]">
@@ -345,10 +345,10 @@ function Terminal() {
             transition={{ duration: 0.2 }}
             className={
               l.t === "green"
-                ? "text-emerald-400"
-                : l.t === "amber"
+                ? "text-emerald-600"
+                : l.t === "blue"
                 ? "text-primary"
-                : "text-[#555]"
+                : "text-slate-400"
             }
           >
             {l.msg}
@@ -374,22 +374,22 @@ function ApiLive() {
   return (
     <div className={`${CARD} p-3.5`}>
       <div className="flex items-center gap-1.5 mb-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
         <span className={MONO}>API Gateway</span>
       </div>
       <div className="space-y-1 font-mono text-[0.55rem]">
         <div className="flex justify-between">
-          <span className="text-[#666]">Requests</span>
-          <span className="text-white tabular-nums">
+          <span className="text-slate-400">Requests</span>
+          <span className="text-slate-700 tabular-nums">
             {req.toLocaleString()}
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-[#666]">Latency</span>
-          <span className="text-emerald-400">42ms</span>
+          <span className="text-slate-400">Latency</span>
+          <span className="text-emerald-600">42ms</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-[#666]">Errors</span>
+          <span className="text-slate-400">Errors</span>
           <span className="text-primary">0.02%</span>
         </div>
       </div>

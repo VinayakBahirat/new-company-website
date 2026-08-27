@@ -61,30 +61,25 @@ export function SplitHeading({
   className?: string;
   delay?: number;
 }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   const words = text.split(" ");
   
   return (
-    <span className={cn("inline-block", className)}>
+    <span className={cn("inline", className)}>
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block pb-[0.12em] align-bottom" style={{ clipPath: "inset(-100% -50% 0 -50%)" }}>
-          <motion.span
-            className="inline-block"
-            initial={{ y: "108%", opacity: 0 }}
-            animate={mounted ? { y: "0%", opacity: 1 } : { y: "108%", opacity: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: delay + i * 0.03,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            {word}
-            {i < words.length - 1 ? "\u00A0" : ""}
-          </motion.span>
-        </span>
+        <motion.span
+          key={`${word}-${i}`}
+          className="inline"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.6,
+            delay: delay + i * 0.05,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          {word}
+          {i < words.length - 1 ? " " : ""}
+        </motion.span>
       ))}
     </span>
   );
@@ -239,32 +234,7 @@ export function ScrollProgress() {
 /* ------------------------------------------------------------ CursorGlow */
 
 export function CursorGlow() {
-  const x = useSpring(useMotionValue(-500), { stiffness: 120, damping: 22, mass: 0.6 });
-  const y = useSpring(useMotionValue(-500), { stiffness: 120, damping: 22, mass: 0.6 });
-  const [enabled, setEnabled] = useState(false);
-
-  useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
-    setEnabled(true);
-    const onMove = (e: MouseEvent) => {
-      x.set(e.clientX);
-      y.set(e.clientY);
-    };
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [x, y]);
-
-  if (!enabled) return null;
-
-  return (
-    <motion.div
-      aria-hidden
-      style={{ x, y }}
-      className="pointer-events-none fixed left-0 top-0 z-[55] hidden h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full md:block"
-    >
-      <div className="h-full w-full rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--primary)_11%,transparent)_0%,transparent_62%)] blur-[10px]" />
-    </motion.div>
-  );
+  return null;
 }
 
 /* ------------------------------------------------------------- Parallax */

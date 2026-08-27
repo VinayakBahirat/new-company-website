@@ -3,7 +3,7 @@ import { COMPANY } from "@/content/site";
 
 const WA_NUMBER = COMPANY.phone.replace(/[^+\d]/g, "");
 const WA_MESSAGE = encodeURIComponent(
-  "Hi Aeriform! I'd like to discuss a project with your team."
+  "Hi Sumanix! I'd like to discuss a project with your team."
 );
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 

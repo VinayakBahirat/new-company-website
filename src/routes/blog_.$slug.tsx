@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section } from "@/components/site/primitives";
@@ -8,7 +8,7 @@ import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
     const post = BLOG_POSTS.find((p) => p.slug === params.slug);
-    const title = post ? (post.metaTitle || `${post.title} — Blog | Aeriform Systems`) : "Blog Post Not Found — Aeriform Systems";
+    const title = post ? (post.metaTitle || `${post.title} — Blog | Sumanix Solutions`) : "Blog Post Not Found — Sumanix Solutions";
     const description = post ? (post.metaDescription || post.summary) : "Blog post details";
     return {
       meta: [

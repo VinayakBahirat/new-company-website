@@ -1,4 +1,4 @@
-export interface RealWorldUseCase {
+﻿export interface RealWorldUseCase {
   id: string; // e.g. "Use Case 01"
   title: string;
   description: string;

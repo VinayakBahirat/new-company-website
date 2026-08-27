@@ -5,7 +5,7 @@ import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/sit
 import { PROJECTS } from "@/content/site";
 import { MockUi } from "@/components/site/mock-ui";
 
-const TITLE = "Selected Work — Enterprise Platforms & AI Products | Aeriform Systems";
+const TITLE = "Selected Work — Enterprise Platforms & AI Products | Sumanix Solutions";
 const DESCRIPTION =
   "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 
@@ -51,7 +51,7 @@ function WorkPage() {
                     ) : (
                       <>
                         <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
-                        <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.74)]" />
+                        <div className="absolute inset-0 bg-[oklch(0.96_0.02_220_/_0.60)]" />
                         <div className="absolute inset-0 grid-lines opacity-30" />
                         <MockUi name={p.name} />
                       </>

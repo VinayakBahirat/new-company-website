@@ -26,8 +26,8 @@ export const Route = createFileRoute("/industries_/$slug")({
   head: ({ params }) => {
     const ind = getIndustryDetailBySlug(params.slug);
     const title = ind
-      ? `${ind.name} Software & AI Solutions — Industries | Aeriform Systems`
-      : "Industry Not Found — Aeriform Systems";
+      ? `${ind.name} Software & AI Solutions — Industries | Sumanix Solutions`
+      : "Industry Not Found — Sumanix Solutions";
     const description = ind
       ? ind.shortDescription
       : "Custom software engineering, AI solutions, and cloud systems built for industry leaders.";
@@ -177,7 +177,7 @@ function IndustryDetailPage() {
         <SectionHeading
           eyebrow="Market Dynamics"
           title={`Addressing Core Obstacles in ${industry.name}.`}
-          body="A strategic overview of market friction and Aeriform's engineered response."
+          body="A strategic overview of market friction and Sumanix's engineered response."
         />
 
         <div className="mt-12 grid gap-12 md:grid-cols-2 md:divide-x md:divide-border/80">
@@ -211,13 +211,13 @@ function IndustryDetailPage() {
             </div>
           </Reveal>
 
-          {/* Right Column: Aeriform Advantage */}
+          {/* Right Column: Sumanix Advantage */}
           <Reveal delay={0.1}>
             <div className="space-y-6 md:pl-8">
               <div className="flex items-center gap-3 border-b border-primary/20 pb-4">
                 <ShieldCheck className="h-5 w-5 text-primary" />
                 <h3 className="font-display text-lg font-bold text-foreground">
-                  The Aeriform Strategic Edge
+                  The Sumanix Strategic Edge
                 </h3>
               </div>
 
@@ -348,7 +348,7 @@ function IndustryDetailPage() {
 
               <div className="md:pl-6">
                 <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider block mb-2">
-                  The Aeriform Engineering Solution
+                  The Sumanix Engineering Solution
                 </span>
                 <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {activeUseCase.solution}

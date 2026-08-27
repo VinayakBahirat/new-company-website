@@ -137,7 +137,7 @@ export function ContactAnimation() {
             return (
               <motion.div
                 key={tag}
-                className="absolute inset-x-0 font-display text-xs font-medium text-white/80 flex items-center gap-1.5"
+                className="absolute inset-x-0 font-display text-xs font-medium text-primary flex items-center gap-1.5"
                 initial={{ opacity: 0, y: 15 }}
                 animate={isActive ? { opacity: 1, y: 4 } : { opacity: 0, y: -15 }}
                 transition={{ duration: 0.4 }}
