@@ -57,6 +57,7 @@ import {
 const TITLE = "Sumanix Solutions — Enterprise Software & AI Product Engineering";
 const DESCRIPTION =
   "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
+const OG_IMAGE = "https://vinayakbahiartwebsite.netlify.app/og-image.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,6 +66,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
   }),
   component: HomePage,

@@ -1,4 +1,4 @@
-﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -81,14 +81,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#e8f0fe" },
       { name: "author", content: "Sumanix Solutions" },
+      { title: "Sumanix Solutions — Enterprise Software & AI Product Engineering" },
+      { name: "description", content: "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications, mobile apps, and AI solutions." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Sumanix Solutions" },
+      { property: "og:title", content: "Sumanix Solutions — Enterprise Software & AI Product Engineering" },
+      { property: "og:description", content: "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications, mobile apps, and AI solutions." },
+      { property: "og:image", content: "https://vinayakbahiartwebsite.netlify.app/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Sumanix Solutions — Enterprise Software & AI Product Engineering" },
+      { name: "twitter:description", content: "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications, mobile apps, and AI solutions." },
+      { name: "twitter:image", content: "https://vinayakbahiartwebsite.netlify.app/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "shortcut icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.png?v=2", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png?v=2" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=2" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

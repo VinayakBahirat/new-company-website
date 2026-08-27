@@ -235,7 +235,7 @@ function IndustryDetailPage() {
                   How We Deliver Value
                 </h4>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {industry.overview.howAeriformHelps}
+                  {industry.overview.howSumanixHelps}
                 </p>
               </div>
             </div>

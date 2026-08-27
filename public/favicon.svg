@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="120" fill="#0f172a"/>
+  <!-- Glowing Hexagon Icon -->
+  <g transform="translate(76, 76) scale(1.41)">
+    <defs>
+      <linearGradient id="gradSky" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0284c7"/>
+        <stop offset="50%" stop-color="#0ea5e9"/>
+        <stop offset="100%" stop-color="#38bdf8"/>
+      </linearGradient>
+    </defs>
+    <!-- Outer Hexagon -->
+    <path d="M 128 20 L 230 79 L 230 197 L 128 256 L 26 197 L 26 79 Z" fill="none" stroke="url(#gradSky)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Inner Interconnected Hexagon -->
+    <path d="M 128 58 L 196 97 L 196 175 L 128 214 L 60 175 L 60 97 Z" fill="none" stroke="#f8fafc" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>
