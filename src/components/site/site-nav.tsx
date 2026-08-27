@@ -5,22 +5,16 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { COMPANY, NAV_LINKS } from "@/content/site";
 import { Magnetic } from "./motion-primitives";
 import { cn } from "@/lib/utils";
+import logoImg from "@/img/logo.png";
 
 export function Logotype({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span className="relative grid h-8 w-8 place-items-center">
-        <span className="absolute inset-0 rounded-[10px] bg-[conic-gradient(from_140deg,color-mix(in_oklab,var(--primary)_80%,transparent),transparent_55%,color-mix(in_oklab,var(--primary)_55%,transparent))] opacity-50 blur-[7px]" />
-        <svg viewBox="0 0 32 32" className="relative h-8 w-8" aria-hidden>
-          <rect x="1" y="1" width="30" height="30" rx="9" fill="oklch(0.97 0.008 220)" stroke="oklch(0.78 0.035 225)" strokeWidth="1" />
-          <path d="M16 7.5 24.5 24h-4.9L16 16.2 12.4 24H7.5L16 7.5Z" fill="var(--primary)" />
-          <circle cx="16" cy="21" r="1.9" fill="oklch(0.97 0.008 220)" />
-        </svg>
-      </span>
-      <span className="font-display text-[0.95rem] font-semibold tracking-tight">
-        {COMPANY.short}
-        <span className="text-muted-foreground">.solutions</span>
-      </span>
+    <span className={cn("inline-flex items-center gap-2", className)}>
+      <img
+        src={logoImg}
+        alt={COMPANY.name}
+        className="h-9 sm:h-11 w-auto object-contain transition-opacity duration-200"
+      />
     </span>
   );
 }
@@ -53,9 +47,9 @@ export function SiteNav() {
             scrolled ? "glass-panel" : "border border-transparent",
           )}
         >
-          <Link 
-            to="/" 
-            className="focus-ring rounded-lg" 
+          <Link
+            to="/"
+            className="focus-ring rounded-lg"
             aria-label={`${COMPANY.name} home`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >

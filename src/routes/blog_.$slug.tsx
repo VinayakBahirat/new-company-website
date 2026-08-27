@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section } from "@/components/site/primitives";
@@ -195,6 +195,7 @@ function BlogPostPage() {
                             </ol>
                           );
                         }
+                        return null;
                       });
                     })()
                   ) : (

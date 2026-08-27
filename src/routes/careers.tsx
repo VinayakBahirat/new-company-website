@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, MapPin, Clock, Users, Check } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
@@ -146,7 +146,7 @@ function CareersPage() {
       </Section>
 
       <Dialog open={isFormOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-2xl bg-zinc-950 border-border p-7 sm:p-10 text-white rounded-[1.8rem]">
+        <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-xl border-border p-7 sm:p-10 rounded-[1.8rem]">
           <DialogHeader>
             <DialogTitle className="font-display text-2xl font-semibold">Join Our Pod</DialogTitle>
           </DialogHeader>
