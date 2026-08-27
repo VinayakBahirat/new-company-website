@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, MapPin, Clock, Users, Check } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
@@ -21,7 +21,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const TITLE = "Careers — Engineering, AI and Design Roles | Aeriform Systems";
+const TITLE = "Careers — Engineering, AI and Design Roles | Sumanix Solutions";
 const DESCRIPTION =
   "Open roles for senior product engineers, AI systems engineers, platform engineers, designers and delivery leads. Remote-friendly, senior-weighted teams.";
 

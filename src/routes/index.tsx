@@ -19,9 +19,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
-import { NodeField } from "@/components/site/node-field";
 import { StudioArchitecture } from "@/components/site/studio-architecture";
-import { HeroDashboard } from "@/components/site/hero-dashboard";
 import {
   Counter,
   Parallax,
@@ -56,7 +54,7 @@ import {
   VALUES,
 } from "@/content/site";
 
-const TITLE = "Aeriform Systems — Enterprise Software & AI Product Engineering";
+const TITLE = "Sumanix Solutions — Enterprise Software & AI Product Engineering";
 const DESCRIPTION =
   "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
 
@@ -114,82 +112,53 @@ function HomePage() {
 
 function Hero() {
   return (
-    <Section className="relative min-h-[100svh] overflow-hidden pb-20 pt-36 sm:pt-44">
+    <Section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden pb-20 pt-36 sm:pt-44">
       <MeshBackground />
-      <div className="pointer-events-none absolute inset-0 -z-0 opacity-70">
-        <div className="absolute right-[-10%] top-[6%] h-[92vh] w-[70vw] max-w-[900px]">
-          <NodeField density={68} />
-        </div>
-      </div>
 
-      <div className="relative grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Pill>
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              Available for new projects
-            </Pill>
-          </motion.div>
-
-
-          <h1 className="mt-8 text-[2.6rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.1rem]">
-            <span className="text-gradient block">
-              <SplitHeading text="We Build Products That" delay={0.1} />
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Pill>
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
             </span>
-            <span className="block text-amber-gradient">
-              <SplitHeading text="Real Businesses Depend On." delay={0.28} />
-            </span>
-          </h1>
+            Available for new projects
+          </Pill>
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
-          >
-            We help businesses turn ideas into fast, reliable, and scalable software. From custom web applications and SaaS platforms to AI-powered solutions, we build products that solve real business problems and support long-term growth.
-          </motion.p>
+        <h1 className="mt-10 text-[2.8rem] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-6xl lg:text-[5.5rem]">
+          <span className="text-gradient block">
+            <SplitHeading text="We Build Products That" delay={0.1} />
+          </span>
+          <span className="block text-amber-gradient mt-2">
+            <SplitHeading text="Real Businesses Depend On." delay={0.28} />
+          </span>
+        </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-wrap items-center gap-3"
-          >
-            <CtaLink to="/contact">Book a Free Consultation</CtaLink>
-            <CtaLink to="/work" variant="ghost">
-              View Our Work
-            </CtaLink>
-          </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+        >
+          We help businesses turn ideas into fast, reliable, and scalable software. From custom web applications and SaaS platforms to AI-powered solutions, we build products that solve real business problems and support long-term growth.
+        </motion.p>
 
-          {/* 
-          <motion.dl
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="mt-16 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-4 hidden"
-          >
-            {METRICS.map((m) => (
-              <div key={m.label} className="bg-background/70 px-5 py-6 backdrop-blur-sm">
-                <dt className="font-display text-2xl font-semibold sm:text-3xl">
-                  <Counter to={m.value} suffix={m.suffix} />
-                </dt>
-                <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">{m.label}</dd>
-              </div>
-            ))}
-          </motion.dl> */}
-        </div>
-
-        <div className="relative hidden lg:block">
-          <HeroDashboard />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+        >
+          <CtaLink to="/contact">Book a Free Consultation</CtaLink>
+          <CtaLink to="/work" variant="ghost">
+            View Our Work
+          </CtaLink>
+        </motion.div>
       </div>
     </Section>
   );
@@ -296,9 +265,13 @@ function StudioIntro() {
             title="We build software that makes your business easier to run."
             body="A successful product starts with the right foundation. We take time to understand your business, plan the best solution, and build software that is reliable, scalable, and ready for the future."
           />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-2">
+          <div className="mt-12 grid overflow-hidden rounded-2xl border border-border glass-panel sm:grid-cols-2">
             {VALUES.map((v, i) => (
-              <Reveal key={v.title} delay={i * 0.05}>
+              <Reveal key={v.title} delay={i * 0.05} className={cn(
+                "border-border",
+                i % 2 === 0 ? "sm:border-r" : "",
+                i < 4 ? "border-b" : ""
+              )}>
                 <div className="h-full bg-background/70 p-6">
                   <h3 className="font-display text-base font-semibold">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
@@ -332,7 +305,7 @@ function ProcessTimeline() {
         body="We keep the process simple and transparent, so you always know what we're working on and what comes next."
       />
       <div className="relative mt-16">
-        <div className="grid gap-4 md:grid-cols-2 md:gap-x-14">
+        <div className="grid gap-4 md:grid-cols-2">
           {/* Left Column */}
           <div className="flex flex-col gap-4">
             {leftColumn.map((stage, i) => (
@@ -461,7 +434,7 @@ function WorkPreview() {
                   ) : (
                     <>
                       <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
-                      <div className="absolute inset-0 bg-[oklch(0.1_0_0_/_0.72)]" />
+                      <div className="absolute inset-0 bg-[oklch(0.96_0.02_220_/_0.60)]" />
                       <div className="absolute inset-0 grid-lines opacity-30" />
                       <MockUi name={p.name} />
                     </>
@@ -479,10 +452,10 @@ function WorkPreview() {
                         <span className="font-semibold text-foreground/80">Technology:</span> {p.tech.join(", ")}
                       </p>
                     )}
-                    <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm">
+                    {/* <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-glass px-3.5 py-1.5 text-[0.75rem] font-medium text-muted-foreground shadow-sm">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
                       Result: [X]% increase in [metric]
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </GlassCard>
@@ -527,6 +500,10 @@ function IndustriesSection() {
 /* ----------------------------------------------------------------- Why us */
 
 function WhyUs() {
+  const len = DIFFERENTIATORS.length;
+  const lastRowSm = Math.floor((len - 1) / 2) * 2;
+  const lastRowLg = Math.floor((len - 1) / 5) * 5;
+
   return (
     <Section className="py-24 sm:py-32">
       <SectionHeading
@@ -534,9 +511,16 @@ function WhyUs() {
         title="Why Clients Choose Us."
         align="center"
       />
-      <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-16 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-5">
         {DIFFERENTIATORS.map((d, i) => (
-          <Reveal key={d.title} delay={(i % 5) * 0.05}>
+          <Reveal key={d.title} delay={(i % 5) * 0.05} className={cn(
+            "border-border",
+            i < len - 1 ? "border-b" : "",
+            i >= lastRowSm ? "sm:border-b-0" : "",
+            i >= lastRowLg ? "lg:border-b-0" : "",
+            i % 2 === 0 ? "sm:border-r" : "",
+            i % 5 !== 4 ? "lg:border-r" : "lg:border-r-0"
+          )}>
             <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
               <span className="font-mono text-[0.65rem] text-primary">
                 {String(i + 1).padStart(2, "0")}

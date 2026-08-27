@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
-import { Section, SectionHeading } from "@/components/site/primitives";
+import { ClosingCta, Section, SectionHeading } from "@/components/site/primitives";
 import { LeadForm } from "@/components/site/lead-form";
 import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { INDUSTRY_DETAILS } from "@/content/industry-details";
@@ -15,7 +15,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const TITLE = "Industries We Serve — Enterprise, Fintech, Healthcare & AI Solutions | Aeriform Systems";
+const TITLE = "Industries We Serve — Enterprise, Fintech, Healthcare & AI Solutions | Sumanix Solutions";
 const DESCRIPTION =
   "We build custom software, AI systems, SaaS platforms, and mobile apps tailored for Healthcare, Finance, Education, Retail, Logistics, Manufacturing, Real Estate, and Enterprise operations.";
 
@@ -51,9 +51,9 @@ function IndustriesOverviewPage() {
   return (
     <>
       {/* HERO SECTION */}
-      <Section className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
+      <Section className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
         <MeshBackground />
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
               <Building2 className="h-3.5 w-3.5" />
@@ -62,32 +62,36 @@ function IndustriesOverviewPage() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl text-foreground">
+            <h1 className="mt-6 max-w-4xl text-balance font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl text-foreground">
               Industry-Specific Software & AI Engineering.
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Off-the-shelf software rarely fits complex industry workflows, compliance standards, and security demands. We engineer bespoke digital platforms built 100% around your domain operations.
             </p>
           </Reveal>
 
           {/* Compliance & Domain Bar */}
           <Reveal delay={0.15}>
-            <div className="mt-10 flex flex-wrap items-center gap-6 border-y border-border/80 py-6 text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Lock className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">100% IP & Source Code Ownership</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">Built With Compliance-Aware Practices</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap className="h-4 w-4 text-primary" />
-                <span className="font-semibold text-foreground">Senior Engineers Only</span>
-              </div>
+            <div className="mt-10 flex flex-wrap gap-4">
+              {[
+                { icon: Lock, label: "100% IP & Source Code Ownership" },
+                { icon: ShieldCheck, label: "Built With Compliance-Aware Practices" },
+                { icon: Zap, label: "Senior Engineers Only" },
+              ].map((badge) => {
+                const Icon = badge.icon;
+                return (
+                  <span
+                    key={badge.label}
+                    className="inline-flex items-center gap-2 rounded-xl border border-border bg-glass px-4 py-2 text-xs font-medium text-muted-foreground"
+                  >
+                    <Icon className="h-3.5 w-3.5 text-primary" />
+                    {badge.label}
+                  </span>
+                );
+              })}
             </div>
           </Reveal>
         </div>
@@ -172,51 +176,7 @@ function IndustriesOverviewPage() {
         </div>
       </Section>
 
-      {/* LEAD FORM SECTION */}
-      <Section id="industry-enquiry" className="py-20 sm:py-28 border-t border-border">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-          <div>
-            <Reveal>
-              <p className="eyebrow flex items-center gap-2.5">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
-                Industry Consultation
-              </p>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mt-5 text-balance font-display text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-                Discuss Your Industry Software Strategy.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Tell us which industry you operate in and what software challenges you are facing. We will put together a custom industry solution proposal sent within 24 hours.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Response sent within 24 hours",
-                  "Domain-expert technical consultation",
-                  "Compliance & security evaluation included",
-                  "Work directly with senior engineers",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Zap className="h-3 w-3" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <div className="rounded-[1.8rem] border border-border bg-surface/30 p-7 sm:p-10">
-              <LeadForm heading="Get an Industry Solution Proposal" />
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+      <ClosingCta />
 
       <WhatsAppFab />
     </>

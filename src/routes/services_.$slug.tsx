@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
@@ -27,8 +27,8 @@ export const Route = createFileRoute("/services_/$slug")({
   head: ({ params }) => {
     const service = getServiceDetailBySlug(params.slug);
     const title = service
-      ? `${service.title} — Services | Aeriform Systems`
-      : "Service Not Found — Aeriform Systems";
+      ? `${service.title} — Services | Sumanix Solutions`
+      : "Service Not Found — Sumanix Solutions";
     const description = service
       ? service.shortDescription
       : "Enterprise software, AI, SaaS, mobile, cloud and performance engineering services.";
@@ -160,7 +160,7 @@ function ServiceDetailPage() {
         <SectionHeading
           eyebrow="Service Overview"
           title="Solving Real Business Challenges With Modern Software Engineering."
-          body="Clear answers to why your business needs this service and how Aeriform delivers tangible impact."
+          body="Clear answers to why your business needs this service and how Sumanix delivers tangible impact."
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
 import { StudioArchitecture } from "@/components/site/studio-architecture";
@@ -8,7 +9,7 @@ import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/sit
 import { COMPANY, DIFFERENTIATORS, INDUSTRIES, STATS, VALUES } from "@/content/site";
 import { getIndustrySlug } from "@/content/industry-details";
 
-const TITLE = "Studio — Story, Mission and Values | Aeriform Systems";
+const TITLE = "Studio — Story, Mission and Values | Sumanix Solutions";
 const DESCRIPTION =
   "An independent engineering studio of 68 product, AI, infrastructure and design specialists building long-lived software systems across 19 countries.";
 
@@ -62,16 +63,29 @@ function StudioPage() {
 
       <Section className="py-20">
         <SectionHeading eyebrow="Core values" title="The Values That Guide Every Project." />
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
-          {VALUES.map((v, i) => (
-            <Reveal key={v.title} delay={i * 0.05}>
-              <div className="h-full bg-background/70 p-6">
-                <span className="font-mono text-[0.65rem] text-primary">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 font-display text-base font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-14 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-5">
+          {VALUES.map((v, i) => {
+            const len = VALUES.length;
+            const lastRowSm = Math.floor((len - 1) / 2) * 2;
+            const lastRowLg = Math.floor((len - 1) / 5) * 5;
+            
+            return (
+              <Reveal key={v.title} delay={i * 0.05} className={cn(
+                "border-border",
+                i < len - 1 ? "border-b" : "",
+                i >= lastRowSm ? "sm:border-b-0" : "",
+                i >= lastRowLg ? "lg:border-b-0" : "",
+                i % 2 === 0 ? "sm:border-r" : "",
+                i % 5 !== 4 ? "lg:border-r" : "lg:border-r-0"
+              )}>
+                <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+                  <span className="font-mono text-[0.65rem] text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-3 font-display text-base font-semibold">{v.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
@@ -80,7 +94,7 @@ function StudioPage() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={(i % 4) * 0.05}>
-              <div className="h-full rounded-2xl border border-border bg-surface/30 p-6">
+              <div className="h-full rounded-2xl border border-border bg-glass p-6">
                 <p className="font-display text-3xl font-semibold tracking-tight text-amber-gradient sm:text-4xl">
                   <Counter to={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
                 </p>
@@ -123,18 +137,31 @@ function StudioPage() {
           title="Why Clients Choose Us."
           align="center"
         />
-        <div className="mt-16 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
-          {DIFFERENTIATORS.map((d, i) => (
-            <Reveal key={d.title} delay={(i % 5) * 0.05}>
-              <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
-                <span className="font-mono text-[0.65rem] text-primary">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 font-display text-base font-semibold">{d.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.body}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-16 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-5">
+          {DIFFERENTIATORS.map((d, i) => {
+            const len = DIFFERENTIATORS.length;
+            const lastRowSm = Math.floor((len - 1) / 2) * 2;
+            const lastRowLg = Math.floor((len - 1) / 5) * 5;
+            
+            return (
+              <Reveal key={d.title} delay={(i % 5) * 0.05} className={cn(
+                "border-border",
+                i < len - 1 ? "border-b" : "",
+                i >= lastRowSm ? "sm:border-b-0" : "",
+                i >= lastRowLg ? "lg:border-b-0" : "",
+                i % 2 === 0 ? "sm:border-r" : "",
+                i % 5 !== 4 ? "lg:border-r" : "lg:border-r-0"
+              )}>
+                <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+                  <span className="font-mono text-[0.65rem] text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 font-display text-base font-semibold">{d.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.body}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 

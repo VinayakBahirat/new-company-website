@@ -38,7 +38,7 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "application-performance-optimization": Gauge,
 };
 
-const TITLE = "Services — Enterprise, AI, SaaS & Cloud Engineering | Aeriform Systems";
+const TITLE = "Services — Enterprise, AI, SaaS & Cloud Engineering | Sumanix Solutions";
 const DESCRIPTION =
   "Enterprise software, AI product development, SaaS platforms, mobile, cloud operations, automation and performance engineering delivered by senior pods.";
 
@@ -150,16 +150,29 @@ function ServicesPage() {
       {/* Process section */}
       <Section className="py-24 sm:py-32">
         <SectionHeading eyebrow="How it runs" title="From discovery to long-horizon ownership." />
-        <div className="mt-14 grid gap-px overflow-hidden rounded-[1.6rem] border border-border bg-border/60 sm:grid-cols-2 lg:grid-cols-5">
-          {PROCESS.map((s, i) => (
-            <Reveal key={s.step} delay={(i % 5) * 0.05}>
-              <div className="h-full bg-background/70 p-6 transition-colors hover:bg-surface/60">
-                <span className="font-mono text-[0.65rem] text-primary">{s.step}</span>
-                <h3 className="mt-3 font-display text-base font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-14 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-5">
+          {PROCESS.map((s, i) => {
+            const len = PROCESS.length;
+            const lastRowSm = Math.floor((len - 1) / 2) * 2;
+            const lastRowLg = Math.floor((len - 1) / 5) * 5;
+            
+            return (
+              <Reveal key={s.step} delay={(i % 5) * 0.05} className={cn(
+                "border-border",
+                i < len - 1 ? "border-b" : "",
+                i >= lastRowSm ? "sm:border-b-0" : "",
+                i >= lastRowLg ? "lg:border-b-0" : "",
+                i % 2 === 0 ? "sm:border-r" : "",
+                i % 5 !== 4 ? "lg:border-r" : "lg:border-r-0"
+              )}>
+                <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
+                  <span className="font-mono text-[0.65rem] text-primary">{s.step}</span>
+                  <h3 className="mt-3 font-display text-base font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
@@ -211,51 +224,7 @@ function ServicesPage() {
         </div>
       </Section>
 
-      {/* Inline Lead Form */}
-      <Section id="services-enquiry" className="py-24 sm:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-          <div>
-            <Reveal>
-              <p className="eyebrow flex items-center gap-2.5">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
-                Start Your Project
-              </p>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mt-5 text-balance text-3xl font-semibold leading-[1.05] sm:text-4xl md:text-5xl">
-                Ready to Build Something?
-              </h2>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Tell us which service you need and what you're building. We'll put together a free proposal with estimates and timelines — sent to you within 24 hours.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Response in under 24 hours",
-                  "Free technical consultation",
-                  "No pushy follow-ups",
-                  "Work directly with senior engineers",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Zap className="h-3 w-3" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <GlassCard className="rounded-[1.8rem] p-7 sm:p-10">
-              <LeadForm heading="Get a Free Proposal" />
-            </GlassCard>
-          </Reveal>
-        </div>
-      </Section>
+      <ClosingCta />
 
       <WhatsAppFab />
     </>

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Mail, MapPin, Phone, Check, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,7 +19,7 @@ import {
 
 
 
-const TITLE = "Contact — Start a Project | Aeriform Systems";
+const TITLE = "Contact — Start a Project | Sumanix Solutions";
 const DESCRIPTION =
   "Tell us about the platform, AI product or system you need built. We reply within one business day and start with a two-week discovery.";
 
@@ -212,9 +212,9 @@ function ContactPage() {
             </GlassCard>
           </Reveal>
 
-          <div className="grid gap-5">
+          <div className="">
             <Reveal delay={0.06}>
-              <GlassCard className="rounded-[1.8rem] p-7">
+              <GlassCard className="rounded-[1.8rem] p-7 mb-5">
                 <h2 className="eyebrow">Direct lines</h2>
                 <ul className="mt-5 space-y-4 text-sm">
                   <li>

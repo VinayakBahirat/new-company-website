@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#050505" },
-      { name: "author", content: "Aeriform Systems" },
+      { name: "theme-color", content: "#e8f0fe" },
+      { name: "author", content: "Sumanix Solutions" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Aeriform Systems" },
+      { property: "og:site_name", content: "Sumanix Solutions" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

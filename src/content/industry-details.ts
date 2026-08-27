@@ -1,4 +1,4 @@
-export interface IndustrySolution {
+﻿export interface IndustrySolution {
   title: string;
   description: string;
 }
@@ -922,7 +922,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         id: "Use Case 01",
         title: "8-Week SaaS MVP Launch",
         problem: "A legaltech startup needed to launch its SaaS platform to secure its Seed funding round, but lacked an in-house engineering team.",
-        solution: "Deployed a 3-person Aeriform pod to design, build, and deploy the entire multi-tenant SaaS platform with Stripe billing in 8 weeks.",
+        solution: "Deployed a 3-person Sumanix pod to design, build, and deploy the entire multi-tenant SaaS platform with Stripe billing in 8 weeks.",
         impact: "Launched on schedule, acquired 25 paying pilot clients, and successfully closed a $1.8M Seed round.",
       },
       {

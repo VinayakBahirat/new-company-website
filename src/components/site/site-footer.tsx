@@ -80,11 +80,14 @@ export function SiteFooter() {
           </FooterColumn>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-4 border-t border-border pt-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
-          <p className="font-mono tracking-wider">Designed and engineered in-house.</p>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

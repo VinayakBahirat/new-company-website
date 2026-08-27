@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
-import { GlassCard, Section, SectionHeading } from "@/components/site/primitives";
+import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { BLOG_POSTS, COMPANY } from "@/content/site";
 import {
@@ -16,7 +16,7 @@ import {
   Download,
 } from "lucide-react";
 
-const TITLE = "Blog & Insights — Software & AI Engineering | Aeriform Systems";
+const TITLE = "Blog & Insights — Software & AI Engineering | Sumanix Solutions";
 const DESCRIPTION =
   "Expert insights, technical analysis, and best practices for building scalable enterprise software, practical AI applications, and high-performance SaaS platforms.";
 
@@ -149,8 +149,7 @@ function BlogPage() {
         </div>
       </Section>
 
-      {/* Newsletter signup */}
-      <NewsletterSection />
+      <ClosingCta />
 
       <WhatsAppFab />
     </>
@@ -187,7 +186,7 @@ function LeadMagnetBanner() {
           </div>
           <a
             id="lead-magnet-cta"
-            href={`mailto:${COMPANY.email}?subject=Free Guide Request — Tech Stack Checklist&body=Hi Aeriform! Please send me the free tech stack checklist.`}
+            href={`mailto:${COMPANY.email}?subject=Free Guide Request — Tech Stack Checklist&body=Hi Sumanix! Please send me the free tech stack checklist.`}
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_40px_-8px_var(--ring)]"
           >
             Get Free Guide
@@ -199,94 +198,4 @@ function LeadMagnetBanner() {
   );
 }
 
-/* -------------------------------------------------------- Newsletter */
 
-function NewsletterSection() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const body = `Name: ${name}\nEmail: ${email}\n\nPlease add me to your engineering newsletter.`;
-    window.location.href = `mailto:${COMPANY.email}?subject=Newsletter Subscription from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
-    setTimeout(() => setSubmitted(true), 500);
-  }
-
-  return (
-    <Section className="py-24 sm:py-32 border-t border-border">
-      <GlassCard className="overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-14 sm:py-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 -top-1/2 h-[120%] bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_70%)]"
-        />
-        <div className="relative mx-auto max-w-2xl">
-          <Reveal>
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <Mail className="h-7 w-7" />
-            </div>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <h2 className="mt-6 text-balance text-3xl font-semibold sm:text-4xl md:text-5xl">
-              Get our weekly engineering insights free.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Monthly deep dives on software architecture, AI integration, performance engineering, and product building straight to your inbox.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.18}>
-            {submitted ? (
-              <div className="mt-10 flex flex-col items-center gap-3">
-                <CheckCircle className="h-10 w-10 text-primary" />
-                <p className="text-lg font-semibold">You're on the list!</p>
-                <p className="text-sm text-muted-foreground">
-                  Check your email — we've sent a confirmation.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="mt-10 flex flex-col items-center gap-4"
-              >
-                <div className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
-                  <input
-                    id="newsletter-name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    placeholder="Your name"
-                    className="h-12 flex-1 rounded-xl border border-border bg-background/60 px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
-                  />
-                  <input
-                    id="newsletter-email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    placeholder="your@email.com"
-                    className="h-12 flex-1 rounded-xl border border-border bg-background/60 px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
-                  />
-                </div>
-                <button
-                  id="newsletter-submit"
-                  type="submit"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:shadow-[0_0_40px_-8px_var(--ring)]"
-                >
-                  Subscribe — It's Free
-                  <Mail className="h-4 w-4 transition-transform group-hover:scale-110" />
-                </button>
-                <p className="text-xs text-muted-foreground">
-                  No spam · Unsubscribe anytime · Read by 1,200+ engineers
-                </p>
-              </form>
-            )}
-          </Reveal>
-        </div>
-      </GlassCard>
-    </Section>
-  );
-}
