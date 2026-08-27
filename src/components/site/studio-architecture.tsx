@@ -243,11 +243,21 @@ export function StudioArchitecture() {
                               <line x1="140" y1="35" x2="200" y2="35" stroke="rgba(99,102,241,0.25)" strokeWidth={1} />
                               
                               {/* Pulsing particles */}
-                              <motion.circle r="2.5" fill="#6366f1"
+                              <motion.circle
+                                cx={20}
+                                cy={35}
+                                r="2.5"
+                                fill="#6366f1"
+                                initial={{ cx: 20, cy: 35 }}
                                 animate={{ cx: [20, 80, 140, 200], cy: [35, 15, 35, 35] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                               />
-                              <motion.circle r="2.5" fill="#818cf8"
+                              <motion.circle
+                                cx={20}
+                                cy={35}
+                                r="2.5"
+                                fill="#818cf8"
+                                initial={{ cx: 20, cy: 35 }}
                                 animate={{ cx: [20, 80, 140, 200], cy: [35, 55, 35, 35] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
                               />
