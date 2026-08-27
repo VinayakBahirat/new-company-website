@@ -1,4 +1,4 @@
-﻿export interface IndustrySolution {
+export interface IndustrySolution {
   title: string;
   description: string;
 }
@@ -42,7 +42,7 @@ export interface IndustryDetail {
     marketContext: string;
     challenges: string;
     transformationUrgency: string;
-    howAeriformHelps: string;
+    howSumanixHelps: string;
   };
   solutions: IndustrySolution[];
   useCases: IndustryUseCaseDetail[];
@@ -69,7 +69,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Medical providers face severe administrative overload, data silos in legacy EMR systems, complex HIPAA compliance requirements, and fragmented patient communication channels.",
       transformationUrgency:
         "Modern health organizations must adopt secure cloud infrastructure and intelligent AI tools to reduce physician burnout and deliver timely, accurate patient care.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build end-to-end medical software solutions with zero-trust security architecture, seamless FHIR/HL7 interoperability, and automated clinical documentation guardrails.",
     },
     solutions: [
@@ -176,7 +176,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Legacy core banking software causes slow transaction processing, security vulnerabilities, high operational costs, and poor mobile user experiences.",
       transformationUrgency:
         "Fintech innovators and traditional banks must modernize their APIs, automate reconciliation, and deploy real-time fraud monitoring to retain customer trust.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We engineer high-throughput financial architectures featuring double-entry ledgers, sub-50ms transaction APIs, multi-currency engines, and SOC2 compliant security.",
     },
     solutions: [
@@ -268,7 +268,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Educational institutions struggle with outdated learning platforms, low student completion rates, manual grading bottlenecks, and inefficient parent-teacher communication.",
       transformationUrgency:
         "Modern learning environments require accessible, mobile-first platforms and personalized AI support to keep students engaged and improve academic outcomes.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build high-concurrency LMS platforms, automated grading engines, adaptive AI learning paths, and intuitive student portals handling thousands of concurrent users.",
     },
     solutions: [
@@ -360,7 +360,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Retail brands struggle with slow page speeds, cart abandonment, inventory discrepancies across channels, and generic product recommendations.",
       transformationUrgency:
         "To win modern consumers, retailers must deliver sub-second shopping experiences, personalized AI recommendations, and frictionless checkout across web and mobile.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build sub-second headless storefronts (Next.js), one-tap checkout systems, real-time inventory synchronization across Shopify/Amazon, and semantic visual search.",
     },
     solutions: [
@@ -452,7 +452,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Factory floors suffer from manual paper job cards, unexpected machine breakdowns, unmonitored material waste, and disconnected ERP data.",
       transformationUrgency:
         "Modern manufacturers must digitize shop floor operations to track assembly line throughput, predict equipment failures, and maintain strict quality standards.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build tablet-based shop floor platforms, automated procurement triggers, quality audit loggers, and predictive maintenance engines.",
     },
     solutions: [
@@ -543,7 +543,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Property firms struggle with slow property search portals, delayed rent collection, manual maintenance ticket dispatch, and outdated paper lease renewals.",
       transformationUrgency:
         "Modern buyers and tenants demand instant mobile property searches, 3D virtual walkthroughs, automated rent payments, and self-service maintenance reporting.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build sub-second property search portals, 3D WebGL tour viewers, automated Stripe rent collection pipelines, and tenant maintenance ticketing SaaS.",
     },
     solutions: [
@@ -634,7 +634,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Companies struggle with non-deterministic LLM outputs, model hallucinations, high API costs, latency lag, and securing sensitive data against model leaks.",
       transformationUrgency:
         "To stay competitive, enterprises must integrate custom AI into internal workflows to search proprietary data, automate document analysis, and accelerate decision-making.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build deterministic AI architectures with strict JSON schema validation, vector database indexing, hybrid model routing, and automated regression evaluation suites.",
     },
     solutions: [
@@ -725,7 +725,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Logistics companies struggle with inefficient warehouse picking routes, delayed shipment tracking, manual freight dispatcher calls, and paper proof of delivery.",
       transformationUrgency:
         "Modern supply chains demand real-time GPS visibility, automated route dispatching, offline mobile barcode scanning, and multi-carrier price comparison.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build turn-by-turn driver navigation apps, digital proof-of-delivery signature capture, automated freight rate dispatchers, and warehouse bin tracking platforms.",
     },
     solutions: [
@@ -816,7 +816,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Hotels and travel operators face long front-desk check-in queues, high third-party OTA commission fees, rigid reservation engines, and poor guest mobile app engagement.",
       transformationUrgency:
         "Modern travelers demand frictionless mobile check-in, keyless room entry, direct booking perks, and instant digital concierge services.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build keyless mobile door entry apps (NFC/Bluetooth), high-conversion direct booking engines, automated guest messaging, and offline itinerary managers.",
     },
     solutions: [
@@ -907,7 +907,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Early-stage startups struggle with limited engineering bandwidth, slow product iterations, technical debt from hasty prototypes, and scaling failures.",
       transformationUrgency:
         "To win market traction and secure funding, founders must launch polished MVPs quickly without sacrificing code quality or security.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We deploy senior engineering pods to ship production-ready web, mobile, and SaaS MVPs in weeks—built on clean, scalable architectures with zero technical debt.",
     },
     solutions: [
@@ -999,7 +999,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetail> = {
         "Enterprise organizations suffer from fragmented legacy systems, high operational drag, strict data security requirements, and slow release cycles.",
       transformationUrgency:
         "Global enterprises must modernize legacy codebases, automate complex approval workflows, and migrate to secure cloud environments to maintain market leadership.",
-      howAeriformHelps:
+      howSumanixHelps:
         "We build custom enterprise management tools with granular role-based permissions, automated approval routing, legacy REST wrappers, and multi-region cloud failover.",
     },
     solutions: [
