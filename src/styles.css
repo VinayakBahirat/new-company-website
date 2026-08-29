@@ -255,7 +255,7 @@
   will-change: transform;
 }
 @utility animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 80s linear infinite;
   will-change: transform;
 }
 @utility animate-float-y {

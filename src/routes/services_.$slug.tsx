@@ -1,9 +1,8 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
-import { GlassCard, Section, SectionHeading } from "@/components/site/primitives";
-import { LeadForm } from "@/components/site/lead-form";
+import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { getServiceDetailBySlug, SERVICE_DETAILS } from "@/content/service-details";
 import { getIndustrySlug } from "@/content/industry-details";
@@ -458,18 +457,18 @@ function ServiceDetailPage() {
             if (!relService) return null;
             return (
               <Reveal key={relSlug} delay={i * 0.06}>
-                <Link to="/services/$slug" params={{ slug: relService.slug }}>
-                  <GlassCard className="group h-full rounded-[1.6rem] p-6 transition-all duration-300 hover:border-primary/40 hover:scale-[1.02]">
+                <Link to="/services/$slug" params={{ slug: relService.slug }} className="block h-full">
+                  <GlassCard className="group h-full flex flex-col rounded-[1.6rem] p-6 transition-all duration-300 hover:border-primary/40 hover:scale-[1.02]">
                     <span className="font-mono text-[0.65rem] text-primary uppercase tracking-wider">
                       Related Service
                     </span>
                     <h3 className="mt-3 font-display text-base font-semibold group-hover:text-primary transition-colors">
                       {relService.title}
                     </h3>
-                    <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-muted-foreground">
+                    <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-muted-foreground mb-4">
                       {relService.shortDescription}
                     </p>
-                    <div className="mt-5 flex items-center gap-1 text-xs font-semibold text-primary">
+                    <div className="mt-auto pt-1 flex items-center gap-1 text-xs font-semibold text-primary">
                       Learn more
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -481,51 +480,12 @@ function ServiceDetailPage() {
         </div>
       </Section>
 
-      {/* 11. CTA & LEAD FORM */}
-      <Section id="service-enquiry" className="py-20 sm:py-28 border-t border-border">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-          <div>
-            <Reveal>
-              <p className="eyebrow flex items-center gap-2.5">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
-                Have a Project in Mind?
-              </p>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mt-5 text-balance font-display text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-                Let's Build Your {service.title} Solution.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Let's discuss your requirements and identify the right technology solution for your business. We'll provide a free proposal with estimates and timelines within 24 hours.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Response sent within 24 hours",
-                  "Free technical consultation with senior engineers",
-                  "Fixed-scope proposal & clear milestones",
-                  "No pushy follow-ups or lock-in contracts",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Zap className="h-3 w-3" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <GlassCard className="rounded-[1.8rem] p-7 sm:p-10">
-              <LeadForm heading={`Get a Free Quote for ${service.title}`} />
-            </GlassCard>
-          </Reveal>
-        </div>
-      </Section>
+      {/* 11. CLOSING CTA */}
+      <ClosingCta
+        eyebrow="Have a Project in Mind?"
+        title={`Let's Build Your ${service.title} Solution.`}
+        body="Let's discuss your requirements and identify the right technology solution for your business. We'll provide a free proposal with estimates and timelines within 24 hours."
+      />
 
       <WhatsAppFab />
     </>

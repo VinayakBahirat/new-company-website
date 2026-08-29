@@ -2,8 +2,7 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
-import { Section, SectionHeading } from "@/components/site/primitives";
-import { LeadForm } from "@/components/site/lead-form";
+import { ClosingCta, Section, SectionHeading } from "@/components/site/primitives";
 import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { getIndustryDetailBySlug } from "@/content/industry-details";
 import { getServiceDetailBySlug } from "@/content/service-details";
@@ -314,31 +313,20 @@ function IndustryDetailPage() {
         {/* Spotlight Details */}
         {activeUseCase && (
           <div className="mt-8 border-y border-border/80 py-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
-                  {activeUseCase.id} Case Study
-                </span>
-                <h3 className="mt-2 font-display text-2xl font-bold sm:text-3xl text-foreground">
-                  {activeUseCase.title}
-                </h3>
-              </div>
-
-              {/* Big Metric Impact Banner */}
-              <div className="rounded-xl border border-primary/30 bg-primary/10 px-6 py-4">
-                <span className="font-mono text-[0.65rem] font-semibold text-primary uppercase tracking-wider block">
-                  Measured Business Impact
-                </span>
-                <p className="mt-1 font-display text-lg sm:text-xl font-bold text-foreground">
-                  {activeUseCase.impact}
-                </p>
-              </div>
+            {/* Case Study Title */}
+            <div>
+              <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider">
+                {activeUseCase.id} Case Study
+              </span>
+              <h3 className="mt-2 font-display text-2xl font-bold sm:text-3xl lg:text-4xl text-foreground">
+                {activeUseCase.title}
+              </h3>
             </div>
 
-            {/* Problem vs Solution Editorial Split */}
-            <div className="mt-8 grid gap-8 md:grid-cols-2 md:divide-x md:divide-border/80">
-              <div className="md:pr-6">
-                <span className="font-mono text-xs font-semibold text-muted-foreground uppercase tracking-wider block mb-2">
+            {/* Problem, Solution & Impact Grid */}
+            <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="space-y-3">
+                <span className="font-mono text-xs font-semibold text-muted-foreground uppercase tracking-wider block">
                   The Problem
                 </span>
                 <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -346,12 +334,21 @@ function IndustryDetailPage() {
                 </p>
               </div>
 
-              <div className="md:pl-6">
-                <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider block mb-2">
+              <div className="space-y-3 md:border-l md:border-border/80 md:pl-8">
+                <span className="font-mono text-xs font-semibold text-primary uppercase tracking-wider block">
                   The Sumanix Engineering Solution
                 </span>
                 <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {activeUseCase.solution}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 space-y-3 md:col-span-2 lg:col-span-1 lg:border-l-0">
+                <span className="font-mono text-[0.65rem] font-semibold text-primary uppercase tracking-wider block">
+                  Measured Business Impact
+                </span>
+                <p className="font-display text-base font-bold text-foreground leading-snug sm:text-lg lg:text-base">
+                  {activeUseCase.impact}
                 </p>
               </div>
             </div>
@@ -514,51 +511,12 @@ function IndustryDetailPage() {
         </div>
       </Section>
 
-      {/* 11. CTA & LEAD FORM */}
-      <Section id="industry-enquiry" className="py-20 sm:py-28 border-t border-border">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-          <div>
-            <Reveal>
-              <p className="eyebrow flex items-center gap-2.5">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_2px_var(--ring)]" />
-                Start Your Project
-              </p>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mt-5 text-balance font-display text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-                Ready to Build Your {industry.name} Solution?
-              </h2>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Let's discuss your requirements and identify the right technology solution for your organization. We will provide a free proposal with estimates and timelines within 24 hours.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <ul className="mt-8 space-y-3">
-                {[
-                  "Response sent within 24 hours",
-                  "Free technical consultation with senior engineers",
-                  "Fixed-scope proposal & clear milestones",
-                  "Zero lock-in contracts or pushy sales",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Zap className="h-3 w-3" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <div className="rounded-[1.8rem] border border-border bg-surface/30 p-7 sm:p-10">
-              <LeadForm heading={`Get a Free Proposal for ${industry.name}`} />
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+      {/* 11. CLOSING CTA */}
+      <ClosingCta
+        eyebrow="Start Your Project"
+        title={`Ready to Build Your ${industry.name} Solution?`}
+        body="Let's discuss your requirements and identify the right technology solution for your organization. We will provide a free proposal with estimates and timelines within 24 hours."
+      />
 
       <WhatsAppFab />
     </>

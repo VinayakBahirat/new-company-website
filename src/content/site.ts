@@ -1,4 +1,4 @@
-﻿import chooseYourAttitudeImg from "@/img/Choose-Your-Attitude.jpg";
+import chooseYourAttitudeImg from "@/img/Choose-Your-Attitude.jpg";
 import evenskynBeautyImg from "@/img/Evenskyn-Beauty.jpg";
 import sixVintageRugsImg from "@/img/Six-Vintage-Rugs.jpg";
 import norsuHomeImg from "@/img/Norsu-Home.jpg";
@@ -179,16 +179,12 @@ export const SERVICES = [
 ];
 
 export const PROCESS = [
-  { step: "01", title: "Discovery", body: "Every successful project starts with understanding your business, goals, and challenges." },
-  { step: "02", title: "Planning", body: "A clear roadmap with realistic timelines, budgets, and milestones keeps every project on track." },
-  { step: "03", title: "UX Research", body: "Understanding your users helps create experiences that are simple, intuitive, and effective." },
-  { step: "04", title: "Wireframes", body: "Simple layouts help visualize the product and validate ideas before development begins." },
-  { step: "05", title: "UI Design", body: "Clean, modern designs that are easy to use and create a great experience for your customers." },
-  { step: "06", title: "Architecture", body: "A strong foundation ensures your software is reliable, scalable, and ready for future growth." },
-  { step: "07", title: "Development", body: "Your project is built step by step, with regular updates so you can track progress throughout the development process." },
-  { step: "08", title: "Testing", body: "Every feature is carefully tested to make sure your software is reliable, secure, and ready for launch." },
-  { step: "09", title: "Deployment", body: "Your software is launched smoothly with minimal disruption, ensuring everything works as expected from day one." },
-  { step: "10", title: "Maintenance", body: "Regular updates and ongoing support keep your software secure, reliable, and ready as your business grows." },
+  { step: "01", title: "Discovery", body: "Every successful project starts with understanding your business, goals, and creating a clear roadmap." },
+  { step: "02", title: "Design", body: "We create clean, modern designs and intuitive user experiences to validate ideas before development." },
+  { step: "03", title: "Development", body: "A strong architectural foundation is built step-by-step, with regular updates to track progress." },
+  { step: "04", title: "Testing", body: "Every feature is carefully tested to make sure your software is reliable, secure, and ready for launch." },
+  { step: "05", title: "Deployment", body: "Your software is launched smoothly with minimal disruption, ensuring everything works from day one." },
+  { step: "06", title: "Support", body: "Regular updates and ongoing support keep your software secure, reliable, and ready as your business grows." },
 ];
 
 export const TECH_GROUPS = [

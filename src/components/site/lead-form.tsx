@@ -1,8 +1,8 @@
-import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { COMPANY, SERVICES } from "@/content/site";
+import { SERVICES } from "@/content/site";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 type LeadFormProps = {
   variant?: "full" | "compact";
@@ -17,45 +17,7 @@ export function LeadForm({
   heading = "Get a Free Project Proposal",
   subheading = "Tell us what you need — we'll send back a tailored proposal within 24 hours. No commitment required.",
 }: LeadFormProps) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
-  const [fields, setFields] = useState({
-    name: "",
-    company: "",
-    email: "",
-    whatsapp: "",
-    service: "",
-    budget: "",
-    timeline: "",
-    message: "",
-  });
-
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) {
-    setFields((f) => ({ ...f, [e.target.name]: e.target.value }));
-  }
-
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    setStatus("sending");
-
-    const body = `
-Name: ${fields.name}
-Company: ${fields.company}
-Email: ${fields.email}
-WhatsApp: ${fields.whatsapp}
-Service: ${fields.service}
-Budget: ${fields.budget}
-Timeline: ${fields.timeline}
-Message: ${fields.message}
-    `.trim();
-
-    // Open mailto as the form action
-    window.location.href = `mailto:${COMPANY.email}?subject=New Project Enquiry from ${encodeURIComponent(fields.name)}&body=${encodeURIComponent(body)}`;
-
-    // Show success after brief delay
-    setTimeout(() => setStatus("sent"), 800);
-  }
+  const { status, fields, setFields, handleChange, handleSubmit } = useLeadForm();
 
   return (
     <div className={cn("relative", className)}>
