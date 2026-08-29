@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, Section, SectionHeading } from "@/components/site/primitives";
@@ -15,17 +16,29 @@ import {
   Zap,
 } from "lucide-react";
 
-const TITLE = "Industries We Serve — Enterprise, Fintech, Healthcare & AI Solutions | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "Industry Software Solutions — Healthcare to Finance | Sumanix Solutions";
 const DESCRIPTION =
-  "We build custom software, AI systems, SaaS platforms, and mobile apps tailored for Healthcare, Finance, Education, Retail, Logistics, Manufacturing, Real Estate, and Enterprise operations.";
+  "Custom software, AI, and cloud solutions built for healthcare, finance, retail, manufacturing, logistics, real estate, and more. Sumanix Solutions, Sangli, Maharashtra.";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/industries` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/industries` },
     ],
   }),
   component: IndustriesOverviewPage,
@@ -33,6 +46,10 @@ export const Route = createFileRoute("/industries")({
 
 function IndustriesOverviewPage() {
   const industriesList = Object.values(INDUSTRY_DETAILS);
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Industries", url: `${DOMAIN}/industries` },
+  ]));
 
   const complianceBadges: Record<string, string> = {
     healthcare: "PATIENT DATA SECURITY FOCUSED",
@@ -50,6 +67,7 @@ function IndustriesOverviewPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       {/* HERO SECTION */}
       <Section className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
         <MeshBackground />

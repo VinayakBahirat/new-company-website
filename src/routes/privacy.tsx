@@ -5,6 +5,16 @@ import { Reveal } from "@/components/site/motion-primitives";
 import { COMPANY } from "@/content/site";
 
 export const Route = createFileRoute("/privacy")({
+  head: () => ({
+    meta: [
+      { title: "Privacy Policy | Sumanix Solutions" },
+      { name: "description", content: "Read the privacy policy for Sumanix Solutions. We are committed to protecting your personal information and your right to privacy." },
+      { name: "robots", content: "noindex, follow" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://sumanixsolutions.com/privacy" },
+    ],
+  }),
   component: PrivacyPage,
 });
 

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { useState } from "react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
@@ -16,9 +17,11 @@ import {
   Download,
 } from "lucide-react";
 
-const TITLE = "Blog & Insights — Software & AI Engineering | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "Engineering Blog — Software & AI Insights | Sumanix Solutions";
 const DESCRIPTION =
-  "Expert insights, technical analysis, and best practices for building scalable enterprise software, practical AI applications, and high-performance SaaS platforms.";
+  "Practical articles on software engineering, applied AI, SaaS architecture, and business automation from the Sumanix Solutions team in Sangli, India.";
 
 /** Map blog categories → related service slugs for cross-links */
 const CATEGORY_SERVICE_MAP: Record<string, { label: string; slug: string }> = {
@@ -35,16 +38,32 @@ export const Route = createFileRoute("/blog")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/blog` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/blog` },
     ],
   }),
   component: BlogPage,
 });
 
 function BlogPage() {
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Blog", url: `${DOMAIN}/blog` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative">
@@ -75,8 +94,11 @@ function BlogPage() {
                         <div className="mb-6 -mx-8 -mt-8 overflow-hidden rounded-t-[1.8rem]">
                           <img
                             src={post.image}
-                            alt={post.title}
+                            alt={`Cover image for: ${post.title}`}
                             className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                            width={800}
+                            height={450}
                           />
                         </div>
                       )}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, Section, SectionHeading } from "@/components/site/primitives";
@@ -21,21 +22,37 @@ import {
   Zap,
 } from "lucide-react";
 
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+
 export const Route = createFileRoute("/industries_/$slug")({
   head: ({ params }) => {
     const ind = getIndustryDetailBySlug(params.slug);
     const title = ind
-      ? `${ind.name} Software & AI Solutions — Industries | Sumanix Solutions`
-      : "Industry Not Found — Sumanix Solutions";
+      ? `${ind.name} Software Solutions | Sumanix Solutions`
+      : "Industry Not Found | Sumanix Solutions";
     const description = ind
-      ? ind.shortDescription
+      ? ind.shortDescription.slice(0, 160)
       : "Custom software engineering, AI solutions, and cloud systems built for industry leaders.";
+    const canonical = ind
+      ? `${DOMAIN}/industries/${params.slug}`
+      : `${DOMAIN}/industries`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        { property: "og:type", content: "website" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:image", content: OG_IMAGE },
+        { property: "og:url", content: canonical },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [
+        { rel: "canonical", href: canonical },
       ],
     };
   },
@@ -71,8 +88,15 @@ function IndustryDetailPage() {
   const [activeUseCaseIndex, setActiveUseCaseIndex] = useState(0);
   const activeUseCase = industry.useCases[activeUseCaseIndex] || industry.useCases[0];
 
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Industries", url: `${DOMAIN}/industries` },
+    { name: industry.name, url: `${DOMAIN}/industries/${slug}` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       {/* 1. HERO SECTION (EDITORIAL SPLIT - NO CARDS) */}
       <Section className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
         <MeshBackground />

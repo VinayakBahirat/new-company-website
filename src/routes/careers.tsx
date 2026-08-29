@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { ArrowUpRight, MapPin, Clock, Users, Check } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
@@ -19,17 +20,29 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const TITLE = "Careers — Engineering, AI and Design Roles | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "Careers — Join Our Engineering Team | Sumanix Solutions";
 const DESCRIPTION =
-  "Open roles for senior product engineers, AI systems engineers, platform engineers, designers and delivery leads. Remote-friendly, senior-weighted teams.";
+  "Open engineering roles at Sumanix Solutions in Sangli, India: AI engineers, fullstack developers, DevOps, Java, .NET engineers. Remote-friendly. Apply now.";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/careers` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/careers` },
     ],
   }),
   component: CareersPage,
@@ -50,8 +63,14 @@ function CareersPage() {
     handleOpenChange,
   } = useCareersForm();
 
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Careers", url: `${DOMAIN}/careers` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative">

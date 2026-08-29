@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Phone, Check } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Check } from "lucide-react";
+import { breadcrumbSchema } from "@/lib/schema";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { ContactAnimation } from "@/components/site/contact-animation";
 import { Reveal } from "@/components/site/motion-primitives";
@@ -17,17 +18,29 @@ import {
 
 
 
-const TITLE = "Contact — Start a Project | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "Contact Us — Start a Project | Sumanix Solutions";
 const DESCRIPTION =
-  "Tell us about the platform, AI product or system you need built. We reply within one business day and start with a two-week discovery.";
+  "Contact Sumanix Solutions in Sangli, Maharashtra. Start your web app, AI, or SaaS project — free consultation, reply within one business day. Serving India, US, and UK.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/contact` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/contact` },
     ],
   }),
   component: ContactPage,
@@ -39,9 +52,15 @@ const FIELD =
 function ContactPage() {
   const { sent, isSubmitting, onSubmit } = useContactForm();
 
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Contact", url: `${DOMAIN}/contact` },
+  ]));
 
   return (
-    <>      <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
+      <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
       <MeshBackground />
       <div className="relative">
         <SectionHeading
@@ -188,10 +207,13 @@ function ContactPage() {
                       {COMPANY.phone}
                     </a>
                   </li>
-                  {/* <li className="flex items-start gap-3 text-muted-foreground">
+                  <li className="flex items-start gap-3 text-muted-foreground">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    {COMPANY.address}
-                  </li> */}
+                    <div>
+                      <p>{COMPANY.address}</p>
+                      <p className="mt-1 text-xs text-muted-foreground/70">Serving clients across India, US &amp; UK</p>
+                    </div>
+                  </li>
                 </ul>
               </GlassCard>
             </Reveal>

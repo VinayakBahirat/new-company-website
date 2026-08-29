@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
@@ -22,21 +23,37 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+
 export const Route = createFileRoute("/services_/$slug")({
   head: ({ params }) => {
     const service = getServiceDetailBySlug(params.slug);
     const title = service
-      ? `${service.title} — Services | Sumanix Solutions`
-      : "Service Not Found — Sumanix Solutions";
+      ? `${service.title} in India | Sumanix Solutions`
+      : "Service Not Found | Sumanix Solutions";
     const description = service
-      ? service.shortDescription
-      : "Enterprise software, AI, SaaS, mobile, cloud and performance engineering services.";
+      ? service.shortDescription.slice(0, 160)
+      : "Enterprise software, AI, SaaS, mobile, cloud and performance engineering services from Sumanix Solutions, Sangli.";
+    const canonical = service
+      ? `${DOMAIN}/services/${service.slug}`
+      : `${DOMAIN}/services`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        { property: "og:type", content: "website" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:image", content: OG_IMAGE },
+        { property: "og:url", content: canonical },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [
+        { rel: "canonical", href: canonical },
       ],
     };
   },
@@ -72,8 +89,18 @@ function ServiceDetailPage() {
   const [activeIndustryIndex, setActiveIndustryIndex] = useState(0);
   const activeIndustry = service.industryUseCases[activeIndustryIndex] || service.industryUseCases[0];
 
+  // Structured data for this service page
+  const svcSchema = JSON.stringify(serviceSchema(service));
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Services", url: `${DOMAIN}/services` },
+    { name: service.title, url: `${DOMAIN}/services/${service.slug}` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: svcSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       {/* 1. HERO SECTION */}
       <Section className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
         <MeshBackground />
