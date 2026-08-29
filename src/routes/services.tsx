@@ -150,20 +150,23 @@ function ServicesPage() {
       {/* Process section */}
       <Section className="py-24 sm:py-32">
         <SectionHeading eyebrow="How it runs" title="From discovery to long-horizon ownership." />
-        <div className="mt-14 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-3">
           {PROCESS.map((s, i) => {
             const len = PROCESS.length;
-            const lastRowSm = Math.floor((len - 1) / 2) * 2;
-            const lastRowLg = Math.floor((len - 1) / 5) * 5;
             
             return (
-              <Reveal key={s.step} delay={(i % 5) * 0.05} className={cn(
+              <Reveal key={s.step} delay={(i % 3) * 0.05} className={cn(
                 "border-border",
+                // Mobile layout (1 column)
                 i < len - 1 ? "border-b" : "",
-                i >= lastRowSm ? "sm:border-b-0" : "",
-                i >= lastRowLg ? "lg:border-b-0" : "",
-                i % 2 === 0 ? "sm:border-r" : "",
-                i % 5 !== 4 ? "lg:border-r" : "lg:border-r-0"
+                
+                // Small layout (2 columns)
+                i >= 4 ? "sm:border-b-0" : "sm:border-b",
+                i % 2 === 0 ? "sm:border-r" : "sm:border-r-0",
+                
+                // Large layout (3 columns)
+                i >= 3 ? "lg:border-b-0" : "lg:border-b",
+                i % 3 !== 2 ? "lg:border-r" : "lg:border-r-0"
               )}>
                 <div className="group h-full bg-background/70 p-6 transition-colors duration-400 hover:bg-surface/60">
                   <span className="font-mono text-[0.65rem] text-primary">{s.step}</span>

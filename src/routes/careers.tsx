@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
 import { ArrowUpRight, MapPin, Clock, Users, Check } from "lucide-react";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { ROLES, VALUES } from "@/content/site";
-import { toast } from "sonner";
-import { sendContactEmail } from "@/lib/emailjs";
+import { useCareersForm } from "@/hooks/use-careers-form";
 import {
   Select,
   SelectContent,
@@ -41,46 +39,16 @@ const FIELD =
   "w-full rounded-xl border border-border bg-glass px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-ring";
 
 function CareersPage() {
-  const [selectedRole, setSelectedRole] = useState<string>("");
-  const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const portfolio = formData.get("portfolio") as string;
-    const notes = formData.get("notes") as string;
-
-    try {
-      await sendContactEmail({
-        name,
-        email,
-        phone,
-        company: "Careers Application",
-        budget: `Portfolio: ${portfolio}`,
-        scope: `Apply: ${selectedRole}`,
-        message: notes || "No additional notes provided.",
-      });
-      toast.success("Application successfully submitted!");
-      setSent(true);
-    } catch (err) {
-      toast.error("Failed to send application. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleOpenChange = (open: boolean) => {
-    setIsFormOpen(open);
-    if (!open) {
-      setTimeout(() => setSent(false), 200);
-    }
-  };
+  const {
+    selectedRole,
+    setSelectedRole,
+    sent,
+    loading,
+    isFormOpen,
+    setIsFormOpen,
+    onSubmit,
+    handleOpenChange,
+  } = useCareersForm();
 
   return (
     <>
