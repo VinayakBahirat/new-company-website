@@ -5,6 +5,16 @@ import { Reveal } from "@/components/site/motion-primitives";
 import { COMPANY } from "@/content/site";
 
 export const Route = createFileRoute("/terms")({
+  head: () => ({
+    meta: [
+      { title: "Terms of Service | Sumanix Solutions" },
+      { name: "description", content: "Read the terms of service for Sumanix Solutions. These terms govern your use of our website and services." },
+      { name: "robots", content: "noindex, follow" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://sumanixsolutions.com/terms" },
+    ],
+  }),
   component: TermsPage,
 });
 

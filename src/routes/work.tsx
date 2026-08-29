@@ -1,29 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { PROJECTS } from "@/content/site";
 import { MockUi } from "@/components/site/mock-ui";
 
-const TITLE = "Selected Work — Enterprise Platforms & AI Products | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "Portfolio & Case Studies | Sumanix Solutions";
 const DESCRIPTION =
-  "We help startups, SaaS companies, and agencies ship high-quality, production-ready web applications in record time by combining expert human engineering with advanced AI integration. We specialize in React & Next.js frontends, Node.js APIs, and practical AI features that solve real business problems.";
+  "Browse delivered projects by Sumanix Solutions: Shopify stores, WordPress sites, web apps, and custom software. Senior engineers, real results. Based in Sangli, India.";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/work` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/work` },
     ],
   }),
   component: WorkPage,
 });
 
 function WorkPage() {
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Work", url: `${DOMAIN}/work` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative">
@@ -45,8 +64,11 @@ function WorkPage() {
                     {p.image ? (
                       <img
                         src={p.image}
-                        alt={p.name}
+                        alt={`${p.name} — ${p.category} project by Sumanix Solutions`}
                         className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                        width={800}
+                        height={500}
                       />
                     ) : (
                       <>

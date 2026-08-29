@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { breadcrumbSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { Reveal, TiltCard } from "@/components/site/motion-primitives";
@@ -38,25 +39,43 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "application-performance-optimization": Gauge,
 };
 
-const TITLE = "Services — Enterprise, AI, SaaS & Cloud Engineering | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "IT & Software Development Services | Sumanix Solutions";
 const DESCRIPTION =
-  "Enterprise software, AI product development, SaaS platforms, mobile, cloud operations, automation and performance engineering delivered by senior pods.";
+  "Full-range IT services from Sumanix Solutions: web & app development, AI, SaaS platforms, mobile apps, cloud DevOps, automation, and performance optimization. Based in Sangli, India.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/services` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/services` },
     ],
   }),
   component: ServicesPage,
 });
 
 function ServicesPage() {
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Services", url: `${DOMAIN}/services` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative">
@@ -233,3 +252,4 @@ function ServicesPage() {
     </>
   );
 }
+

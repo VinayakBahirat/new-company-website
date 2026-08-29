@@ -4,18 +4,35 @@ import { Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section } from "@/components/site/primitives";
 import { BLOG_POSTS } from "@/content/site";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
+
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
 
 export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
     const post = BLOG_POSTS.find((p) => p.slug === params.slug);
-    const title = post ? (post.metaTitle || `${post.title} — Blog | Sumanix Solutions`) : "Blog Post Not Found — Sumanix Solutions";
-    const description = post ? (post.metaDescription || post.summary) : "Blog post details";
+    const title = post ? (post.metaTitle || `${post.title} | Sumanix Solutions`) : "Blog Post Not Found | Sumanix Solutions";
+    const description = post ? (post.metaDescription || post.summary) : "Blog post on software engineering, AI, and business automation by Sumanix Solutions.";
+    const canonical = `${DOMAIN}/blog/${params.slug}`;
+    const image = post?.image ? (post.image.startsWith("http") ? post.image : `${DOMAIN}${post.image}`) : OG_IMAGE;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        // og:type = article for blog posts (not website)
+        { property: "og:type", content: "article" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
+        { property: "og:image", content: image },
+        { property: "og:url", content: canonical },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [
+        { rel: "canonical", href: canonical },
       ],
     };
   },
@@ -48,27 +65,26 @@ function BlogPostPage() {
     );
   }
 
+  // Structured data — BlogPosting + BreadcrumbList
+  const articleSchema = JSON.stringify(blogPostingSchema(post));
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Blog", url: `${DOMAIN}/blog` },
+    { name: post.title, url: `${DOMAIN}/blog/${post.slug}` },
+  ]));
+
   return (
     <>
-      {post && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              headline: post.title,
-              description: post.metaDescription || post.summary,
-              author: {
-                "@type": "Person",
-                name: post.author,
-              },
-              datePublished: new Date(post.date).toISOString().split('T')[0],
-              articleSection: post.category,
-            }),
-          }}
-        />
-      )}
+      {/* Enhanced BlogPosting JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: articleSchema }}
+      />
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: breadcrumb }}
+      />
       <Section className="relative overflow-hidden pb-12 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
@@ -104,7 +120,7 @@ function BlogPostPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span>{post.date}</span>
+                <time dateTime={new Date(post.date).toISOString().split("T")[0]}>{post.date}</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary" />
@@ -122,8 +138,12 @@ function BlogPostPage() {
               <div className="mb-12 overflow-hidden rounded-[2rem] border border-border">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={`Cover image for: ${post.title}`}
                   className="aspect-[2/1] w-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  width={1200}
+                  height={600}
                 />
               </div>
             )}

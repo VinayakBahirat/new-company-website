@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MeshBackground } from "@/components/site/mesh-background";
 import { NodeField } from "@/components/site/node-field";
@@ -8,34 +8,64 @@ import { Counter, Reveal } from "@/components/site/motion-primitives";
 import { ClosingCta, GlassCard, Section, SectionHeading } from "@/components/site/primitives";
 import { COMPANY, DIFFERENTIATORS, INDUSTRIES, STATS, VALUES } from "@/content/site";
 import { getIndustrySlug } from "@/content/industry-details";
+import { breadcrumbSchema } from "@/lib/schema";
 
-const TITLE = "Studio — Story, Mission and Values | Sumanix Solutions";
+const DOMAIN = "https://sumanixsolutions.com";
+const OG_IMAGE = `${DOMAIN}/og-image.png`;
+const TITLE = "About Us — Software Studio in Sangli | Sumanix Solutions";
 const DESCRIPTION =
-  "An independent engineering studio of 68 product, AI, infrastructure and design specialists building long-lived software systems across 19 countries.";
+  "Sumanix Solutions is a software engineering studio in Sangli, Maharashtra. We build custom web apps, AI systems, SaaS platforms, and mobile applications for businesses across India, US, and UK.";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:url", content: `${DOMAIN}/studio` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    links: [
+      { rel: "canonical", href: `${DOMAIN}/studio` },
     ],
   }),
   component: StudioPage,
 });
 
 function StudioPage() {
+  const breadcrumb = JSON.stringify(breadcrumbSchema([
+    { name: "Home", url: DOMAIN },
+    { name: "Studio", url: `${DOMAIN}/studio` },
+  ]));
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
         <MeshBackground />
         <div className="relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <SectionHeading
-            eyebrow="The studio"
-            title="Built on Experience. Focused on Results."
-            body={`We help businesses turn ideas into reliable software with a focus on quality, performance, and long-term success. Every project is built with care, clear communication, and a commitment to delivering real business value.`}
-          />
+          <div>
+            <SectionHeading
+              eyebrow="The studio"
+              title="Built on Experience. Focused on Results."
+              body={`We help businesses turn ideas into reliable software with a focus on quality, performance, and long-term success. Every project is built with care, clear communication, and a commitment to delivering real business value.`}
+            />
+            {/* Local SEO — office location & service area */}
+            <div className="mt-6 flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-primary flex-shrink-0" aria-hidden />
+                <span>Office: <strong className="text-foreground">Sangli, Maharashtra, India</strong></span>
+              </span>
+              <span className="text-muted-foreground/50 hidden sm:inline">·</span>
+              <span>Serving clients across <strong className="text-foreground">India, US, and UK</strong></span>
+            </div>
+          </div>
           <StudioArchitecture />
         </div>
       </Section>
@@ -88,24 +118,6 @@ function StudioPage() {
           })}
         </div>
       </Section>
-
-      {/* <Section className="py-20">
-        <SectionHeading eyebrow="Statistics" title="Eleven years, measured." />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={(i % 4) * 0.05}>
-              <div className="h-full rounded-2xl border border-border bg-glass p-6">
-                <p className="font-display text-3xl font-semibold tracking-tight text-amber-gradient sm:text-4xl">
-                  <Counter to={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
-                </p>
-                <p className="mt-3 text-sm font-medium">{s.label}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{s.note}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section> */}
-
 
       <Section className="py-24 sm:py-32">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">

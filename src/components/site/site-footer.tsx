@@ -70,6 +70,9 @@ export function SiteFooter() {
             <a href={`tel:${COMPANY.phone.replace(/[^+\d]/g, "")}`} className="focus-ring block py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground">
               {COMPANY.phone}
             </a>
+            <p className="py-1.5 text-sm text-muted-foreground">
+              {COMPANY.address}
+            </p>
             <Link
               to="/contact"
               className="focus-ring mt-4 inline-flex items-center gap-1.5 rounded-xl border border-primary/35 bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/16"
