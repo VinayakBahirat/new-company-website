@@ -21,7 +21,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "Engineering Blog — Software & AI Insights | Sumanix Solutions";
 const DESCRIPTION =
-  "Practical articles on software engineering, applied AI, SaaS architecture, and business automation from the Sumanix Solutions team in Sangli, India.";
+  "Practical articles on software engineering, applied AI, SaaS architecture, and business automation from the Sumanix Solutions team in Pune, India.";
 
 /** Map blog categories → related service slugs for cross-links */
 const CATEGORY_SERVICE_MAP: Record<string, { label: string; slug: string }> = {

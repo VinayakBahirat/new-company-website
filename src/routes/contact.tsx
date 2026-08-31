@@ -22,7 +22,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "Contact Us — Start a Project | Sumanix Solutions";
 const DESCRIPTION =
-  "Contact Sumanix Solutions in Sangli, Maharashtra. Start your web app, AI, or SaaS project — free consultation, reply within one business day. Serving India, US, and UK.";
+  "Contact Sumanix Solutions in Pune, Maharashtra. Start your web app, AI, or SaaS project — free consultation, reply within one business day. Serving India, US, and UK.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -61,15 +61,15 @@ function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumb }} />
       <Section className="relative overflow-hidden pb-16 pt-40 sm:pt-48">
-      <MeshBackground />
-      <div className="relative">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let's build something together."
-          body="Whether you are an individual with an idea or a company looking to build next-generation software, we'd love to hear from you. You will hear back within one business day."
-        />
-      </div>
-    </Section>
+        <MeshBackground />
+        <div className="relative">
+          <SectionHeading
+            eyebrow="Contact"
+            title="Let's build something together."
+            body="Whether you are an individual with an idea or a company looking to build next-generation software, we'd love to hear from you. You will hear back within one business day."
+          />
+        </div>
+      </Section>
 
       <Section className="pb-8">
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">

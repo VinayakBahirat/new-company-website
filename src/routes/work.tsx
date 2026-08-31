@@ -10,7 +10,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "Portfolio & Case Studies | Sumanix Solutions";
 const DESCRIPTION =
-  "Browse delivered projects by Sumanix Solutions: Shopify stores, WordPress sites, web apps, and custom software. Senior engineers, real results. Based in Sangli, India.";
+  "Browse delivered projects by Sumanix Solutions: Shopify stores, WordPress sites, web apps, and custom software. Senior engineers, real results. Based in Pune, India.";
 
 export const Route = createFileRoute("/work")({
   head: () => ({

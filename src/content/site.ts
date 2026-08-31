@@ -17,8 +17,8 @@ export const COMPANY = {
   tagline: "We help businesses build fast, reliable, and scalable software that solves real problems. From web applications to AI-powered solutions, we turn ideas into products people love to use.",
   email: "hello@sumanixsolutions.com",
   phone: "+91 7709044575",
-  address: "Sangli, Maharashtra, India",
-  hq: "Sangli, Maharashtra · Remote",
+  address: "Pune, Maharashtra, India",
+  hq: "Pune, Maharashtra · Remote",
   domain: "https://sumanixsolutions.com",
 };
 

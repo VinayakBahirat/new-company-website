@@ -23,7 +23,7 @@ export function organizationSchema() {
     telephone: "+91-7709044575",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Sangli",
+      addressLocality: "Pune",
       addressRegion: "Maharashtra",
       addressCountry: "IN",
     },
@@ -47,8 +47,8 @@ export function localBusinessSchema() {
     telephone: "+91-7709044575",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Sangli",
-      addressLocality: "Sangli",
+      streetAddress: "Pune",
+      addressLocality: "Pune",
       addressRegion: "Maharashtra",
       postalCode: "416416",
       addressCountry: "IN",

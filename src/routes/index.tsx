@@ -21,9 +21,9 @@ import { ClientTestimonials } from "@/components/site/home/client-testimonials";
 
 const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
-const TITLE = "Software & AI Development Company in Sangli | Sumanix Solutions";
+const TITLE = "Software & AI Development Company in Pune | Sumanix Solutions";
 const DESCRIPTION =
-  "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Sangli, Maharashtra. Get a free consultation.";
+  "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Pune, Maharashtra. Get a free consultation.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
