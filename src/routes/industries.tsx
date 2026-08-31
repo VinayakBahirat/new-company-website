@@ -20,7 +20,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "Industry Software Solutions — Healthcare to Finance | Sumanix Solutions";
 const DESCRIPTION =
-  "Custom software, AI, and cloud solutions built for healthcare, finance, retail, manufacturing, logistics, real estate, and more. Sumanix Solutions, Sangli, Maharashtra.";
+  "Custom software, AI, and cloud solutions built for healthcare, finance, retail, manufacturing, logistics, real estate, and more. Sumanix Solutions, Pune, Maharashtra.";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({

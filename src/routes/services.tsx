@@ -43,7 +43,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "IT & Software Development Services | Sumanix Solutions";
 const DESCRIPTION =
-  "Full-range IT services from Sumanix Solutions: web & app development, AI, SaaS platforms, mobile apps, cloud DevOps, automation, and performance optimization. Based in Sangli, India.";
+  "Full-range IT services from Sumanix Solutions: web & app development, AI, SaaS platforms, mobile apps, cloud DevOps, automation, and performance optimization. Based in Pune, India.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -140,27 +140,27 @@ function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                {/* Per-service CTA */}
-                <div className="mt-6 flex flex-wrap items-center justify-between border-t border-border pt-5 gap-3">
-                  <Link
-                    to="/services/$slug"
-                    params={{ slug: service.slug }}
-                    id={`service-detail-${service.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:gap-2.5"
-                  >
-                    View detailed service breakdown
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                  <Link
-                    to="/services/$slug"
-                    params={{ slug: service.slug }}
-                    className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
-                  >
-                    Explore Service →
-                  </Link>
-                </div>
-              </GlassCard>
-            </Reveal>
+                  {/* Per-service CTA */}
+                  <div className="mt-6 flex flex-wrap items-center justify-between border-t border-border pt-5 gap-3">
+                    <Link
+                      to="/services/$slug"
+                      params={{ slug: service.slug }}
+                      id={`service-detail-${service.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-all duration-200 hover:gap-2.5"
+                    >
+                      View detailed service breakdown
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                    <Link
+                      to="/services/$slug"
+                      params={{ slug: service.slug }}
+                      className="rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+                    >
+                      Explore Service →
+                    </Link>
+                  </div>
+                </GlassCard>
+              </Reveal>
             );
           })}
         </div>
@@ -172,17 +172,17 @@ function ServicesPage() {
         <div className="mt-14 grid overflow-hidden rounded-[1.6rem] border border-border glass-panel sm:grid-cols-2 lg:grid-cols-3">
           {PROCESS.map((s, i) => {
             const len = PROCESS.length;
-            
+
             return (
               <Reveal key={s.step} delay={(i % 3) * 0.05} className={cn(
                 "border-border",
                 // Mobile layout (1 column)
                 i < len - 1 ? "border-b" : "",
-                
+
                 // Small layout (2 columns)
                 i >= 4 ? "sm:border-b-0" : "sm:border-b",
                 i % 2 === 0 ? "sm:border-r" : "sm:border-r-0",
-                
+
                 // Large layout (3 columns)
                 i >= 3 ? "lg:border-b-0" : "lg:border-b",
                 i % 3 !== 2 ? "lg:border-r" : "lg:border-r-0"

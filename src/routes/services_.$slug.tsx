@@ -34,7 +34,7 @@ export const Route = createFileRoute("/services_/$slug")({
       : "Service Not Found | Sumanix Solutions";
     const description = service
       ? service.shortDescription.slice(0, 160)
-      : "Enterprise software, AI, SaaS, mobile, cloud and performance engineering services from Sumanix Solutions, Sangli.";
+      : "Enterprise software, AI, SaaS, mobile, cloud and performance engineering services from Sumanix Solutions, Pune.";
     const canonical = service
       ? `${DOMAIN}/services/${service.slug}`
       : `${DOMAIN}/services`;
@@ -286,11 +286,10 @@ function ServiceDetailPage() {
               <button
                 key={ind.industry}
                 onClick={() => setActiveIndustryIndex(idx)}
-                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold transition-all ${
-                  isActive
+                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold transition-all ${isActive
                     ? "bg-primary text-primary-foreground shadow-md"
                     : "border border-border/80 bg-surface/30 text-muted-foreground hover:bg-surface/80 hover:text-foreground"
-                }`}
+                  }`}
               >
                 <Building2 className="h-3.5 w-3.5" />
                 {ind.industry}

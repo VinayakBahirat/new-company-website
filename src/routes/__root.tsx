@@ -93,20 +93,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // { name: "google-site-verification", content: "YOUR_VERIFICATION_CODE_HERE" },
       // -----------------------------------------------------------------------
       // Default global title & description (overridden by each route's head())
-      { title: "Software & AI Development Company in Sangli | Sumanix Solutions" },
-      { name: "description", content: "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Sangli, Maharashtra. Get a free consultation." },
+      { title: "Software & AI Development Company in Pune | Sumanix Solutions" },
+      { name: "description", content: "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Pune, Maharashtra. Get a free consultation." },
       // Open Graph — global defaults (overridden per route)
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Sumanix Solutions" },
-      { property: "og:title", content: "Software & AI Development Company in Sangli | Sumanix Solutions" },
-      { property: "og:description", content: "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Sangli, Maharashtra." },
+      { property: "og:title", content: "Software & AI Development Company in Pune | Sumanix Solutions" },
+      { property: "og:description", content: "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK. Based in Pune, Maharashtra." },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:url", content: DOMAIN },
       // Twitter Card — global defaults
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Software & AI Development Company in Sangli | Sumanix Solutions" },
+      { name: "twitter:title", content: "Software & AI Development Company in Pune | Sumanix Solutions" },
       { name: "twitter:description", content: "Sumanix Solutions builds custom web apps, AI systems, SaaS platforms, and mobile apps for businesses across India, US, and UK." },
       { name: "twitter:image", content: OG_IMAGE },
     ],

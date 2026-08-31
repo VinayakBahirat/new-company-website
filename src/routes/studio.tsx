@@ -12,9 +12,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
-const TITLE = "About Us — Software Studio in Sangli | Sumanix Solutions";
+const TITLE = "About Us — Software Studio in Pune | Sumanix Solutions";
 const DESCRIPTION =
-  "Sumanix Solutions is a software engineering studio in Sangli, Maharashtra. We build custom web apps, AI systems, SaaS platforms, and mobile applications for businesses across India, US, and UK.";
+  "Sumanix Solutions is a software engineering studio in Pune, Maharashtra. We build custom web apps, AI systems, SaaS platforms, and mobile applications for businesses across India, US, and UK.";
 
 export const Route = createFileRoute("/studio")({
   head: () => ({
@@ -60,7 +60,7 @@ function StudioPage() {
             <div className="mt-6 flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary flex-shrink-0" aria-hidden />
-                <span>Office: <strong className="text-foreground">Sangli, Maharashtra, India</strong></span>
+                <span>Office: <strong className="text-foreground">Pune, Maharashtra, India</strong></span>
               </span>
               <span className="text-muted-foreground/50 hidden sm:inline">·</span>
               <span>Serving clients across <strong className="text-foreground">India, US, and UK</strong></span>
@@ -98,7 +98,7 @@ function StudioPage() {
             const len = VALUES.length;
             const lastRowSm = Math.floor((len - 1) / 2) * 2;
             const lastRowLg = Math.floor((len - 1) / 5) * 5;
-            
+
             return (
               <Reveal key={v.title} delay={i * 0.05} className={cn(
                 "border-border",
@@ -154,7 +154,7 @@ function StudioPage() {
             const len = DIFFERENTIATORS.length;
             const lastRowSm = Math.floor((len - 1) / 2) * 2;
             const lastRowLg = Math.floor((len - 1) / 5) * 5;
-            
+
             return (
               <Reveal key={d.title} delay={(i % 5) * 0.05} className={cn(
                 "border-border",

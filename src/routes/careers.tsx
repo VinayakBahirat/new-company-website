@@ -24,7 +24,7 @@ const DOMAIN = "https://sumanixsolutions.com";
 const OG_IMAGE = `${DOMAIN}/og-image.png`;
 const TITLE = "Careers — Join Our Engineering Team | Sumanix Solutions";
 const DESCRIPTION =
-  "Open engineering roles at Sumanix Solutions in Sangli, India: AI engineers, fullstack developers, DevOps, Java, .NET engineers. Remote-friendly. Apply now.";
+  "Open engineering roles at Sumanix Solutions in Pune, India: AI engineers, fullstack developers, DevOps, Java, .NET engineers. Remote-friendly. Apply now.";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
