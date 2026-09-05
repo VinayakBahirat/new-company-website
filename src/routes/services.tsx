@@ -25,6 +25,7 @@ import {
   Cloud,
   Gauge,
   Zap,
+  ShoppingCart,
 } from "lucide-react";
 
 const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -37,6 +38,7 @@ const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>>
   "backend-api-development": Server,
   "cloud-devops-solutions": Cloud,
   "application-performance-optimization": Gauge,
+  "ecommerce-development": ShoppingCart,
 };
 
 const DOMAIN = "https://sumanixsolutions.com";

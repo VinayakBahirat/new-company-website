@@ -1,4 +1,4 @@
-﻿export interface RealWorldUseCase {
+export interface RealWorldUseCase {
   id: string; // e.g. "Use Case 01"
   title: string;
   description: string;
@@ -1922,6 +1922,134 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     relatedIndustries: ["E-Commerce", "Finance", "Media", "SaaS", "Mobile", "Enterprise"],
     relatedServicesSlugs: ["website-web-app-development", "backend-api-development", "cloud-devops-solutions", "mobile-app-development"],
   },
+  "ecommerce-development": {
+    slug: "ecommerce-development",
+    title: "E-Commerce Development",
+    eyebrow: "Digital Storefronts & Marketplaces",
+    headline: "High-Converting E-Commerce Platforms Built for Growth and Scale.",
+    shortDescription:
+      "We build scalable e-commerce platforms designed for optimal user experience, higher conversions, and seamless payment integrations.",
+    overview: {
+      whatItIs:
+        "E-Commerce Development is the engineering of robust digital storefronts, B2B/B2C marketplaces, and custom shopping platforms.",
+      problemSolved:
+        "Slow loading times, complicated checkout processes, and poor inventory management lead to cart abandonment and lost sales.",
+      whyNeeded:
+        "A fast, secure, and intuitive shopping experience is essential to retain customers and maximize conversion rates.",
+      howWeHelp:
+        "We develop custom e-commerce solutions with seamless payment gateways, robust inventory management, and high-performance storefronts.",
+    },
+    capabilities: [
+      {
+        title: "Custom Storefront Engineering",
+        description: "Bespoke UI/UX design tailored to your brand, moving beyond rigid off-the-shelf templates.",
+      },
+      {
+        title: "Seamless Payment & Shipping Integration",
+        description: "Secure connections to Stripe, PayPal, Razorpay, and global shipping providers.",
+      },
+      {
+        title: "Inventory & Order Management",
+        description: "Automated syncing across warehouses and real-time stock level tracking.",
+      },
+      {
+        title: "High-Performance Headless Commerce",
+        description: "Decoupled frontend architecture for lightning-fast page loads and better SEO.",
+      },
+      {
+        title: "B2B & B2C Marketplaces",
+        description: "Multi-vendor platform development with tiered pricing and advanced role management.",
+      },
+      {
+        title: "Advanced Analytics & Conversion Tracking",
+        description: "Integrated data tracking to analyze user behavior, cart abandonment, and sales trends.",
+      },
+    ],
+    industryUseCases: [
+      {
+        industry: "Retail",
+        context: "Direct-to-consumer brands, multi-category retailers, and specialty stores needing robust digital sales channels.",
+        useCases: [
+          {
+            id: "Use Case 01",
+            title: "Direct-to-Consumer (D2C) Storefront",
+            description: "High-converting online store with customized product pages and rapid checkout.",
+          },
+          {
+            id: "Use Case 02",
+            title: "Multi-Region E-Commerce Platform",
+            description: "Storefront supporting multiple currencies, languages, and localized shipping rules.",
+          },
+          {
+            id: "Use Case 03",
+            title: "Product Configurator & Customizer",
+            description: "Interactive tools allowing users to personalize products before purchasing.",
+          },
+          {
+            id: "Use Case 04",
+            title: "Omnichannel Loyalty Program",
+            description: "Integrated rewards system bridging online purchases with in-store point collection.",
+          },
+        ],
+      },
+      {
+        industry: "Startups",
+        context: "Emerging brands and digital-first retailers looking to establish a strong online presence.",
+        useCases: [
+          {
+            id: "Use Case 01",
+            title: "Rapid MVP Launch Store",
+            description: "Quick-to-market storefront to test product viability and gather initial customer data.",
+          },
+          {
+            id: "Use Case 02",
+            title: "Subscription Box Service",
+            description: "Recurring billing and custom fulfillment logic for monthly delivery models.",
+          },
+          {
+            id: "Use Case 03",
+            title: "Social Commerce Integration",
+            description: "Shoppable feeds seamlessly connected with Instagram and TikTok catalogs.",
+          },
+          {
+            id: "Use Case 04",
+            title: "Drop-Shipping Automation",
+            description: "Zero-inventory setups with automated vendor order routing and tracking sync.",
+          },
+        ],
+      },
+    ],
+    process: [
+      { step: "01", title: "Strategy & Platform Selection", description: "Analyzing requirements to choose between custom builds, Shopify, Magento, or headless architectures." },
+      { step: "02", title: "UX/UI & Conversion Design", description: "Designing intuitive product discovery and frictionless checkout flows." },
+      { step: "03", title: "Development & Integration", description: "Building the storefront and connecting payment gateways, ERPs, and CRMs." },
+      { step: "04", title: "Testing & Security Audit", description: "Rigorous testing of payment flows, load handling, and data security." },
+      { step: "05", title: "Launch & Training", description: "Deploying the platform and training your team on managing products and orders." },
+      { step: "06", title: "Growth & Optimization", description: "Post-launch support focusing on conversion rate optimization and performance tuning." },
+    ],
+    deliverables: [
+      "Custom E-Commerce Storefront Codebase",
+      "Payment Gateway & Shipping Carrier Integrations",
+      "Product Catalog & Inventory Sync Setup",
+      "Admin Dashboard for Order Management",
+      "SEO & Performance Optimization Report",
+      "End-to-End Testing & Security Validation",
+    ],
+    techStack: [
+      { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Liquid (Shopify)"] },
+      { category: "Backend", items: ["Node.js", "Shopify API", "Medusa.js", "Stripe API"] },
+      { category: "Database", items: ["PostgreSQL", "MongoDB", "Redis Cache"] },
+      { category: "Cloud & DevOps", items: ["Vercel", "AWS", "CDN Distribution"] },
+    ],
+    businessOutcomes: [
+      { title: "Increased Conversion Rates", description: "Optimized user flows and fast load times directly boost sales." },
+      { title: "Reduced Cart Abandonment", description: "Frictionless checkout processes recover potentially lost revenue." },
+      { title: "Operational Efficiency", description: "Automated inventory and order management save hours of manual work." },
+      { title: "Scalable Growth", description: "Architecture designed to handle traffic spikes during peak sales events." },
+    ],
+    relatedIndustries: ["Retail", "Startups", "Enterprise"],
+    relatedServicesSlugs: ["website-web-app-development", "business-automation", "application-performance-optimization"],
+  },
 };
 
 // Helper lookup mapping legacy or alternative slugs to normalized keys
@@ -1944,6 +2072,8 @@ export const SLUG_MAP: Record<string, string> = {
   "cloud-devops-solutions": "cloud-devops-solutions",
   "Application Performance Optimization": "application-performance-optimization",
   "application-performance-optimization": "application-performance-optimization",
+  "E-Commerce Development": "ecommerce-development",
+  "ecommerce-development": "ecommerce-development",
 };
 
 export function getServiceDetailBySlug(slug: string): ServiceDetail | undefined {

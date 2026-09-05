@@ -177,6 +177,13 @@ export const SERVICES = [
       "Improve the speed, reliability, and efficiency of your existing applications with optimized code and performance-focused solutions.",
     points: ["Faster Loading", "Better Performance", "Code Optimization"],
   },
+  {
+    slug: "ecommerce-development",
+    title: "E-Commerce Development",
+    summary:
+      "Scalable e-commerce platforms designed for optimal user experience, higher conversions, and seamless payment integrations.",
+    points: ["Custom Stores & UI", "Payment Gateway Integration", "Inventory Management"],
+  },
 ];
 
 export const PROCESS = [
