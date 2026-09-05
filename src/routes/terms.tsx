@@ -43,7 +43,7 @@ function TermsPage() {
             <div className="flex flex-col gap-10">
               <section className="border-b border-border/60 pb-10">
                 <p className="text-lg leading-relaxed text-foreground">
-                  These Terms of Service ("Terms") govern the relationship between {COMPANY.name} ("Company," "we," "us," "our"), based in Pune, Maharashtra, India, and any client, business, or individual ("Client," "you") engaging our software development, white-label engineering, AI integration, e-commerce (Shopify), CRM (Salesforce), or related technology Services ("Services").
+                  These Terms of Service govern the relationship between {COMPANY.name}, based in Pune, Maharashtra, India, and any client, business, or individual engaging our software development, white-label engineering, AI integration, e-commerce, CRM, or related technology Services.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   By engaging {COMPANY.name}, signing a proposal/Statement of Work (SOW), making payment, or using our website, you agree to be bound by these Terms.

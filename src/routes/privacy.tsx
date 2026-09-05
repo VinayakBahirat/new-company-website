@@ -43,7 +43,7 @@ function PrivacyPage() {
             <div className="flex flex-col gap-10">
               <section className="border-b border-border/60 pb-10">
                 <p className="text-lg leading-relaxed text-foreground">
-                  {COMPANY.name} ("Company," "we," "us," or "our"), based in Pune, Maharashtra, India, provides software development, white-label engineering, AI integration, e-commerce (Shopify), CRM (Salesforce), and healthcare-technology-adjacent development services ("Services"). This Privacy Policy explains how we collect, use, store, and share information in connection with our Services, our website, and our engagements with clients and their end users.
+                  {COMPANY.name}, based in Pune, Maharashtra, India, provides software development, white-label engineering, AI integration, e-commerce, CRM, and healthcare-technology-adjacent development services. This Privacy Policy explains how we collect, use, store, and share information in connection with our Services, our website, and our engagements with clients and their end users.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   By using our website, engaging us as a service provider, or otherwise interacting with us, you agree to the terms of this Privacy Policy.
