@@ -67,7 +67,7 @@ function HomePage() {
       />
       <Hero />
       <StudioIntro />
-      <StatsBand />
+      {/* <StatsBand /> */}
       <CapabilityGrid />
       <MarqueeStrip />
       {/* <ProblemsWeSolveSection /> */}

@@ -10,6 +10,13 @@ import menuMuseImg from "@/img/MenuMuse.png";
 import sparkFutureImg from "@/img/SparkFuture-Technologies.png";
 import jsbsImg from "@/img/Jamea-Saifiyah-Business-School.png";
 import rugnaAdhaarImg from "@/img/Rugna-Adhaar-Foundation-Website.avif";
+import aiJobMatchingImg from "@/img/ai-job-matching.jpg";
+import saasAnimationBuilderImg from "@/img/saas-animation-builder-sdk.jpg";
+import propertyFloorPlanImg from "@/img/property-floor-plan-designer.jpg";
+import aiCommAgentsImg from "@/img/ai-communication-agents.jpg";
+import highPerformanceSaasImg from "@/img/high-performance-saas.jpg";
+import internationalEcommerceImg from "@/img/international-ecommerce.jpg";
+import umngotEcommerceImg from "@/img/umngot-ecommerce.jpg";
 
 export const COMPANY = {
   name: "Sumanix Solutions",
@@ -242,6 +249,125 @@ export const DIFFERENTIATORS = [
 ];
 
 export const PROJECTS = [
+  {
+    slug: "ai-job-matching-platform",
+    name: "AI Job Matching Platform",
+    category: "AI / RAG Platform",
+    goal: "A RAG-powered job and candidate matching platform designed to automate recruitment screening using semantic search and LLM-based resume parsing to understand candidate profiles and match them against relevant job requirements.",
+    tech: ["RAG", "LLM", "Semantic Search", "AI/ML", "React", "Node.js"],
+    features: [
+      "AI-powered resume parsing",
+      "Semantic job-candidate matching",
+      "RAG-based search",
+      "Automated recruitment screening",
+      "Intelligent candidate recommendations",
+    ],
+    metric: "96% Match Accuracy",
+    image: aiJobMatchingImg,
+    accent: "from-[oklch(0.7_0.16_240)] to-[oklch(0.55_0.18_280)]",
+  },
+  {
+    slug: "saas-animation-builder-sdk",
+    name: "SaaS Animation Builder SDK",
+    category: "SaaS / Developer Tools",
+    goal: "A JavaScript SDK designed to deliver reusable and encapsulated animations across 50+ client websites, complemented by a visual builder backend to easily create and manage animations.",
+    tech: ["React", "JavaScript", "Shadow DOM", "CSS3", "Node.js"],
+    features: [
+      "Reusable animation SDK",
+      "Visual animation builder",
+      "Integration across multiple websites",
+      "Encapsulated components",
+      "Scalable frontend architecture",
+    ],
+    metric: "50+ Client Sites",
+    image: saasAnimationBuilderImg,
+    accent: "from-[oklch(0.75_0.15_310)] to-[oklch(0.58_0.16_340)]",
+  },
+  {
+    slug: "property-floor-plan-designer",
+    name: "Property & Floor Plan Designer",
+    category: "Interactive App / Real Estate",
+    goal: "An interactive floor plan design application created for interior design and property-related workflows, featuring a canvas-based interface where users can create and modify floor plans via drag-and-drop.",
+    tech: ["React", "TypeScript", "Konva.js", "WebSockets"],
+    features: [
+      "Interactive floor plan creation",
+      "Drag-and-drop elements",
+      "Zoom and canvas controls",
+      "Real-time collaboration",
+      "Interactive design workflows",
+    ],
+    metric: "Real-Time Canvas",
+    image: propertyFloorPlanImg,
+    accent: "from-[oklch(0.74_0.14_170)] to-[oklch(0.55_0.15_205)]",
+  },
+  {
+    slug: "ai-communication-agents-platform",
+    name: "AI Communication Agents Platform",
+    category: "AI / Communication Platform",
+    goal: "An AI-focused communication platform supported by a mobile-first website and content management system, complete with SEO optimization and interactive frontend animations.",
+    tech: ["Next.js", "Sanity.io", "GSAP", "Tailwind CSS"],
+    features: [
+      "AI communication solutions",
+      "Mobile-first interface",
+      "Content management",
+      "SEO optimization",
+      "Interactive animations",
+    ],
+    metric: "AI Platform",
+    image: aiCommAgentsImg,
+    accent: "from-[oklch(0.78_0.14_140)] to-[oklch(0.58_0.16_165)]",
+  },
+  {
+    slug: "high-performance-saas-platform",
+    name: "High-Performance SaaS Platform",
+    category: "SaaS / Enterprise UI",
+    goal: "A high-performance SaaS platform developed with a reusable component-based architecture including 25+ UI components, seamless CMS integration, and fluid interactive animations.",
+    tech: ["React", "Tailwind CSS", "Strapi", "GSAP"],
+    features: [
+      "Scalable SaaS architecture",
+      "Reusable UI component library (25+ components)",
+      "CMS integration",
+      "Interactive user experience",
+      "Performance-focused development",
+    ],
+    metric: "25+ Components",
+    image: highPerformanceSaasImg,
+    accent: "from-[oklch(0.75_0.14_45)] to-[oklch(0.58_0.16_25)]",
+  },
+  {
+    slug: "international-ecommerce-platform",
+    name: "International E-Commerce Platform",
+    category: "E-Commerce / Global Payments",
+    goal: "A full-featured international e-commerce platform designed to support global online sales, seamlessly integrating Shopify APIs with Stripe multi-currency payments and comprehensive analytics.",
+    tech: ["Shopify", "Stripe", "React", "Node.js"],
+    features: [
+      "International e-commerce",
+      "Shopify API integration",
+      "Multi-currency payments",
+      "Stripe integration",
+      "Analytics integration & custom UI",
+    ],
+    metric: "Multi-Currency Payments",
+    image: internationalEcommerceImg,
+    accent: "from-[oklch(0.72_0.13_210)] to-[oklch(0.55_0.14_245)]",
+  },
+  {
+    slug: "umngot",
+    name: "Umngot",
+    category: "Shopify / D2C E-Commerce",
+    goal: "Designed and developed an authentic, high-converting D2C Shopify eCommerce store for UMNGOT, dedicated to premium traditional Bilona Gir cow ghee with seamless checkout, rich storytelling, and fast load times.",
+    tech: ["Shopify", "Liquid", "JavaScript", "Responsive Design", "Payment Gateway"],
+    features: [
+      "Custom Shopify storefront & responsive design",
+      "Traditional Bilona process storytelling sections",
+      "Optimized mobile-first shopping experience",
+      "Fast checkout & payment gateway integration",
+      "Product variant & customer review management",
+    ],
+    metric: "Shopify D2C Store",
+    image: umngotEcommerceImg,
+    accent: "from-[oklch(0.82_0.15_90)] to-[oklch(0.65_0.16_65)]",
+  },
   {
     slug: "choose-your-attitude",
     name: "Choose Your Attitude",
