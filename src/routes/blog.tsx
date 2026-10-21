@@ -76,9 +76,9 @@ function BlogPage() {
       </Section>
 
       {/* Lead magnet banner */}
-      <Section className="pb-10">
+      {/* <Section className="pb-10">
         <LeadMagnetBanner />
-      </Section>
+      </Section> */}
 
       {/* Blog posts */}
       <Section className="pb-24">

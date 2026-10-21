@@ -143,19 +143,19 @@ function ServiceDetailPage() {
           {/* Primary & Secondary CTAs */}
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#service-enquiry"
+              <Link
+                to="/contact"
                 className="focus-ring inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 Start a Project
                 <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#service-overview"
+              </Link>
+              <Link
+                to="/contact"
                 className="focus-ring inline-flex items-center gap-2 rounded-2xl border border-border bg-glass px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface/80"
               >
                 Get a Free Consultation
-              </a>
+              </Link>
             </div>
           </Reveal>
 
