@@ -25,7 +25,7 @@ export function SiteFooter() {
             <Logotype />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{COMPANY.tagline}</p>
             {/* <p className="mt-4 font-mono text-xs tracking-wider text-muted-foreground/80">{COMPANY.hq}</p> */}
-            <div className="mt-6 flex gap-2">
+            {/* <div className="mt-6 flex gap-2">
               {SOCIALS.map(({ label, Icon }) => (
                 <a
                   key={label}
@@ -36,7 +36,7 @@ export function SiteFooter() {
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <FooterColumn title="Company">
